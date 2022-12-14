@@ -417,131 +417,131 @@ namespace yy {
     union union_type
     {
       // actual_parameters
-      char dummy1[sizeof (shared_ptr<ActualParameters>)];
+      char dummy1[sizeof (shared_ptr<ActualParameters> )];
 
       // array_expression
-      char dummy2[sizeof (shared_ptr<ArrayExpression>)];
+      char dummy2[sizeof (shared_ptr<ArrayExpression> )];
 
       // array_expressions
-      char dummy3[sizeof (shared_ptr<ArrayExpressions>)];
+      char dummy3[sizeof (shared_ptr<ArrayExpressions> )];
 
       // array_values
-      char dummy4[sizeof (shared_ptr<ArrayValues>)];
+      char dummy4[sizeof (shared_ptr<ArrayValues> )];
 
       // assign_expression
-      char dummy5[sizeof (shared_ptr<AssignExpression>)];
+      char dummy5[sizeof (shared_ptr<AssignExpression> )];
 
       // assign_expressions
-      char dummy6[sizeof (shared_ptr<AssignExpressions>)];
+      char dummy6[sizeof (shared_ptr<AssignExpressions> )];
 
       // body
-      char dummy7[sizeof (shared_ptr<Body>)];
+      char dummy7[sizeof (shared_ptr<Body> )];
 
       // component
-      char dummy8[sizeof (shared_ptr<Component>)];
+      char dummy8[sizeof (shared_ptr<Component> )];
 
       // component_values
-      char dummy9[sizeof (shared_ptr<ComponentValues>)];
+      char dummy9[sizeof (shared_ptr<ComponentValues> )];
 
       // components
-      char dummy10[sizeof (shared_ptr<Components>)];
+      char dummy10[sizeof (shared_ptr<Components> )];
 
       // declaration
       // declarations
-      char dummy11[sizeof (shared_ptr<Declaration>)];
+      char dummy11[sizeof (shared_ptr<Declarations> )];
 
       // elif_section
-      char dummy12[sizeof (shared_ptr<ElifSection>)];
+      char dummy12[sizeof (shared_ptr<ElifSection> )];
 
       // elif_sections
-      char dummy13[sizeof (shared_ptr<ElifSections>)];
+      char dummy13[sizeof (shared_ptr<ElifSections> )];
 
       // else_section
-      char dummy14[sizeof (shared_ptr<ElseSection>)];
+      char dummy14[sizeof (shared_ptr<ElseSection> )];
 
       // expression
-      char dummy15[sizeof (shared_ptr<Expression>)];
+      char dummy15[sizeof (shared_ptr<Expression> )];
 
       // expressions
-      char dummy16[sizeof (shared_ptr<Expressions>)];
+      char dummy16[sizeof (shared_ptr<Expressions> )];
 
       // for_step
-      char dummy17[sizeof (shared_ptr<ForStep>)];
+      char dummy17[sizeof (shared_ptr<ForStep> )];
 
       // formal_parameter
-      char dummy18[sizeof (shared_ptr<FormalParameter>)];
+      char dummy18[sizeof (shared_ptr<FormalParameter> )];
 
       // formal_parameters
-      char dummy19[sizeof (shared_ptr<FormalParameters>)];
-
-      // integer
-      char dummy20[sizeof (shared_ptr<INTEGER>)];
+      char dummy19[sizeof (shared_ptr<FormalParameters> )];
 
       // id
-      char dummy21[sizeof (shared_ptr<Id>)];
+      char dummy20[sizeof (shared_ptr<Id> )];
 
       // ids
-      char dummy22[sizeof (shared_ptr<Ids>)];
+      char dummy21[sizeof (shared_ptr<Ids> )];
+
+      // integer
+      char dummy22[sizeof (shared_ptr<Integer> )];
 
       // lvalue
-      char dummy23[sizeof (shared_ptr<Lvalue>)];
+      char dummy23[sizeof (shared_ptr<Lvalue> )];
 
       // lvalues
-      char dummy24[sizeof (shared_ptr<Lvalues>)];
+      char dummy24[sizeof (shared_ptr<Lvalues> )];
 
       // number
-      char dummy25[sizeof (shared_ptr<Number>)];
+      char dummy25[sizeof (shared_ptr<Number> )];
 
       // procedure_declaration
-      char dummy26[sizeof (shared_ptr<ProcedureDeclaration>)];
+      char dummy26[sizeof (shared_ptr<ProcedureDeclaration> )];
 
       // procedure_declarations
-      char dummy27[sizeof (shared_ptr<ProcedureDeclarations>)];
+      char dummy27[sizeof (shared_ptr<ProcedureDeclarations> )];
 
       // program
-      char dummy28[sizeof (shared_ptr<Program>)];
-
-      // real
-      char dummy29[sizeof (shared_ptr<REAL>)];
+      char dummy28[sizeof (shared_ptr<Program> )];
 
       // read_parameters
-      char dummy30[sizeof (shared_ptr<ReadParameters>)];
+      char dummy29[sizeof (shared_ptr<ReadParameters>)];
 
-      // string
-      char dummy31[sizeof (shared_ptr<STRING>)];
+      // real
+      char dummy30[sizeof (shared_ptr<Real> )];
 
       // statement
-      char dummy32[sizeof (shared_ptr<Statement>)];
+      char dummy31[sizeof (shared_ptr<Statement>  )];
 
       // statements
-      char dummy33[sizeof (shared_ptr<Statements>)];
+      char dummy32[sizeof (shared_ptr<Statements> )];
+
+      // string
+      char dummy33[sizeof (shared_ptr<String> )];
 
       // type
-      char dummy34[sizeof (shared_ptr<Type>)];
+      char dummy34[sizeof (shared_ptr<Type> )];
 
       // type_annotation
-      char dummy35[sizeof (shared_ptr<TypeAnnotation>)];
+      char dummy35[sizeof (shared_ptr<TypeAnnotation> )];
 
       // type_declaration
-      char dummy36[sizeof (shared_ptr<TypeDeclaration>)];
+      char dummy36[sizeof (shared_ptr<TypeDeclaration> )];
 
       // type_declarations
-      char dummy37[sizeof (shared_ptr<TypeDeclarations>)];
+      char dummy37[sizeof (shared_ptr<TypeDeclarations> )];
 
-      // variable_declaration
-      char dummy38[sizeof (shared_ptr<VariableDeclaration>)];
+      // var_declaration
+      char dummy38[sizeof (shared_ptr<VarDeclaration> )];
 
-      // variable_declarations
-      char dummy39[sizeof (shared_ptr<VariableDeclarations>)];
+      // var_declarations
+      char dummy39[sizeof (shared_ptr<VarDeclarations> )];
 
       // write_expression
-      char dummy40[sizeof (shared_ptr<WriteExpression>)];
+      char dummy40[sizeof (shared_ptr<WriteExpression> )];
 
       // write_expressions
-      char dummy41[sizeof (shared_ptr<WriteExpressions>)];
+      char dummy41[sizeof (shared_ptr<WriteExpressions> )];
 
       // write_parameters
-      char dummy42[sizeof (shared_ptr<WriteParameters>)];
+      char dummy42[sizeof (shared_ptr<WriteParameters> )];
 
       // AND
       // ARRAY
@@ -803,8 +803,8 @@ namespace yy {
         S_body = 66,                             // body
         S_declaration = 67,                      // declaration
         S_declarations = 68,                     // declarations
-        S_variable_declaration = 69,             // variable_declaration
-        S_variable_declarations = 70,            // variable_declarations
+        S_var_declaration = 69,                  // var_declaration
+        S_var_declarations = 70,                 // var_declarations
         S_type_declaration = 71,                 // type_declaration
         S_type_declarations = 72,                // type_declarations
         S_procedure_declaration = 73,            // procedure_declaration
@@ -879,172 +879,172 @@ namespace yy {
         switch (this->kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.move< shared_ptr<ActualParameters> > (std::move (that.value));
+        value.move< shared_ptr<ActualParameters>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.move< shared_ptr<ArrayExpression> > (std::move (that.value));
+        value.move< shared_ptr<ArrayExpression>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.move< shared_ptr<ArrayExpressions> > (std::move (that.value));
+        value.move< shared_ptr<ArrayExpressions>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.move< shared_ptr<ArrayValues> > (std::move (that.value));
+        value.move< shared_ptr<ArrayValues>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.move< shared_ptr<AssignExpression> > (std::move (that.value));
+        value.move< shared_ptr<AssignExpression>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.move< shared_ptr<AssignExpressions> > (std::move (that.value));
+        value.move< shared_ptr<AssignExpressions>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_body: // body
-        value.move< shared_ptr<Body> > (std::move (that.value));
+        value.move< shared_ptr<Body>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_component: // component
-        value.move< shared_ptr<Component> > (std::move (that.value));
+        value.move< shared_ptr<Component>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.move< shared_ptr<ComponentValues> > (std::move (that.value));
+        value.move< shared_ptr<ComponentValues>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_components: // components
-        value.move< shared_ptr<Components> > (std::move (that.value));
+        value.move< shared_ptr<Components>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.move< shared_ptr<Declaration> > (std::move (that.value));
+        value.move< shared_ptr<Declarations>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.move< shared_ptr<ElifSection> > (std::move (that.value));
+        value.move< shared_ptr<ElifSection>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.move< shared_ptr<ElifSections> > (std::move (that.value));
+        value.move< shared_ptr<ElifSections>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.move< shared_ptr<ElseSection> > (std::move (that.value));
+        value.move< shared_ptr<ElseSection>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_expression: // expression
-        value.move< shared_ptr<Expression> > (std::move (that.value));
+        value.move< shared_ptr<Expression>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.move< shared_ptr<Expressions> > (std::move (that.value));
+        value.move< shared_ptr<Expressions>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.move< shared_ptr<ForStep> > (std::move (that.value));
+        value.move< shared_ptr<ForStep>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.move< shared_ptr<FormalParameter> > (std::move (that.value));
+        value.move< shared_ptr<FormalParameter>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.move< shared_ptr<FormalParameters> > (std::move (that.value));
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.move< shared_ptr<INTEGER> > (std::move (that.value));
+        value.move< shared_ptr<FormalParameters>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_id: // id
-        value.move< shared_ptr<Id> > (std::move (that.value));
+        value.move< shared_ptr<Id>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_ids: // ids
-        value.move< shared_ptr<Ids> > (std::move (that.value));
+        value.move< shared_ptr<Ids>  > (std::move (that.value));
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.move< shared_ptr<Integer>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.move< shared_ptr<Lvalue> > (std::move (that.value));
+        value.move< shared_ptr<Lvalue>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.move< shared_ptr<Lvalues> > (std::move (that.value));
+        value.move< shared_ptr<Lvalues>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_number: // number
-        value.move< shared_ptr<Number> > (std::move (that.value));
+        value.move< shared_ptr<Number>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.move< shared_ptr<ProcedureDeclaration> > (std::move (that.value));
+        value.move< shared_ptr<ProcedureDeclaration>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.move< shared_ptr<ProcedureDeclarations> > (std::move (that.value));
+        value.move< shared_ptr<ProcedureDeclarations>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_program: // program
-        value.move< shared_ptr<Program> > (std::move (that.value));
-        break;
-
-      case symbol_kind::S_real: // real
-        value.move< shared_ptr<REAL> > (std::move (that.value));
+        value.move< shared_ptr<Program>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.move< shared_ptr<ReadParameters> > (std::move (that.value));
         break;
 
-      case symbol_kind::S_string: // string
-        value.move< shared_ptr<STRING> > (std::move (that.value));
+      case symbol_kind::S_real: // real
+        value.move< shared_ptr<Real>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_statement: // statement
-        value.move< shared_ptr<Statement> > (std::move (that.value));
+        value.move< shared_ptr<Statement>   > (std::move (that.value));
         break;
 
       case symbol_kind::S_statements: // statements
-        value.move< shared_ptr<Statements> > (std::move (that.value));
+        value.move< shared_ptr<Statements>  > (std::move (that.value));
+        break;
+
+      case symbol_kind::S_string: // string
+        value.move< shared_ptr<String>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_type: // type
-        value.move< shared_ptr<Type> > (std::move (that.value));
+        value.move< shared_ptr<Type>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.move< shared_ptr<TypeAnnotation> > (std::move (that.value));
+        value.move< shared_ptr<TypeAnnotation>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.move< shared_ptr<TypeDeclaration> > (std::move (that.value));
+        value.move< shared_ptr<TypeDeclaration>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.move< shared_ptr<TypeDeclarations> > (std::move (that.value));
+        value.move< shared_ptr<TypeDeclarations>  > (std::move (that.value));
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.move< shared_ptr<VariableDeclaration> > (std::move (that.value));
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.move< shared_ptr<VarDeclaration>  > (std::move (that.value));
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.move< shared_ptr<VariableDeclarations> > (std::move (that.value));
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.move< shared_ptr<VarDeclarations>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.move< shared_ptr<WriteExpression> > (std::move (that.value));
+        value.move< shared_ptr<WriteExpression>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.move< shared_ptr<WriteExpressions> > (std::move (that.value));
+        value.move< shared_ptr<WriteExpressions>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.move< shared_ptr<WriteParameters> > (std::move (that.value));
+        value.move< shared_ptr<WriteParameters>  > (std::move (that.value));
         break;
 
       case symbol_kind::S_AND: // AND
@@ -1133,13 +1133,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ActualParameters>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ActualParameters> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ActualParameters>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ActualParameters> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1147,13 +1147,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ArrayExpression>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ArrayExpression> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ArrayExpression>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ArrayExpression> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1161,13 +1161,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ArrayExpressions>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ArrayExpressions> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ArrayExpressions>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ArrayExpressions> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1175,13 +1175,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ArrayValues>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ArrayValues> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ArrayValues>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ArrayValues> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1189,13 +1189,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<AssignExpression>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<AssignExpression> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<AssignExpression>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<AssignExpression> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1203,13 +1203,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<AssignExpressions>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<AssignExpressions> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<AssignExpressions>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<AssignExpressions> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1217,13 +1217,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Body>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Body> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Body>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Body> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1231,13 +1231,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Component>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Component> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Component>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Component> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1245,13 +1245,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ComponentValues>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ComponentValues> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ComponentValues>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ComponentValues> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1259,13 +1259,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Components>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Components> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Components>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Components> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1273,13 +1273,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Declaration>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Declarations> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Declaration>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Declarations> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1287,13 +1287,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ElifSection>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ElifSection> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ElifSection>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ElifSection> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1301,13 +1301,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ElifSections>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ElifSections> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ElifSections>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ElifSections> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1315,13 +1315,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ElseSection>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ElseSection> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ElseSection>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ElseSection> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1329,13 +1329,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Expression>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Expression> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Expression>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Expression> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1343,13 +1343,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Expressions>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Expressions> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Expressions>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Expressions> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1357,13 +1357,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ForStep>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ForStep> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ForStep>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ForStep> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1371,13 +1371,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<FormalParameter>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<FormalParameter> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<FormalParameter>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<FormalParameter> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1385,13 +1385,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<FormalParameters>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<FormalParameters> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<FormalParameters>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<FormalParameters> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1399,13 +1399,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<INTEGER>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Id> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<INTEGER>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Id> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1413,13 +1413,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Id>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Ids> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Id>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Ids> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1427,13 +1427,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Ids>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Integer> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Ids>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Integer> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1441,13 +1441,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Lvalue>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Lvalue> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Lvalue>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Lvalue> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1455,13 +1455,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Lvalues>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Lvalues> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Lvalues>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Lvalues> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1469,13 +1469,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Number>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Number> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Number>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Number> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1483,13 +1483,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ProcedureDeclaration>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ProcedureDeclaration> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ProcedureDeclaration>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ProcedureDeclaration> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1497,13 +1497,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<ProcedureDeclarations>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<ProcedureDeclarations> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<ProcedureDeclarations>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<ProcedureDeclarations> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1511,27 +1511,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Program>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Program> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Program>& v, const location_type& l)
-        : Base (t)
-        , value (v)
-        , location (l)
-      {}
-#endif
-
-#if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<REAL>&& v, location_type&& l)
-        : Base (t)
-        , value (std::move (v))
-        , location (std::move (l))
-      {}
-#else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<REAL>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Program> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1553,13 +1539,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<STRING>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Real> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<STRING>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Real> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1567,13 +1553,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Statement>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Statement>  && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Statement>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Statement>  & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1581,13 +1567,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Statements>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Statements> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Statements>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Statements> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1595,13 +1581,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<Type>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<String> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<Type>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<String> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1609,13 +1595,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<TypeAnnotation>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<Type> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<TypeAnnotation>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<Type> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1623,13 +1609,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<TypeDeclaration>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<TypeAnnotation> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<TypeDeclaration>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<TypeAnnotation> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1637,13 +1623,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<TypeDeclarations>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<TypeDeclaration> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<TypeDeclarations>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<TypeDeclaration> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1651,13 +1637,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<VariableDeclaration>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<TypeDeclarations> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<VariableDeclaration>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<TypeDeclarations> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1665,13 +1651,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<VariableDeclarations>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<VarDeclaration> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<VariableDeclarations>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<VarDeclaration> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1679,13 +1665,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<WriteExpression>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<VarDeclarations> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<WriteExpression>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<VarDeclarations> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1693,13 +1679,13 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<WriteExpressions>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<WriteExpression> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<WriteExpressions>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<WriteExpression> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1707,13 +1693,27 @@ namespace yy {
 #endif
 
 #if 201103L <= YY_CPLUSPLUS
-      basic_symbol (typename Base::kind_type t, shared_ptr<WriteParameters>&& v, location_type&& l)
+      basic_symbol (typename Base::kind_type t, shared_ptr<WriteExpressions> && v, location_type&& l)
         : Base (t)
         , value (std::move (v))
         , location (std::move (l))
       {}
 #else
-      basic_symbol (typename Base::kind_type t, const shared_ptr<WriteParameters>& v, const location_type& l)
+      basic_symbol (typename Base::kind_type t, const shared_ptr<WriteExpressions> & v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, shared_ptr<WriteParameters> && v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const shared_ptr<WriteParameters> & v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1759,172 +1759,172 @@ namespace yy {
 switch (yykind)
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.template destroy< shared_ptr<ActualParameters> > ();
+        value.template destroy< shared_ptr<ActualParameters>  > ();
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.template destroy< shared_ptr<ArrayExpression> > ();
+        value.template destroy< shared_ptr<ArrayExpression>  > ();
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.template destroy< shared_ptr<ArrayExpressions> > ();
+        value.template destroy< shared_ptr<ArrayExpressions>  > ();
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.template destroy< shared_ptr<ArrayValues> > ();
+        value.template destroy< shared_ptr<ArrayValues>  > ();
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.template destroy< shared_ptr<AssignExpression> > ();
+        value.template destroy< shared_ptr<AssignExpression>  > ();
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.template destroy< shared_ptr<AssignExpressions> > ();
+        value.template destroy< shared_ptr<AssignExpressions>  > ();
         break;
 
       case symbol_kind::S_body: // body
-        value.template destroy< shared_ptr<Body> > ();
+        value.template destroy< shared_ptr<Body>  > ();
         break;
 
       case symbol_kind::S_component: // component
-        value.template destroy< shared_ptr<Component> > ();
+        value.template destroy< shared_ptr<Component>  > ();
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.template destroy< shared_ptr<ComponentValues> > ();
+        value.template destroy< shared_ptr<ComponentValues>  > ();
         break;
 
       case symbol_kind::S_components: // components
-        value.template destroy< shared_ptr<Components> > ();
+        value.template destroy< shared_ptr<Components>  > ();
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.template destroy< shared_ptr<Declaration> > ();
+        value.template destroy< shared_ptr<Declarations>  > ();
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.template destroy< shared_ptr<ElifSection> > ();
+        value.template destroy< shared_ptr<ElifSection>  > ();
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.template destroy< shared_ptr<ElifSections> > ();
+        value.template destroy< shared_ptr<ElifSections>  > ();
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.template destroy< shared_ptr<ElseSection> > ();
+        value.template destroy< shared_ptr<ElseSection>  > ();
         break;
 
       case symbol_kind::S_expression: // expression
-        value.template destroy< shared_ptr<Expression> > ();
+        value.template destroy< shared_ptr<Expression>  > ();
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.template destroy< shared_ptr<Expressions> > ();
+        value.template destroy< shared_ptr<Expressions>  > ();
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.template destroy< shared_ptr<ForStep> > ();
+        value.template destroy< shared_ptr<ForStep>  > ();
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.template destroy< shared_ptr<FormalParameter> > ();
+        value.template destroy< shared_ptr<FormalParameter>  > ();
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.template destroy< shared_ptr<FormalParameters> > ();
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.template destroy< shared_ptr<INTEGER> > ();
+        value.template destroy< shared_ptr<FormalParameters>  > ();
         break;
 
       case symbol_kind::S_id: // id
-        value.template destroy< shared_ptr<Id> > ();
+        value.template destroy< shared_ptr<Id>  > ();
         break;
 
       case symbol_kind::S_ids: // ids
-        value.template destroy< shared_ptr<Ids> > ();
+        value.template destroy< shared_ptr<Ids>  > ();
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.template destroy< shared_ptr<Integer>  > ();
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.template destroy< shared_ptr<Lvalue> > ();
+        value.template destroy< shared_ptr<Lvalue>  > ();
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.template destroy< shared_ptr<Lvalues> > ();
+        value.template destroy< shared_ptr<Lvalues>  > ();
         break;
 
       case symbol_kind::S_number: // number
-        value.template destroy< shared_ptr<Number> > ();
+        value.template destroy< shared_ptr<Number>  > ();
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.template destroy< shared_ptr<ProcedureDeclaration> > ();
+        value.template destroy< shared_ptr<ProcedureDeclaration>  > ();
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.template destroy< shared_ptr<ProcedureDeclarations> > ();
+        value.template destroy< shared_ptr<ProcedureDeclarations>  > ();
         break;
 
       case symbol_kind::S_program: // program
-        value.template destroy< shared_ptr<Program> > ();
-        break;
-
-      case symbol_kind::S_real: // real
-        value.template destroy< shared_ptr<REAL> > ();
+        value.template destroy< shared_ptr<Program>  > ();
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.template destroy< shared_ptr<ReadParameters> > ();
         break;
 
-      case symbol_kind::S_string: // string
-        value.template destroy< shared_ptr<STRING> > ();
+      case symbol_kind::S_real: // real
+        value.template destroy< shared_ptr<Real>  > ();
         break;
 
       case symbol_kind::S_statement: // statement
-        value.template destroy< shared_ptr<Statement> > ();
+        value.template destroy< shared_ptr<Statement>   > ();
         break;
 
       case symbol_kind::S_statements: // statements
-        value.template destroy< shared_ptr<Statements> > ();
+        value.template destroy< shared_ptr<Statements>  > ();
+        break;
+
+      case symbol_kind::S_string: // string
+        value.template destroy< shared_ptr<String>  > ();
         break;
 
       case symbol_kind::S_type: // type
-        value.template destroy< shared_ptr<Type> > ();
+        value.template destroy< shared_ptr<Type>  > ();
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.template destroy< shared_ptr<TypeAnnotation> > ();
+        value.template destroy< shared_ptr<TypeAnnotation>  > ();
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.template destroy< shared_ptr<TypeDeclaration> > ();
+        value.template destroy< shared_ptr<TypeDeclaration>  > ();
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.template destroy< shared_ptr<TypeDeclarations> > ();
+        value.template destroy< shared_ptr<TypeDeclarations>  > ();
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.template destroy< shared_ptr<VariableDeclaration> > ();
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.template destroy< shared_ptr<VarDeclaration>  > ();
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.template destroy< shared_ptr<VariableDeclarations> > ();
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.template destroy< shared_ptr<VarDeclarations>  > ();
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.template destroy< shared_ptr<WriteExpression> > ();
+        value.template destroy< shared_ptr<WriteExpression>  > ();
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.template destroy< shared_ptr<WriteExpressions> > ();
+        value.template destroy< shared_ptr<WriteExpressions>  > ();
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.template destroy< shared_ptr<WriteParameters> > ();
+        value.template destroy< shared_ptr<WriteParameters>  > ();
         break;
 
       case symbol_kind::S_AND: // AND
@@ -2106,7 +2106,7 @@ switch (yykind)
     };
 
     /// Build a parser object.
-    Parser (yy::Lexer* p_lex_yyarg, Driver* p_driver_yyarg);
+    Parser (yy::Lexer* p_lexer_yyarg, Driver* p_driver_yyarg);
     virtual ~Parser ();
 
 #if 201103L <= YY_CPLUSPLUS
@@ -3467,7 +3467,7 @@ switch (yykind)
 
 
     // User arguments.
-    yy::Lexer* p_lex;
+    yy::Lexer* p_lexer;
     Driver* p_driver;
 
   };
@@ -3489,172 +3489,172 @@ switch (yykind)
     switch (this->kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.copy< shared_ptr<ActualParameters> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ActualParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.copy< shared_ptr<ArrayExpression> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ArrayExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.copy< shared_ptr<ArrayExpressions> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ArrayExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.copy< shared_ptr<ArrayValues> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ArrayValues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.copy< shared_ptr<AssignExpression> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<AssignExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.copy< shared_ptr<AssignExpressions> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<AssignExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_body: // body
-        value.copy< shared_ptr<Body> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Body>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_component: // component
-        value.copy< shared_ptr<Component> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Component>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.copy< shared_ptr<ComponentValues> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ComponentValues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_components: // components
-        value.copy< shared_ptr<Components> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Components>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.copy< shared_ptr<Declaration> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Declarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.copy< shared_ptr<ElifSection> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ElifSection>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.copy< shared_ptr<ElifSections> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ElifSections>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.copy< shared_ptr<ElseSection> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ElseSection>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_expression: // expression
-        value.copy< shared_ptr<Expression> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Expression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.copy< shared_ptr<Expressions> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Expressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.copy< shared_ptr<ForStep> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ForStep>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.copy< shared_ptr<FormalParameter> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<FormalParameter>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.copy< shared_ptr<FormalParameters> > (YY_MOVE (that.value));
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.copy< shared_ptr<INTEGER> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<FormalParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_id: // id
-        value.copy< shared_ptr<Id> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Id>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_ids: // ids
-        value.copy< shared_ptr<Ids> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Ids>  > (YY_MOVE (that.value));
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.copy< shared_ptr<Integer>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.copy< shared_ptr<Lvalue> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Lvalue>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.copy< shared_ptr<Lvalues> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Lvalues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_number: // number
-        value.copy< shared_ptr<Number> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Number>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.copy< shared_ptr<ProcedureDeclaration> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ProcedureDeclaration>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.copy< shared_ptr<ProcedureDeclarations> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<ProcedureDeclarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_program: // program
-        value.copy< shared_ptr<Program> > (YY_MOVE (that.value));
-        break;
-
-      case symbol_kind::S_real: // real
-        value.copy< shared_ptr<REAL> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Program>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.copy< shared_ptr<ReadParameters> > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_string: // string
-        value.copy< shared_ptr<STRING> > (YY_MOVE (that.value));
+      case symbol_kind::S_real: // real
+        value.copy< shared_ptr<Real>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_statement: // statement
-        value.copy< shared_ptr<Statement> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Statement>   > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_statements: // statements
-        value.copy< shared_ptr<Statements> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Statements>  > (YY_MOVE (that.value));
+        break;
+
+      case symbol_kind::S_string: // string
+        value.copy< shared_ptr<String>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type: // type
-        value.copy< shared_ptr<Type> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<Type>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.copy< shared_ptr<TypeAnnotation> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<TypeAnnotation>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.copy< shared_ptr<TypeDeclaration> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<TypeDeclaration>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.copy< shared_ptr<TypeDeclarations> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<TypeDeclarations>  > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.copy< shared_ptr<VariableDeclaration> > (YY_MOVE (that.value));
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.copy< shared_ptr<VarDeclaration>  > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.copy< shared_ptr<VariableDeclarations> > (YY_MOVE (that.value));
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.copy< shared_ptr<VarDeclarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.copy< shared_ptr<WriteExpression> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<WriteExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.copy< shared_ptr<WriteExpressions> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<WriteExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.copy< shared_ptr<WriteParameters> > (YY_MOVE (that.value));
+        value.copy< shared_ptr<WriteParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_AND: // AND
@@ -3751,172 +3751,172 @@ switch (yykind)
     switch (this->kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.move< shared_ptr<ActualParameters> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ActualParameters>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.move< shared_ptr<ArrayExpression> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ArrayExpression>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.move< shared_ptr<ArrayExpressions> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ArrayExpressions>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.move< shared_ptr<ArrayValues> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ArrayValues>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.move< shared_ptr<AssignExpression> > (YY_MOVE (s.value));
+        value.move< shared_ptr<AssignExpression>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.move< shared_ptr<AssignExpressions> > (YY_MOVE (s.value));
+        value.move< shared_ptr<AssignExpressions>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_body: // body
-        value.move< shared_ptr<Body> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Body>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_component: // component
-        value.move< shared_ptr<Component> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Component>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.move< shared_ptr<ComponentValues> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ComponentValues>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_components: // components
-        value.move< shared_ptr<Components> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Components>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.move< shared_ptr<Declaration> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Declarations>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.move< shared_ptr<ElifSection> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ElifSection>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.move< shared_ptr<ElifSections> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ElifSections>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.move< shared_ptr<ElseSection> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ElseSection>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_expression: // expression
-        value.move< shared_ptr<Expression> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Expression>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.move< shared_ptr<Expressions> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Expressions>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.move< shared_ptr<ForStep> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ForStep>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.move< shared_ptr<FormalParameter> > (YY_MOVE (s.value));
+        value.move< shared_ptr<FormalParameter>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.move< shared_ptr<FormalParameters> > (YY_MOVE (s.value));
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.move< shared_ptr<INTEGER> > (YY_MOVE (s.value));
+        value.move< shared_ptr<FormalParameters>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_id: // id
-        value.move< shared_ptr<Id> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Id>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_ids: // ids
-        value.move< shared_ptr<Ids> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Ids>  > (YY_MOVE (s.value));
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.move< shared_ptr<Integer>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.move< shared_ptr<Lvalue> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Lvalue>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.move< shared_ptr<Lvalues> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Lvalues>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_number: // number
-        value.move< shared_ptr<Number> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Number>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.move< shared_ptr<ProcedureDeclaration> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ProcedureDeclaration>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.move< shared_ptr<ProcedureDeclarations> > (YY_MOVE (s.value));
+        value.move< shared_ptr<ProcedureDeclarations>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_program: // program
-        value.move< shared_ptr<Program> > (YY_MOVE (s.value));
-        break;
-
-      case symbol_kind::S_real: // real
-        value.move< shared_ptr<REAL> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Program>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.move< shared_ptr<ReadParameters> > (YY_MOVE (s.value));
         break;
 
-      case symbol_kind::S_string: // string
-        value.move< shared_ptr<STRING> > (YY_MOVE (s.value));
+      case symbol_kind::S_real: // real
+        value.move< shared_ptr<Real>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_statement: // statement
-        value.move< shared_ptr<Statement> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Statement>   > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_statements: // statements
-        value.move< shared_ptr<Statements> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Statements>  > (YY_MOVE (s.value));
+        break;
+
+      case symbol_kind::S_string: // string
+        value.move< shared_ptr<String>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_type: // type
-        value.move< shared_ptr<Type> > (YY_MOVE (s.value));
+        value.move< shared_ptr<Type>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.move< shared_ptr<TypeAnnotation> > (YY_MOVE (s.value));
+        value.move< shared_ptr<TypeAnnotation>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.move< shared_ptr<TypeDeclaration> > (YY_MOVE (s.value));
+        value.move< shared_ptr<TypeDeclaration>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.move< shared_ptr<TypeDeclarations> > (YY_MOVE (s.value));
+        value.move< shared_ptr<TypeDeclarations>  > (YY_MOVE (s.value));
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.move< shared_ptr<VariableDeclaration> > (YY_MOVE (s.value));
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.move< shared_ptr<VarDeclaration>  > (YY_MOVE (s.value));
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.move< shared_ptr<VariableDeclarations> > (YY_MOVE (s.value));
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.move< shared_ptr<VarDeclarations>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.move< shared_ptr<WriteExpression> > (YY_MOVE (s.value));
+        value.move< shared_ptr<WriteExpression>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.move< shared_ptr<WriteExpressions> > (YY_MOVE (s.value));
+        value.move< shared_ptr<WriteExpressions>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.move< shared_ptr<WriteParameters> > (YY_MOVE (s.value));
+        value.move< shared_ptr<WriteParameters>  > (YY_MOVE (s.value));
         break;
 
       case symbol_kind::S_AND: // AND

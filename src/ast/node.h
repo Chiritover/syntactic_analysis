@@ -10,16 +10,16 @@
 
 class Node{
     public:
-        explicit Node(const yy::location& location) : loc_{location} {}
+        explicit Node(const yy::location& location) : location_{location} {}
         virtual ~Node() {}
 
         virtual void UpdateDepth(int depth);
         virtual void Print(std::ostream& os) const;
 
         virtual std::string name() const { return name_; }
-        yy::location loc() const { return loc_; }
-        void set_loc(const yy::location& loc) { loc_ = loc; }
-        void set_depth(int depth) { depth_ = depth; }
+        yy::location loc() const { return location_; }
+        void SetLocation(const yy::location& location) { location_ = location; }
+        void SetDepth(int depth) { depth_ = depth; }
 
     protected:
         void PrintIndent(std::ostream& os) const;
@@ -28,7 +28,7 @@ class Node{
     
     private:
         const std::string name_ = "node";
-        yy::location loc_;
+        yy::location location_;
         int depth_ = 0;
 };
 
@@ -60,7 +60,7 @@ class Nodes : public Node{
 
     private:
         const std::string name_ = "nodes";
-        std::vector<shared_ptr<Node>> data_;
+        std::vector<shared_ptr<Node> > data_;
 };
 
 #endif  // SRC_AST_NODE_H_  

@@ -1,0 +1,242 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/syntactic_parser.cpp.o",
+      "src/syntactic_parser.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/syntactic_parser.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/syntactic_parser.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/lexer.cpp.o",
+      "src/lexer.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/lexer.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/lexer.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/utils/logger.cpp.o",
+      "src/utils/logger.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/utils/logger.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/utils/logger.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/driver.cpp.o",
+      "src/driver.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/driver.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/driver.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/program.cpp.o",
+      "src/ast/program.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/program.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/program.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/parameter.cpp.o",
+      "src/ast/parameter.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/parameter.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/parameter.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/statement.cpp.o",
+      "src/ast/statement.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/statement.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/statement.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/node.cpp.o",
+      "src/ast/node.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/node.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/node.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/lvalue.cpp.o",
+      "src/ast/lvalue.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/lvalue.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/lvalue.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/declaration.cpp.o",
+      "src/ast/declaration.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/declaration.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/declaration.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/body.cpp.o",
+      "src/ast/body.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/body.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/body.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/expression.cpp.o",
+      "src/ast/expression.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/expression.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/expression.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/constant.cpp.o",
+      "src/ast/constant.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/constant.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/constant.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/ast/type.cpp.o",
+      "src/ast/type.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/ast/type.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/ast/type.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-O3",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "build/src/main.cpp.o",
+      "src/main.cpp"
+    ],
+    "directory": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis",
+    "file": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/src/main.cpp",
+    "output": "/Users/wuxiao/Desktop/university/大三上/编译/pj/词法分析/syntactic_analysis/build/src/main.cpp.o"
+  }
+]

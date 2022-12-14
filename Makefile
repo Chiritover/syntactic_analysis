@@ -26,21 +26,26 @@ RM := rm -rf
 .PHONY: start clean
 
 start: $(BIN_DIR)/$(TARGET)
+	@echo + $@
 	@$(MKDIR) $(OUT_DIR)
 	@$< $(INPUT)
 
 $(BIN_DIR)/$(TARGET): $(OBJS)
+	@echo + $@
 	@$(MKDIR) $(dir $@)
 	@$(CXX) $(CXXFLAGS) -o $@ $^
 
 $(BUILD_DIR)/%.cpp.o: %.cpp
+	@echo + $@
 	@$(MKDIR) $(dir $@)
 	@$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 $(LEX_SRC): $(LEX_IN)
+	@echo + $@
 	@$(LEX) -o $@ $<
 
 $(YACC_SRC): $(YACC_IN)
+	@echo + $@
 	@$(YACC) -o $@ -d $<
 
 $(YACC_H): $(YACC_SRC)

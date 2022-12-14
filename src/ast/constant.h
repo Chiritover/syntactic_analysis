@@ -30,11 +30,11 @@ class Constant : public Node {
 
 class Integer : public Constant<std::string>{
     public:
-        explicit Integer(const yy::location& lcoation,const std::string& value) : Constant{location,value}{}
-        std::string name() const override {return name_l=;}
+        explicit Integer(const yy::location& location,const std::string& value) : Constant{location,value}{}
+        std::string name() const override {return name_;}
     
     private:
-        const std::string name = "integer";
+        const std::string name_ = "integer";
 };
 
 class Real : public Constant<std::string>{
@@ -47,20 +47,20 @@ class Real : public Constant<std::string>{
 };
 
 class Number : public ValueNode {
- public:
-  using UnionPtr = std::variant<shared_ptr<Integer>, shared_ptr<Real>>;
+    public:
+        using UnionPtr = std::variant<shared_ptr<Integer>, shared_ptr<Real>>;
 
-  explicit Number(const yy::location& location, UnionPtr p_number)
-      : ValueNode{location}, p_number_{p_number} {}
+        explicit Number(const yy::location& location, UnionPtr p_number)
+            : ValueNode{location}, p_number_{p_number} {}
 
-  void UpdateDepth(int depth) override;
-  void Print(std::ostream& os) const override;
+        void UpdateDepth(int depth) override;
+        void Print(std::ostream& os) const override;
 
-  std::string name() const override { return name_; }
-
- private:
-  const std::string name_ = "number";
-  UnionPtr p_number_;
+        std::string name() const override { return name_; }
+        std::string value() const override;
+    private:
+        const std::string name_ = "number";
+        UnionPtr p_number_;
 };
 
 class String : public Constant<std::string> {

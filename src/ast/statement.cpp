@@ -2,13 +2,13 @@
 
 #include <iostream>
 
-void AssignmentStatement::UpdateDepth(int depth) {
+void AssignStatement::UpdateDepth(int depth) {
   Statement::UpdateDepth(depth);
   if (p_lvalue_) p_lvalue_->UpdateDepth(depth + 1);
   if (p_expression_) p_expression_->UpdateDepth(depth + 1);
 }
 
-void AssignmentStatement::Print(std::ostream& os) const {
+void AssignStatement::Print(std::ostream& os) const {
   Statement::Print(os);
   if (p_lvalue_) p_lvalue_->Print(os);
   if (p_expression_) p_expression_->Print(os);
@@ -57,7 +57,7 @@ void IfStatement::UpdateDepth(int depth) {
 void IfStatement::Print(std::ostream& os) const {
     Statement::Print(os);
     if (p_expression_) p_expression_->Print(os);
-    if (p_statements_) p_statement_->Print(os);
+    if (p_statements_) p_statements_->Print(os);
     if (p_elif_sections_) p_elif_sections_->Print(os);
     if (p_else_section_) p_else_section_->Print(os);
 }

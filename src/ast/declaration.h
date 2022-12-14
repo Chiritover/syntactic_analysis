@@ -2,6 +2,7 @@
 #define SRC_AST_DECLARATION_H_
 
 #include <iostream>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -43,7 +44,7 @@ class VarDeclaration : public Declaration {
             :   Declaration{location}, 
                 p_ids_{p_ids}, 
                 p_type_annotation_{p_type_annotation},
-                p_expression_{p_expression_} {}
+                p_expression_{p_expression} {}
         
         void UpdateDepth(int depth) override;
         void Print(std::ostream& os) const override;
@@ -89,12 +90,15 @@ class TypeDeclaration : public Declaration {
 
 class TypeDeclarations : public Declarations {
     public:
-        explicit TypeDeclarations(const yy::location& location) : Declarations{location} {}
+        explicit TypeDeclarations(const yy::location& location) : 
+        Declarations{location} {}
     
         std::string name() const override { return name_; }
     
     private:
         const std::string name_ = "type declaration list";
+        shared_ptr<Id> p_id_;
+        shared_ptr<Type> p_type_;
 };
 
 class Body;

@@ -22,12 +22,12 @@ class Id : public ValueNode {
 
 class Ids : public Nodes{
     public:
-    explicit Ids(const yy::location& location) : Nodes{location} {}
+        explicit Ids(const yy::location& location) : Nodes{location} {}
     
-    std::string name() const override { return name_; }
+        std::string name() const override { return name_; }
     
     private:
-    const std::string name_ = "identifier list";
+        const std::string name_ = "identifier list";
 };
 
 #endif  // SRC_AST_INDENTIFIER_H_

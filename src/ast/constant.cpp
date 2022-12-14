@@ -11,7 +11,7 @@ void Number::UpdateDepth(int depth){
             if(p) p->UpdateDepth(depth);
         },
     };
-    std::visit(visitor,p_number_);;ikk
+    std::visit(visitor,p_number_);
 }
 
 void Number::Print(std::ostream& os) const{
@@ -19,10 +19,11 @@ void Number::Print(std::ostream& os) const{
         [&os](auto&& p){
             if (p) p->Print(os);
         },
-    }
+    };
+    std::visit(visitor,p_number_);
 }
 
-string::string Number::value() const{
+std::string Number::value() const{
     auto visitor = Overloaded{
         [](const auto& p){
             auto value = p ? p->value() : "";

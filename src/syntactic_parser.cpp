@@ -37,7 +37,7 @@
 // "%code top" blocks.
 #line 33 "src/syntactic_parser.yy"
 
-    #include <memory> //for std::shared_ptr
+    #include <memory> 
 
     #include "driver.h"
     #include "lexer.h"
@@ -47,12 +47,12 @@
     using location_type = yy::Parser::location_type;
     using symbol_type = yy::Parser::symbol_type;
 
-    static symbol_tyoe yylex(yy::Lexer* p_lex) {
-        return p_lex->ReadToken();
+    static symbol_type yylex(yy::Lexer* p_lexer) {
+        return p_lexer->ReadToken();
     }
 
     int yyFlexLexer::yylex() {
-        Logger::Warning("Wrong yylex() called");
+        Logger::Warn("Wrong yylex() called");
         return EXIT_FAILURE;
     }
 
@@ -158,7 +158,7 @@ namespace yy {
 #line 159 "src/syntactic_parser.cpp"
 
   /// Build a parser object.
-  Parser::Parser (yy::Lexer* p_lex_yyarg, Driver* p_driver_yyarg)
+  Parser::Parser (yy::Lexer* p_lexer_yyarg, Driver* p_driver_yyarg)
 #if YYDEBUG
     : yydebug_ (false),
       yycdebug_ (&std::cerr),
@@ -166,7 +166,7 @@ namespace yy {
     :
 #endif
       yy_lac_established_ (false),
-      p_lex (p_lex_yyarg),
+      p_lexer (p_lexer_yyarg),
       p_driver (p_driver_yyarg)
   {}
 
@@ -226,172 +226,172 @@ namespace yy {
     switch (that.kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.YY_MOVE_OR_COPY< shared_ptr<ActualParameters> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ActualParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.YY_MOVE_OR_COPY< shared_ptr<ArrayExpression> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ArrayExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.YY_MOVE_OR_COPY< shared_ptr<ArrayExpressions> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ArrayExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.YY_MOVE_OR_COPY< shared_ptr<ArrayValues> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ArrayValues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.YY_MOVE_OR_COPY< shared_ptr<AssignExpression> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<AssignExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.YY_MOVE_OR_COPY< shared_ptr<AssignExpressions> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<AssignExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_body: // body
-        value.YY_MOVE_OR_COPY< shared_ptr<Body> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Body>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_component: // component
-        value.YY_MOVE_OR_COPY< shared_ptr<Component> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Component>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.YY_MOVE_OR_COPY< shared_ptr<ComponentValues> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ComponentValues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_components: // components
-        value.YY_MOVE_OR_COPY< shared_ptr<Components> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Components>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.YY_MOVE_OR_COPY< shared_ptr<Declaration> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Declarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.YY_MOVE_OR_COPY< shared_ptr<ElifSection> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ElifSection>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.YY_MOVE_OR_COPY< shared_ptr<ElifSections> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ElifSections>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.YY_MOVE_OR_COPY< shared_ptr<ElseSection> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ElseSection>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_expression: // expression
-        value.YY_MOVE_OR_COPY< shared_ptr<Expression> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Expression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.YY_MOVE_OR_COPY< shared_ptr<Expressions> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Expressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.YY_MOVE_OR_COPY< shared_ptr<ForStep> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ForStep>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.YY_MOVE_OR_COPY< shared_ptr<FormalParameter> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<FormalParameter>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.YY_MOVE_OR_COPY< shared_ptr<FormalParameters> > (YY_MOVE (that.value));
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.YY_MOVE_OR_COPY< shared_ptr<INTEGER> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<FormalParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_id: // id
-        value.YY_MOVE_OR_COPY< shared_ptr<Id> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Id>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_ids: // ids
-        value.YY_MOVE_OR_COPY< shared_ptr<Ids> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Ids>  > (YY_MOVE (that.value));
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.YY_MOVE_OR_COPY< shared_ptr<Integer>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.YY_MOVE_OR_COPY< shared_ptr<Lvalue> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Lvalue>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.YY_MOVE_OR_COPY< shared_ptr<Lvalues> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Lvalues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_number: // number
-        value.YY_MOVE_OR_COPY< shared_ptr<Number> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Number>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.YY_MOVE_OR_COPY< shared_ptr<ProcedureDeclaration> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ProcedureDeclaration>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.YY_MOVE_OR_COPY< shared_ptr<ProcedureDeclarations> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<ProcedureDeclarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_program: // program
-        value.YY_MOVE_OR_COPY< shared_ptr<Program> > (YY_MOVE (that.value));
-        break;
-
-      case symbol_kind::S_real: // real
-        value.YY_MOVE_OR_COPY< shared_ptr<REAL> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Program>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.YY_MOVE_OR_COPY< shared_ptr<ReadParameters> > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_string: // string
-        value.YY_MOVE_OR_COPY< shared_ptr<STRING> > (YY_MOVE (that.value));
+      case symbol_kind::S_real: // real
+        value.YY_MOVE_OR_COPY< shared_ptr<Real>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_statement: // statement
-        value.YY_MOVE_OR_COPY< shared_ptr<Statement> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Statement>   > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_statements: // statements
-        value.YY_MOVE_OR_COPY< shared_ptr<Statements> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Statements>  > (YY_MOVE (that.value));
+        break;
+
+      case symbol_kind::S_string: // string
+        value.YY_MOVE_OR_COPY< shared_ptr<String>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type: // type
-        value.YY_MOVE_OR_COPY< shared_ptr<Type> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<Type>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.YY_MOVE_OR_COPY< shared_ptr<TypeAnnotation> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<TypeAnnotation>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.YY_MOVE_OR_COPY< shared_ptr<TypeDeclaration> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<TypeDeclaration>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.YY_MOVE_OR_COPY< shared_ptr<TypeDeclarations> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<TypeDeclarations>  > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.YY_MOVE_OR_COPY< shared_ptr<VariableDeclaration> > (YY_MOVE (that.value));
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.YY_MOVE_OR_COPY< shared_ptr<VarDeclaration>  > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.YY_MOVE_OR_COPY< shared_ptr<VariableDeclarations> > (YY_MOVE (that.value));
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.YY_MOVE_OR_COPY< shared_ptr<VarDeclarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.YY_MOVE_OR_COPY< shared_ptr<WriteExpression> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<WriteExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.YY_MOVE_OR_COPY< shared_ptr<WriteExpressions> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<WriteExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.YY_MOVE_OR_COPY< shared_ptr<WriteParameters> > (YY_MOVE (that.value));
+        value.YY_MOVE_OR_COPY< shared_ptr<WriteParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_AND: // AND
@@ -472,172 +472,172 @@ namespace yy {
     switch (that.kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.move< shared_ptr<ActualParameters> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ActualParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.move< shared_ptr<ArrayExpression> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ArrayExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.move< shared_ptr<ArrayExpressions> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ArrayExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.move< shared_ptr<ArrayValues> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ArrayValues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.move< shared_ptr<AssignExpression> > (YY_MOVE (that.value));
+        value.move< shared_ptr<AssignExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.move< shared_ptr<AssignExpressions> > (YY_MOVE (that.value));
+        value.move< shared_ptr<AssignExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_body: // body
-        value.move< shared_ptr<Body> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Body>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_component: // component
-        value.move< shared_ptr<Component> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Component>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.move< shared_ptr<ComponentValues> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ComponentValues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_components: // components
-        value.move< shared_ptr<Components> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Components>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.move< shared_ptr<Declaration> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Declarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.move< shared_ptr<ElifSection> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ElifSection>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.move< shared_ptr<ElifSections> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ElifSections>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.move< shared_ptr<ElseSection> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ElseSection>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_expression: // expression
-        value.move< shared_ptr<Expression> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Expression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.move< shared_ptr<Expressions> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Expressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.move< shared_ptr<ForStep> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ForStep>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.move< shared_ptr<FormalParameter> > (YY_MOVE (that.value));
+        value.move< shared_ptr<FormalParameter>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.move< shared_ptr<FormalParameters> > (YY_MOVE (that.value));
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.move< shared_ptr<INTEGER> > (YY_MOVE (that.value));
+        value.move< shared_ptr<FormalParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_id: // id
-        value.move< shared_ptr<Id> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Id>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_ids: // ids
-        value.move< shared_ptr<Ids> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Ids>  > (YY_MOVE (that.value));
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.move< shared_ptr<Integer>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.move< shared_ptr<Lvalue> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Lvalue>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.move< shared_ptr<Lvalues> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Lvalues>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_number: // number
-        value.move< shared_ptr<Number> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Number>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.move< shared_ptr<ProcedureDeclaration> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ProcedureDeclaration>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.move< shared_ptr<ProcedureDeclarations> > (YY_MOVE (that.value));
+        value.move< shared_ptr<ProcedureDeclarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_program: // program
-        value.move< shared_ptr<Program> > (YY_MOVE (that.value));
-        break;
-
-      case symbol_kind::S_real: // real
-        value.move< shared_ptr<REAL> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Program>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.move< shared_ptr<ReadParameters> > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_string: // string
-        value.move< shared_ptr<STRING> > (YY_MOVE (that.value));
+      case symbol_kind::S_real: // real
+        value.move< shared_ptr<Real>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_statement: // statement
-        value.move< shared_ptr<Statement> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Statement>   > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_statements: // statements
-        value.move< shared_ptr<Statements> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Statements>  > (YY_MOVE (that.value));
+        break;
+
+      case symbol_kind::S_string: // string
+        value.move< shared_ptr<String>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type: // type
-        value.move< shared_ptr<Type> > (YY_MOVE (that.value));
+        value.move< shared_ptr<Type>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.move< shared_ptr<TypeAnnotation> > (YY_MOVE (that.value));
+        value.move< shared_ptr<TypeAnnotation>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.move< shared_ptr<TypeDeclaration> > (YY_MOVE (that.value));
+        value.move< shared_ptr<TypeDeclaration>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.move< shared_ptr<TypeDeclarations> > (YY_MOVE (that.value));
+        value.move< shared_ptr<TypeDeclarations>  > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.move< shared_ptr<VariableDeclaration> > (YY_MOVE (that.value));
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.move< shared_ptr<VarDeclaration>  > (YY_MOVE (that.value));
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.move< shared_ptr<VariableDeclarations> > (YY_MOVE (that.value));
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.move< shared_ptr<VarDeclarations>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.move< shared_ptr<WriteExpression> > (YY_MOVE (that.value));
+        value.move< shared_ptr<WriteExpression>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.move< shared_ptr<WriteExpressions> > (YY_MOVE (that.value));
+        value.move< shared_ptr<WriteExpressions>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.move< shared_ptr<WriteParameters> > (YY_MOVE (that.value));
+        value.move< shared_ptr<WriteParameters>  > (YY_MOVE (that.value));
         break;
 
       case symbol_kind::S_AND: // AND
@@ -718,172 +718,172 @@ namespace yy {
     switch (that.kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.copy< shared_ptr<ActualParameters> > (that.value);
+        value.copy< shared_ptr<ActualParameters>  > (that.value);
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.copy< shared_ptr<ArrayExpression> > (that.value);
+        value.copy< shared_ptr<ArrayExpression>  > (that.value);
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.copy< shared_ptr<ArrayExpressions> > (that.value);
+        value.copy< shared_ptr<ArrayExpressions>  > (that.value);
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.copy< shared_ptr<ArrayValues> > (that.value);
+        value.copy< shared_ptr<ArrayValues>  > (that.value);
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.copy< shared_ptr<AssignExpression> > (that.value);
+        value.copy< shared_ptr<AssignExpression>  > (that.value);
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.copy< shared_ptr<AssignExpressions> > (that.value);
+        value.copy< shared_ptr<AssignExpressions>  > (that.value);
         break;
 
       case symbol_kind::S_body: // body
-        value.copy< shared_ptr<Body> > (that.value);
+        value.copy< shared_ptr<Body>  > (that.value);
         break;
 
       case symbol_kind::S_component: // component
-        value.copy< shared_ptr<Component> > (that.value);
+        value.copy< shared_ptr<Component>  > (that.value);
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.copy< shared_ptr<ComponentValues> > (that.value);
+        value.copy< shared_ptr<ComponentValues>  > (that.value);
         break;
 
       case symbol_kind::S_components: // components
-        value.copy< shared_ptr<Components> > (that.value);
+        value.copy< shared_ptr<Components>  > (that.value);
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.copy< shared_ptr<Declaration> > (that.value);
+        value.copy< shared_ptr<Declarations>  > (that.value);
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.copy< shared_ptr<ElifSection> > (that.value);
+        value.copy< shared_ptr<ElifSection>  > (that.value);
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.copy< shared_ptr<ElifSections> > (that.value);
+        value.copy< shared_ptr<ElifSections>  > (that.value);
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.copy< shared_ptr<ElseSection> > (that.value);
+        value.copy< shared_ptr<ElseSection>  > (that.value);
         break;
 
       case symbol_kind::S_expression: // expression
-        value.copy< shared_ptr<Expression> > (that.value);
+        value.copy< shared_ptr<Expression>  > (that.value);
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.copy< shared_ptr<Expressions> > (that.value);
+        value.copy< shared_ptr<Expressions>  > (that.value);
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.copy< shared_ptr<ForStep> > (that.value);
+        value.copy< shared_ptr<ForStep>  > (that.value);
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.copy< shared_ptr<FormalParameter> > (that.value);
+        value.copy< shared_ptr<FormalParameter>  > (that.value);
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.copy< shared_ptr<FormalParameters> > (that.value);
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.copy< shared_ptr<INTEGER> > (that.value);
+        value.copy< shared_ptr<FormalParameters>  > (that.value);
         break;
 
       case symbol_kind::S_id: // id
-        value.copy< shared_ptr<Id> > (that.value);
+        value.copy< shared_ptr<Id>  > (that.value);
         break;
 
       case symbol_kind::S_ids: // ids
-        value.copy< shared_ptr<Ids> > (that.value);
+        value.copy< shared_ptr<Ids>  > (that.value);
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.copy< shared_ptr<Integer>  > (that.value);
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.copy< shared_ptr<Lvalue> > (that.value);
+        value.copy< shared_ptr<Lvalue>  > (that.value);
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.copy< shared_ptr<Lvalues> > (that.value);
+        value.copy< shared_ptr<Lvalues>  > (that.value);
         break;
 
       case symbol_kind::S_number: // number
-        value.copy< shared_ptr<Number> > (that.value);
+        value.copy< shared_ptr<Number>  > (that.value);
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.copy< shared_ptr<ProcedureDeclaration> > (that.value);
+        value.copy< shared_ptr<ProcedureDeclaration>  > (that.value);
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.copy< shared_ptr<ProcedureDeclarations> > (that.value);
+        value.copy< shared_ptr<ProcedureDeclarations>  > (that.value);
         break;
 
       case symbol_kind::S_program: // program
-        value.copy< shared_ptr<Program> > (that.value);
-        break;
-
-      case symbol_kind::S_real: // real
-        value.copy< shared_ptr<REAL> > (that.value);
+        value.copy< shared_ptr<Program>  > (that.value);
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.copy< shared_ptr<ReadParameters> > (that.value);
         break;
 
-      case symbol_kind::S_string: // string
-        value.copy< shared_ptr<STRING> > (that.value);
+      case symbol_kind::S_real: // real
+        value.copy< shared_ptr<Real>  > (that.value);
         break;
 
       case symbol_kind::S_statement: // statement
-        value.copy< shared_ptr<Statement> > (that.value);
+        value.copy< shared_ptr<Statement>   > (that.value);
         break;
 
       case symbol_kind::S_statements: // statements
-        value.copy< shared_ptr<Statements> > (that.value);
+        value.copy< shared_ptr<Statements>  > (that.value);
+        break;
+
+      case symbol_kind::S_string: // string
+        value.copy< shared_ptr<String>  > (that.value);
         break;
 
       case symbol_kind::S_type: // type
-        value.copy< shared_ptr<Type> > (that.value);
+        value.copy< shared_ptr<Type>  > (that.value);
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.copy< shared_ptr<TypeAnnotation> > (that.value);
+        value.copy< shared_ptr<TypeAnnotation>  > (that.value);
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.copy< shared_ptr<TypeDeclaration> > (that.value);
+        value.copy< shared_ptr<TypeDeclaration>  > (that.value);
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.copy< shared_ptr<TypeDeclarations> > (that.value);
+        value.copy< shared_ptr<TypeDeclarations>  > (that.value);
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.copy< shared_ptr<VariableDeclaration> > (that.value);
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.copy< shared_ptr<VarDeclaration>  > (that.value);
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.copy< shared_ptr<VariableDeclarations> > (that.value);
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.copy< shared_ptr<VarDeclarations>  > (that.value);
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.copy< shared_ptr<WriteExpression> > (that.value);
+        value.copy< shared_ptr<WriteExpression>  > (that.value);
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.copy< shared_ptr<WriteExpressions> > (that.value);
+        value.copy< shared_ptr<WriteExpressions>  > (that.value);
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.copy< shared_ptr<WriteParameters> > (that.value);
+        value.copy< shared_ptr<WriteParameters>  > (that.value);
         break;
 
       case symbol_kind::S_AND: // AND
@@ -963,172 +963,172 @@ namespace yy {
     switch (that.kind ())
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        value.move< shared_ptr<ActualParameters> > (that.value);
+        value.move< shared_ptr<ActualParameters>  > (that.value);
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        value.move< shared_ptr<ArrayExpression> > (that.value);
+        value.move< shared_ptr<ArrayExpression>  > (that.value);
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        value.move< shared_ptr<ArrayExpressions> > (that.value);
+        value.move< shared_ptr<ArrayExpressions>  > (that.value);
         break;
 
       case symbol_kind::S_array_values: // array_values
-        value.move< shared_ptr<ArrayValues> > (that.value);
+        value.move< shared_ptr<ArrayValues>  > (that.value);
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        value.move< shared_ptr<AssignExpression> > (that.value);
+        value.move< shared_ptr<AssignExpression>  > (that.value);
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        value.move< shared_ptr<AssignExpressions> > (that.value);
+        value.move< shared_ptr<AssignExpressions>  > (that.value);
         break;
 
       case symbol_kind::S_body: // body
-        value.move< shared_ptr<Body> > (that.value);
+        value.move< shared_ptr<Body>  > (that.value);
         break;
 
       case symbol_kind::S_component: // component
-        value.move< shared_ptr<Component> > (that.value);
+        value.move< shared_ptr<Component>  > (that.value);
         break;
 
       case symbol_kind::S_component_values: // component_values
-        value.move< shared_ptr<ComponentValues> > (that.value);
+        value.move< shared_ptr<ComponentValues>  > (that.value);
         break;
 
       case symbol_kind::S_components: // components
-        value.move< shared_ptr<Components> > (that.value);
+        value.move< shared_ptr<Components>  > (that.value);
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        value.move< shared_ptr<Declaration> > (that.value);
+        value.move< shared_ptr<Declarations>  > (that.value);
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        value.move< shared_ptr<ElifSection> > (that.value);
+        value.move< shared_ptr<ElifSection>  > (that.value);
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        value.move< shared_ptr<ElifSections> > (that.value);
+        value.move< shared_ptr<ElifSections>  > (that.value);
         break;
 
       case symbol_kind::S_else_section: // else_section
-        value.move< shared_ptr<ElseSection> > (that.value);
+        value.move< shared_ptr<ElseSection>  > (that.value);
         break;
 
       case symbol_kind::S_expression: // expression
-        value.move< shared_ptr<Expression> > (that.value);
+        value.move< shared_ptr<Expression>  > (that.value);
         break;
 
       case symbol_kind::S_expressions: // expressions
-        value.move< shared_ptr<Expressions> > (that.value);
+        value.move< shared_ptr<Expressions>  > (that.value);
         break;
 
       case symbol_kind::S_for_step: // for_step
-        value.move< shared_ptr<ForStep> > (that.value);
+        value.move< shared_ptr<ForStep>  > (that.value);
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        value.move< shared_ptr<FormalParameter> > (that.value);
+        value.move< shared_ptr<FormalParameter>  > (that.value);
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        value.move< shared_ptr<FormalParameters> > (that.value);
-        break;
-
-      case symbol_kind::S_integer: // integer
-        value.move< shared_ptr<INTEGER> > (that.value);
+        value.move< shared_ptr<FormalParameters>  > (that.value);
         break;
 
       case symbol_kind::S_id: // id
-        value.move< shared_ptr<Id> > (that.value);
+        value.move< shared_ptr<Id>  > (that.value);
         break;
 
       case symbol_kind::S_ids: // ids
-        value.move< shared_ptr<Ids> > (that.value);
+        value.move< shared_ptr<Ids>  > (that.value);
+        break;
+
+      case symbol_kind::S_integer: // integer
+        value.move< shared_ptr<Integer>  > (that.value);
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        value.move< shared_ptr<Lvalue> > (that.value);
+        value.move< shared_ptr<Lvalue>  > (that.value);
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        value.move< shared_ptr<Lvalues> > (that.value);
+        value.move< shared_ptr<Lvalues>  > (that.value);
         break;
 
       case symbol_kind::S_number: // number
-        value.move< shared_ptr<Number> > (that.value);
+        value.move< shared_ptr<Number>  > (that.value);
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        value.move< shared_ptr<ProcedureDeclaration> > (that.value);
+        value.move< shared_ptr<ProcedureDeclaration>  > (that.value);
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        value.move< shared_ptr<ProcedureDeclarations> > (that.value);
+        value.move< shared_ptr<ProcedureDeclarations>  > (that.value);
         break;
 
       case symbol_kind::S_program: // program
-        value.move< shared_ptr<Program> > (that.value);
-        break;
-
-      case symbol_kind::S_real: // real
-        value.move< shared_ptr<REAL> > (that.value);
+        value.move< shared_ptr<Program>  > (that.value);
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         value.move< shared_ptr<ReadParameters> > (that.value);
         break;
 
-      case symbol_kind::S_string: // string
-        value.move< shared_ptr<STRING> > (that.value);
+      case symbol_kind::S_real: // real
+        value.move< shared_ptr<Real>  > (that.value);
         break;
 
       case symbol_kind::S_statement: // statement
-        value.move< shared_ptr<Statement> > (that.value);
+        value.move< shared_ptr<Statement>   > (that.value);
         break;
 
       case symbol_kind::S_statements: // statements
-        value.move< shared_ptr<Statements> > (that.value);
+        value.move< shared_ptr<Statements>  > (that.value);
+        break;
+
+      case symbol_kind::S_string: // string
+        value.move< shared_ptr<String>  > (that.value);
         break;
 
       case symbol_kind::S_type: // type
-        value.move< shared_ptr<Type> > (that.value);
+        value.move< shared_ptr<Type>  > (that.value);
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        value.move< shared_ptr<TypeAnnotation> > (that.value);
+        value.move< shared_ptr<TypeAnnotation>  > (that.value);
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        value.move< shared_ptr<TypeDeclaration> > (that.value);
+        value.move< shared_ptr<TypeDeclaration>  > (that.value);
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        value.move< shared_ptr<TypeDeclarations> > (that.value);
+        value.move< shared_ptr<TypeDeclarations>  > (that.value);
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        value.move< shared_ptr<VariableDeclaration> > (that.value);
+      case symbol_kind::S_var_declaration: // var_declaration
+        value.move< shared_ptr<VarDeclaration>  > (that.value);
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        value.move< shared_ptr<VariableDeclarations> > (that.value);
+      case symbol_kind::S_var_declarations: // var_declarations
+        value.move< shared_ptr<VarDeclarations>  > (that.value);
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        value.move< shared_ptr<WriteExpression> > (that.value);
+        value.move< shared_ptr<WriteExpression>  > (that.value);
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        value.move< shared_ptr<WriteExpressions> > (that.value);
+        value.move< shared_ptr<WriteExpressions>  > (that.value);
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        value.move< shared_ptr<WriteParameters> > (that.value);
+        value.move< shared_ptr<WriteParameters>  > (that.value);
         break;
 
       case symbol_kind::S_AND: // AND
@@ -1382,7 +1382,7 @@ namespace yy {
         try
 #endif // YY_EXCEPTIONS
           {
-            symbol_type yylookahead (yylex (p_lex));
+            symbol_type yylookahead (yylex (p_lexer));
             yyla.move (yylookahead);
           }
 #if YY_EXCEPTIONS
@@ -1463,172 +1463,172 @@ namespace yy {
       switch (yyr1_[yyn])
     {
       case symbol_kind::S_actual_parameters: // actual_parameters
-        yylhs.value.emplace< shared_ptr<ActualParameters> > ();
+        yylhs.value.emplace< shared_ptr<ActualParameters>  > ();
         break;
 
       case symbol_kind::S_array_expression: // array_expression
-        yylhs.value.emplace< shared_ptr<ArrayExpression> > ();
+        yylhs.value.emplace< shared_ptr<ArrayExpression>  > ();
         break;
 
       case symbol_kind::S_array_expressions: // array_expressions
-        yylhs.value.emplace< shared_ptr<ArrayExpressions> > ();
+        yylhs.value.emplace< shared_ptr<ArrayExpressions>  > ();
         break;
 
       case symbol_kind::S_array_values: // array_values
-        yylhs.value.emplace< shared_ptr<ArrayValues> > ();
+        yylhs.value.emplace< shared_ptr<ArrayValues>  > ();
         break;
 
       case symbol_kind::S_assign_expression: // assign_expression
-        yylhs.value.emplace< shared_ptr<AssignExpression> > ();
+        yylhs.value.emplace< shared_ptr<AssignExpression>  > ();
         break;
 
       case symbol_kind::S_assign_expressions: // assign_expressions
-        yylhs.value.emplace< shared_ptr<AssignExpressions> > ();
+        yylhs.value.emplace< shared_ptr<AssignExpressions>  > ();
         break;
 
       case symbol_kind::S_body: // body
-        yylhs.value.emplace< shared_ptr<Body> > ();
+        yylhs.value.emplace< shared_ptr<Body>  > ();
         break;
 
       case symbol_kind::S_component: // component
-        yylhs.value.emplace< shared_ptr<Component> > ();
+        yylhs.value.emplace< shared_ptr<Component>  > ();
         break;
 
       case symbol_kind::S_component_values: // component_values
-        yylhs.value.emplace< shared_ptr<ComponentValues> > ();
+        yylhs.value.emplace< shared_ptr<ComponentValues>  > ();
         break;
 
       case symbol_kind::S_components: // components
-        yylhs.value.emplace< shared_ptr<Components> > ();
+        yylhs.value.emplace< shared_ptr<Components>  > ();
         break;
 
       case symbol_kind::S_declaration: // declaration
       case symbol_kind::S_declarations: // declarations
-        yylhs.value.emplace< shared_ptr<Declaration> > ();
+        yylhs.value.emplace< shared_ptr<Declarations>  > ();
         break;
 
       case symbol_kind::S_elif_section: // elif_section
-        yylhs.value.emplace< shared_ptr<ElifSection> > ();
+        yylhs.value.emplace< shared_ptr<ElifSection>  > ();
         break;
 
       case symbol_kind::S_elif_sections: // elif_sections
-        yylhs.value.emplace< shared_ptr<ElifSections> > ();
+        yylhs.value.emplace< shared_ptr<ElifSections>  > ();
         break;
 
       case symbol_kind::S_else_section: // else_section
-        yylhs.value.emplace< shared_ptr<ElseSection> > ();
+        yylhs.value.emplace< shared_ptr<ElseSection>  > ();
         break;
 
       case symbol_kind::S_expression: // expression
-        yylhs.value.emplace< shared_ptr<Expression> > ();
+        yylhs.value.emplace< shared_ptr<Expression>  > ();
         break;
 
       case symbol_kind::S_expressions: // expressions
-        yylhs.value.emplace< shared_ptr<Expressions> > ();
+        yylhs.value.emplace< shared_ptr<Expressions>  > ();
         break;
 
       case symbol_kind::S_for_step: // for_step
-        yylhs.value.emplace< shared_ptr<ForStep> > ();
+        yylhs.value.emplace< shared_ptr<ForStep>  > ();
         break;
 
       case symbol_kind::S_formal_parameter: // formal_parameter
-        yylhs.value.emplace< shared_ptr<FormalParameter> > ();
+        yylhs.value.emplace< shared_ptr<FormalParameter>  > ();
         break;
 
       case symbol_kind::S_formal_parameters: // formal_parameters
-        yylhs.value.emplace< shared_ptr<FormalParameters> > ();
-        break;
-
-      case symbol_kind::S_integer: // integer
-        yylhs.value.emplace< shared_ptr<INTEGER> > ();
+        yylhs.value.emplace< shared_ptr<FormalParameters>  > ();
         break;
 
       case symbol_kind::S_id: // id
-        yylhs.value.emplace< shared_ptr<Id> > ();
+        yylhs.value.emplace< shared_ptr<Id>  > ();
         break;
 
       case symbol_kind::S_ids: // ids
-        yylhs.value.emplace< shared_ptr<Ids> > ();
+        yylhs.value.emplace< shared_ptr<Ids>  > ();
+        break;
+
+      case symbol_kind::S_integer: // integer
+        yylhs.value.emplace< shared_ptr<Integer>  > ();
         break;
 
       case symbol_kind::S_lvalue: // lvalue
-        yylhs.value.emplace< shared_ptr<Lvalue> > ();
+        yylhs.value.emplace< shared_ptr<Lvalue>  > ();
         break;
 
       case symbol_kind::S_lvalues: // lvalues
-        yylhs.value.emplace< shared_ptr<Lvalues> > ();
+        yylhs.value.emplace< shared_ptr<Lvalues>  > ();
         break;
 
       case symbol_kind::S_number: // number
-        yylhs.value.emplace< shared_ptr<Number> > ();
+        yylhs.value.emplace< shared_ptr<Number>  > ();
         break;
 
       case symbol_kind::S_procedure_declaration: // procedure_declaration
-        yylhs.value.emplace< shared_ptr<ProcedureDeclaration> > ();
+        yylhs.value.emplace< shared_ptr<ProcedureDeclaration>  > ();
         break;
 
       case symbol_kind::S_procedure_declarations: // procedure_declarations
-        yylhs.value.emplace< shared_ptr<ProcedureDeclarations> > ();
+        yylhs.value.emplace< shared_ptr<ProcedureDeclarations>  > ();
         break;
 
       case symbol_kind::S_program: // program
-        yylhs.value.emplace< shared_ptr<Program> > ();
-        break;
-
-      case symbol_kind::S_real: // real
-        yylhs.value.emplace< shared_ptr<REAL> > ();
+        yylhs.value.emplace< shared_ptr<Program>  > ();
         break;
 
       case symbol_kind::S_read_parameters: // read_parameters
         yylhs.value.emplace< shared_ptr<ReadParameters> > ();
         break;
 
-      case symbol_kind::S_string: // string
-        yylhs.value.emplace< shared_ptr<STRING> > ();
+      case symbol_kind::S_real: // real
+        yylhs.value.emplace< shared_ptr<Real>  > ();
         break;
 
       case symbol_kind::S_statement: // statement
-        yylhs.value.emplace< shared_ptr<Statement> > ();
+        yylhs.value.emplace< shared_ptr<Statement>   > ();
         break;
 
       case symbol_kind::S_statements: // statements
-        yylhs.value.emplace< shared_ptr<Statements> > ();
+        yylhs.value.emplace< shared_ptr<Statements>  > ();
+        break;
+
+      case symbol_kind::S_string: // string
+        yylhs.value.emplace< shared_ptr<String>  > ();
         break;
 
       case symbol_kind::S_type: // type
-        yylhs.value.emplace< shared_ptr<Type> > ();
+        yylhs.value.emplace< shared_ptr<Type>  > ();
         break;
 
       case symbol_kind::S_type_annotation: // type_annotation
-        yylhs.value.emplace< shared_ptr<TypeAnnotation> > ();
+        yylhs.value.emplace< shared_ptr<TypeAnnotation>  > ();
         break;
 
       case symbol_kind::S_type_declaration: // type_declaration
-        yylhs.value.emplace< shared_ptr<TypeDeclaration> > ();
+        yylhs.value.emplace< shared_ptr<TypeDeclaration>  > ();
         break;
 
       case symbol_kind::S_type_declarations: // type_declarations
-        yylhs.value.emplace< shared_ptr<TypeDeclarations> > ();
+        yylhs.value.emplace< shared_ptr<TypeDeclarations>  > ();
         break;
 
-      case symbol_kind::S_variable_declaration: // variable_declaration
-        yylhs.value.emplace< shared_ptr<VariableDeclaration> > ();
+      case symbol_kind::S_var_declaration: // var_declaration
+        yylhs.value.emplace< shared_ptr<VarDeclaration>  > ();
         break;
 
-      case symbol_kind::S_variable_declarations: // variable_declarations
-        yylhs.value.emplace< shared_ptr<VariableDeclarations> > ();
+      case symbol_kind::S_var_declarations: // var_declarations
+        yylhs.value.emplace< shared_ptr<VarDeclarations>  > ();
         break;
 
       case symbol_kind::S_write_expression: // write_expression
-        yylhs.value.emplace< shared_ptr<WriteExpression> > ();
+        yylhs.value.emplace< shared_ptr<WriteExpression>  > ();
         break;
 
       case symbol_kind::S_write_expressions: // write_expressions
-        yylhs.value.emplace< shared_ptr<WriteExpressions> > ();
+        yylhs.value.emplace< shared_ptr<WriteExpressions>  > ();
         break;
 
       case symbol_kind::S_write_parameters: // write_parameters
-        yylhs.value.emplace< shared_ptr<WriteParameters> > ();
+        yylhs.value.emplace< shared_ptr<WriteParameters>  > ();
         break;
 
       case symbol_kind::S_AND: // AND
@@ -1716,8 +1716,8 @@ namespace yy {
   case 2: // program: PROGRAM IS body ";"
 #line 192 "src/syntactic_parser.yy"
                              {
-        yylhs.value.as < shared_ptr<Program> > () = make_shared<Program>(yylhs.location,yystack_[1].value.as < shared_ptr<Body> > ());
-        p_driver.SetProgram(yylhs.value.as < shared_ptr<Program> > ());
+        yylhs.value.as < shared_ptr<Program>  > () = make_shared<Program>(yylhs.location,yystack_[1].value.as < shared_ptr<Body>  > ());
+        p_driver->SetProgram(yylhs.value.as < shared_ptr<Program>  > ());
     }
 #line 1723 "src/syntactic_parser.cpp"
     break;
@@ -1725,8 +1725,8 @@ namespace yy {
   case 3: // program: error body ";"
 #line 196 "src/syntactic_parser.yy"
                       {
-        yylhs.value.as < shared_ptr<Program> > () = make_shared<Program>(yylhs.location,yystack_[1].value.as < shared_ptr<Body> > ());
-        p_driver.SetProgram(yylhs.value.as < shared_ptr<Program> > ());
+        yylhs.value.as < shared_ptr<Program>  > () = make_shared<Program>(yylhs.location,yystack_[1].value.as < shared_ptr<Body>  > ());
+        p_driver->SetProgram(yylhs.value.as < shared_ptr<Program>  > ());
         yyerrok;
     }
 #line 1733 "src/syntactic_parser.cpp"
@@ -1734,23 +1734,23 @@ namespace yy {
 
   case 4: // program: error
 #line 201 "src/syntactic_parser.yy"
-        {yylhs.value.as < shared_ptr<Program> > () = nullptr;yyerrok;yyclearin;}
+        {yylhs.value.as < shared_ptr<Program>  > () = nullptr;yyerrok;yyclearin;}
 #line 1739 "src/syntactic_parser.cpp"
     break;
 
   case 5: // body: declarations BEGIN statements END
 #line 205 "src/syntactic_parser.yy"
                                      {
-        yylhs.value.as < shared_ptr<Body> > () = make_shared<Body>(yylhs.location,yystack_[3].value.as < shared_ptr<Declaration> > (),yystack_[1].value.as < shared_ptr<Statements> > ());
+        yylhs.value.as < shared_ptr<Body>  > () = make_shared<Body>(yylhs.location,yystack_[3].value.as < shared_ptr<Declarations>  > (),yystack_[1].value.as < shared_ptr<Statements>  > ());
     }
 #line 1747 "src/syntactic_parser.cpp"
     break;
 
-  case 6: // declaration: VAR variable_declarations
+  case 6: // declaration: VAR var_declarations
 #line 212 "src/syntactic_parser.yy"
-                             {
-        yylhs.value.as < shared_ptr<Declaration> > () = yystack_[0].value.as < shared_ptr<VariableDeclarations> > ();
-        if(yylhs.value.as < shared_ptr<Declaration> > ()) yylhs.value.as < shared_ptr<Declaration> > ()->SetLocation(yylhs.location);
+                        {
+        yylhs.value.as < shared_ptr<Declarations>  > () = yystack_[0].value.as < shared_ptr<VarDeclarations>  > ();
+        if(yylhs.value.as < shared_ptr<Declarations>  > ()) yylhs.value.as < shared_ptr<Declarations>  > ()->SetLocation(yylhs.location);
     }
 #line 1756 "src/syntactic_parser.cpp"
     break;
@@ -1758,8 +1758,8 @@ namespace yy {
   case 7: // declaration: PROCEDURE procedure_declarations
 #line 216 "src/syntactic_parser.yy"
                                     {
-        yylhs.value.as < shared_ptr<Declaration> > () = yystack_[0].value.as < shared_ptr<ProcedureDeclarations> > ();
-        if(yylhs.value.as < shared_ptr<Declaration> > ()) yylhs.value.as < shared_ptr<Declaration> > ()->SetLocation(yylhs.location);
+        yylhs.value.as < shared_ptr<Declarations>  > () = yystack_[0].value.as < shared_ptr<ProcedureDeclarations>  > ();
+        if(yylhs.value.as < shared_ptr<Declarations>  > ()) yylhs.value.as < shared_ptr<Declarations>  > ()->SetLocation(yylhs.location);
     }
 #line 1765 "src/syntactic_parser.cpp"
     break;
@@ -1767,8 +1767,8 @@ namespace yy {
   case 8: // declaration: TYPE type_declarations
 #line 220 "src/syntactic_parser.yy"
                           {
-        yylhs.value.as < shared_ptr<Declaration> > () = yystack_[0].value.as < shared_ptr<TypeDeclarations> > ();
-        if(yylhs.value.as < shared_ptr<Declaration> > ()) yylhs.value.as < shared_ptr<Declaration> > ()->SetLocation(yylhs.location);
+        yylhs.value.as < shared_ptr<Declarations>  > () = yystack_[0].value.as < shared_ptr<TypeDeclarations>  > ();
+        if(yylhs.value.as < shared_ptr<Declarations>  > ()) yylhs.value.as < shared_ptr<Declarations>  > ()->SetLocation(yylhs.location);
     }
 #line 1774 "src/syntactic_parser.cpp"
     break;
@@ -1776,7 +1776,7 @@ namespace yy {
   case 9: // declarations: %empty
 #line 227 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<Declaration> > () = make_shared<Declarations>(yylhs.location);
+        yylhs.value.as < shared_ptr<Declarations>  > () = make_shared<Declarations>(yylhs.location);
     }
 #line 1782 "src/syntactic_parser.cpp"
     break;
@@ -1784,43 +1784,43 @@ namespace yy {
   case 10: // declarations: declarations declaration
 #line 230 "src/syntactic_parser.yy"
                           {
-        yylhs.value.as < shared_ptr<Declaration> > () =yystack_[1].value.as < shared_ptr<Declaration> > ();
-        if(yylhs.value.as < shared_ptr<Declaration> > ()) yylhs.value.as < shared_ptr<Declaration> > ()->InsertArray(yystack_[0].value.as < shared_ptr<Declaration> > ());
+        yylhs.value.as < shared_ptr<Declarations>  > () =yystack_[1].value.as < shared_ptr<Declarations>  > ();
+        if(yylhs.value.as < shared_ptr<Declarations>  > ()) yylhs.value.as < shared_ptr<Declarations>  > ()->InsertArray(yystack_[0].value.as < shared_ptr<Declarations>  > ());
     }
 #line 1791 "src/syntactic_parser.cpp"
     break;
 
-  case 11: // variable_declaration: ids type_annotation ":=" expression ";"
+  case 11: // var_declaration: ids type_annotation ":=" expression ";"
 #line 237 "src/syntactic_parser.yy"
                                                    {
-        yylhs.value.as < shared_ptr<VariableDeclaration> > () = make_shared<VariableDeclaration>(yylhs.location,yystack_[4].value.as < shared_ptr<Ids> > (),yystack_[3].value.as < shared_ptr<TypeAnnotation> > (),yystack_[1].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<VarDeclaration>  > () = make_shared<VarDeclaration>(yylhs.location,yystack_[4].value.as < shared_ptr<Ids>  > (),yystack_[3].value.as < shared_ptr<TypeAnnotation>  > (),yystack_[1].value.as < shared_ptr<Expression>  > ());
     }
 #line 1799 "src/syntactic_parser.cpp"
     break;
 
-  case 12: // variable_declaration: error ";"
+  case 12: // var_declaration: error ";"
 #line 240 "src/syntactic_parser.yy"
                  {
-    yylhs.value.as < shared_ptr<VariableDeclaration> > () = nullptr;
+    yylhs.value.as < shared_ptr<VarDeclaration>  > () = nullptr;
     yyerrok;
     }
 #line 1808 "src/syntactic_parser.cpp"
     break;
 
-  case 13: // variable_declarations: variable_declaration
+  case 13: // var_declarations: var_declaration
 #line 247 "src/syntactic_parser.yy"
-                        {
-        yylhs.value.as < shared_ptr<VariableDeclarations> > () = make_shared<VariableDeclarations>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<VariableDeclarations> > ()) yylhs.value.as < shared_ptr<VariableDeclarations> > ()->Insert(yystack_[0].value.as < shared_ptr<VariableDeclaration> > ());
+                   {
+        yylhs.value.as < shared_ptr<VarDeclarations>  > () = make_shared<VarDeclarations>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<VarDeclarations>  > ()) yylhs.value.as < shared_ptr<VarDeclarations>  > ()->Insert(yystack_[0].value.as < shared_ptr<VarDeclaration>  > ());
     }
 #line 1817 "src/syntactic_parser.cpp"
     break;
 
-  case 14: // variable_declarations: variable_declarations variable_declaration
+  case 14: // var_declarations: var_declarations var_declaration
 #line 251 "src/syntactic_parser.yy"
-                                             {
-        yylhs.value.as < shared_ptr<VariableDeclarations> > () = yystack_[1].value.as < shared_ptr<VariableDeclarations> > ();
-        if(yylhs.value.as < shared_ptr<VariableDeclarations> > ()) yylhs.value.as < shared_ptr<VariableDeclarations> > ()->Insert(yystack_[0].value.as < shared_ptr<VariableDeclaration> > ());
+                                   {
+        yylhs.value.as < shared_ptr<VarDeclarations>  > () = yystack_[1].value.as < shared_ptr<VarDeclarations>  > ();
+        if(yylhs.value.as < shared_ptr<VarDeclarations>  > ()) yylhs.value.as < shared_ptr<VarDeclarations>  > ()->Insert(yystack_[0].value.as < shared_ptr<VarDeclaration>  > ());
     }
 #line 1826 "src/syntactic_parser.cpp"
     break;
@@ -1828,23 +1828,23 @@ namespace yy {
   case 15: // type_declaration: id IS type ";"
 #line 258 "src/syntactic_parser.yy"
                         {
-        yylhs.value.as < shared_ptr<TypeDeclaration> > () = make_shared<TypeDeclaration>(yylhs.location,yystack_[3].value.as < shared_ptr<Id> > (),yystack_[1].value.as < shared_ptr<Type> > ());
+        yylhs.value.as < shared_ptr<TypeDeclaration>  > () = make_shared<TypeDeclaration>(yylhs.location,yystack_[3].value.as < shared_ptr<Id>  > (),yystack_[1].value.as < shared_ptr<Type>  > ());
     }
 #line 1834 "src/syntactic_parser.cpp"
     break;
 
   case 16: // type_declaration: error ";"
 #line 261 "src/syntactic_parser.yy"
-                 {yylhs.value.as < shared_ptr<TypeDeclaration> > () = nullptr;yyerrok;}
+                 {yylhs.value.as < shared_ptr<TypeDeclaration>  > () = nullptr;yyerrok;}
 #line 1840 "src/syntactic_parser.cpp"
     break;
 
   case 17: // type_declarations: type_declaration
 #line 265 "src/syntactic_parser.yy"
                      {
-        yylhs.value.as < shared_ptr<TypeDeclarations> > () = make_shared<TypeDeclaration>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<TypeDeclarations> > ()){
-            yylhs.value.as < shared_ptr<TypeDeclarations> > ()->Insert(yystack_[0].value.as < shared_ptr<TypeDeclaration> > ());
+        yylhs.value.as < shared_ptr<TypeDeclarations>  > () = make_shared<TypeDeclarations>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<TypeDeclarations>  > ()){
+            yylhs.value.as < shared_ptr<TypeDeclarations>  > ()->Insert(yystack_[0].value.as < shared_ptr<TypeDeclaration>  > ());
         }
     }
 #line 1851 "src/syntactic_parser.cpp"
@@ -1853,9 +1853,9 @@ namespace yy {
   case 18: // type_declarations: type_declarations type_declaration
 #line 271 "src/syntactic_parser.yy"
                                       {
-        yylhs.value.as < shared_ptr<TypeDeclarations> > () = yystack_[1].value.as < shared_ptr<TypeDeclarations> > ();
-        if(yylhs.value.as < shared_ptr<TypeDeclarations> > ()){
-            yylhs.value.as < shared_ptr<TypeDeclarations> > ()->Insert(yystack_[0].value.as < shared_ptr<TypeDeclaration> > ());
+        yylhs.value.as < shared_ptr<TypeDeclarations>  > () = yystack_[1].value.as < shared_ptr<TypeDeclarations>  > ();
+        if(yylhs.value.as < shared_ptr<TypeDeclarations>  > ()){
+            yylhs.value.as < shared_ptr<TypeDeclarations>  > ()->Insert(yystack_[0].value.as < shared_ptr<TypeDeclaration>  > ());
         }
     }
 #line 1862 "src/syntactic_parser.cpp"
@@ -1864,7 +1864,7 @@ namespace yy {
   case 19: // procedure_declaration: id "(" formal_parameters ")" type_annotation IS body ";"
 #line 280 "src/syntactic_parser.yy"
                                                                         {
-        yylhs.value.as < shared_ptr<ProcedureDeclaration> > () = make_shared<ProcedureDeclaration>(yylhs.location,yystack_[7].value.as < shared_ptr<Id> > (),yystack_[5].value.as < shared_ptr<FormalParameters> > (),yystack_[3].value.as < shared_ptr<TypeAnnotation> > (),yystack_[1].value.as < shared_ptr<Body> > ());
+        yylhs.value.as < shared_ptr<ProcedureDeclaration>  > () = make_shared<ProcedureDeclaration>(yylhs.location,yystack_[7].value.as < shared_ptr<Id>  > (),yystack_[5].value.as < shared_ptr<FormalParameters>  > (),yystack_[3].value.as < shared_ptr<TypeAnnotation>  > (),yystack_[1].value.as < shared_ptr<Body>  > ());
     }
 #line 1870 "src/syntactic_parser.cpp"
     break;
@@ -1872,7 +1872,7 @@ namespace yy {
   case 20: // procedure_declaration: id "(" formal_parameters ")" type_annotation error body ";"
 #line 283 "src/syntactic_parser.yy"
                                                                            {
-        yylhs.value.as < shared_ptr<ProcedureDeclaration> > () = make_shared<ProcedureDeclaration>(yylhs.location,yystack_[7].value.as < shared_ptr<Id> > (),yystack_[5].value.as < shared_ptr<FormalParameters> > (),yystack_[3].value.as < shared_ptr<TypeAnnotation> > (),yystack_[1].value.as < shared_ptr<Body> > ());
+        yylhs.value.as < shared_ptr<ProcedureDeclaration>  > () = make_shared<ProcedureDeclaration>(yylhs.location,yystack_[7].value.as < shared_ptr<Id>  > (),yystack_[5].value.as < shared_ptr<FormalParameters>  > (),yystack_[3].value.as < shared_ptr<TypeAnnotation>  > (),yystack_[1].value.as < shared_ptr<Body>  > ());
         yyerrok;
     }
 #line 1879 "src/syntactic_parser.cpp"
@@ -1881,9 +1881,9 @@ namespace yy {
   case 21: // procedure_declarations: procedure_declaration
 #line 290 "src/syntactic_parser.yy"
                          {
-        yylhs.value.as < shared_ptr<ProcedureDeclarations> > () = make_shared<ProcedureDeclarations>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<ProcedureDeclarations> > ()){
-            yylhs.value.as < shared_ptr<ProcedureDeclarations> > ()->Insert(yystack_[0].value.as < shared_ptr<ProcedureDeclaration> > ());
+        yylhs.value.as < shared_ptr<ProcedureDeclarations>  > () = make_shared<ProcedureDeclarations>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<ProcedureDeclarations>  > ()){
+            yylhs.value.as < shared_ptr<ProcedureDeclarations>  > ()->Insert(yystack_[0].value.as < shared_ptr<ProcedureDeclaration>  > ());
         }
     }
 #line 1890 "src/syntactic_parser.cpp"
@@ -1892,9 +1892,9 @@ namespace yy {
   case 22: // procedure_declarations: procedure_declarations procedure_declaration
 #line 297 "src/syntactic_parser.yy"
                                                 {
-        yylhs.value.as < shared_ptr<ProcedureDeclarations> > () = yystack_[1].value.as < shared_ptr<ProcedureDeclarations> > ();
-        if(yylhs.value.as < shared_ptr<ProcedureDeclarations> > ()){
-            yylhs.value.as < shared_ptr<ProcedureDeclarations> > ()->Insert(yystack_[0].value.as < shared_ptr<ProcedureDeclaration> > ());
+        yylhs.value.as < shared_ptr<ProcedureDeclarations>  > () = yystack_[1].value.as < shared_ptr<ProcedureDeclarations>  > ();
+        if(yylhs.value.as < shared_ptr<ProcedureDeclarations>  > ()){
+            yylhs.value.as < shared_ptr<ProcedureDeclarations>  > ()->Insert(yystack_[0].value.as < shared_ptr<ProcedureDeclaration>  > ());
         }
     }
 #line 1901 "src/syntactic_parser.cpp"
@@ -1903,7 +1903,7 @@ namespace yy {
   case 23: // formal_parameter: ids ":" type
 #line 306 "src/syntactic_parser.yy"
                   {
-        yylhs.value.as < shared_ptr<FormalParameter> > () = make_shared<FormalParameter>(yylhs.location,yystack_[2].value.as < shared_ptr<Ids> > (),yystack_[0].value.as < shared_ptr<Type> > ());
+        yylhs.value.as < shared_ptr<FormalParameter>  > () = make_shared<FormalParameter>(yylhs.location,yystack_[2].value.as < shared_ptr<Ids>  > (),yystack_[0].value.as < shared_ptr<Type>  > ());
     }
 #line 1909 "src/syntactic_parser.cpp"
     break;
@@ -1911,7 +1911,7 @@ namespace yy {
   case 24: // formal_parameters: %empty
 #line 312 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<FormalParameters> > () = make_shared<FormalParameters>(yylhs.location);
+        yylhs.value.as < shared_ptr<FormalParameters>  > () = make_shared<FormalParameters>(yylhs.location);
     }
 #line 1917 "src/syntactic_parser.cpp"
     break;
@@ -1919,9 +1919,9 @@ namespace yy {
   case 25: // formal_parameters: formal_parameter
 #line 315 "src/syntactic_parser.yy"
                     {
-        yylhs.value.as < shared_ptr<FormalParameters> > () = make_shared<FormalParameters>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<FormalParameters> > ()){
-            yylhs.value.as < shared_ptr<FormalParameters> > ()->Insert(yystack_[0].value.as < shared_ptr<FormalParameter> > ());
+        yylhs.value.as < shared_ptr<FormalParameters>  > () = make_shared<FormalParameters>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<FormalParameters>  > ()){
+            yylhs.value.as < shared_ptr<FormalParameters>  > ()->Insert(yystack_[0].value.as < shared_ptr<FormalParameter>  > ());
         }
     }
 #line 1928 "src/syntactic_parser.cpp"
@@ -1930,9 +1930,9 @@ namespace yy {
   case 26: // formal_parameters: formal_parameters ";" formal_parameter
 #line 321 "src/syntactic_parser.yy"
                                                 {
-        yylhs.value.as < shared_ptr<FormalParameters> > () = yystack_[2].value.as < shared_ptr<FormalParameters> > ();
-        if(yylhs.value.as < shared_ptr<FormalParameters> > ()){
-            yylhs.value.as < shared_ptr<FormalParameters> > ()->Insert(yystack_[0].value.as < shared_ptr<FormalParameter> > ());
+        yylhs.value.as < shared_ptr<FormalParameters>  > () = yystack_[2].value.as < shared_ptr<FormalParameters>  > ();
+        if(yylhs.value.as < shared_ptr<FormalParameters>  > ()){
+            yylhs.value.as < shared_ptr<FormalParameters>  > ()->Insert(yystack_[0].value.as < shared_ptr<FormalParameter>  > ());
         }
     }
 #line 1939 "src/syntactic_parser.cpp"
@@ -1941,7 +1941,7 @@ namespace yy {
   case 27: // type: id
 #line 330 "src/syntactic_parser.yy"
       {
-        yylhs.value.as < shared_ptr<Type> > () = make_shared<IdType>(yylhs.location,yystack_[0].value.as < shared_ptr<Id> > ());
+        yylhs.value.as < shared_ptr<Type>  > () = make_shared<IdType>(yylhs.location,yystack_[0].value.as < shared_ptr<Id>  > ());
     }
 #line 1947 "src/syntactic_parser.cpp"
     break;
@@ -1949,7 +1949,7 @@ namespace yy {
   case 28: // type: ARRAY OF type
 #line 333 "src/syntactic_parser.yy"
                            {
-        yylhs.value.as < shared_ptr<Type> > () = make_shared<ArrayType>(yylhs.location,yystack_[0].value.as < shared_ptr<Type> > ());
+        yylhs.value.as < shared_ptr<Type>  > () = make_shared<ArrayType>(yylhs.location,yystack_[0].value.as < shared_ptr<Type>  > ());
     }
 #line 1955 "src/syntactic_parser.cpp"
     break;
@@ -1957,7 +1957,7 @@ namespace yy {
   case 29: // type: RECORD components END
 #line 336 "src/syntactic_parser.yy"
                           {
-        yylhs.value.as < shared_ptr<Type> > () = make_shared<RecordType>(yylhs.location,yystack_[1].value.as < shared_ptr<Components> > ()); 
+        yylhs.value.as < shared_ptr<Type>  > () = make_shared<RecordType>(yylhs.location,yystack_[1].value.as < shared_ptr<Components>  > ()); 
     }
 #line 1963 "src/syntactic_parser.cpp"
     break;
@@ -1965,7 +1965,7 @@ namespace yy {
   case 30: // type_annotation: ":" type
 #line 342 "src/syntactic_parser.yy"
               {
-        yylhs.value.as < shared_ptr<TypeAnnotation> > () = make_shared<TypeAnnotation>(yylhs.location,yystack_[0].value.as < shared_ptr<Type> > ());
+        yylhs.value.as < shared_ptr<TypeAnnotation>  > () = make_shared<TypeAnnotation>(yylhs.location,yystack_[0].value.as < shared_ptr<Type>  > ());
     }
 #line 1971 "src/syntactic_parser.cpp"
     break;
@@ -1973,7 +1973,7 @@ namespace yy {
   case 31: // type_annotation: %empty
 #line 345 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<TypeAnnotation> > () = nullptr;
+        yylhs.value.as < shared_ptr<TypeAnnotation>  > () = nullptr;
     }
 #line 1979 "src/syntactic_parser.cpp"
     break;
@@ -1981,21 +1981,21 @@ namespace yy {
   case 32: // component: id ":" type ";"
 #line 351 "src/syntactic_parser.yy"
                            {
-        yylhs.value.as < shared_ptr<Component> > () = make_shared<Component>(yylhs.location,yystack_[3].value.as < shared_ptr<Id> > (),yystack_[1].value.as < shared_ptr<Type> > ());
+        yylhs.value.as < shared_ptr<Component>  > () = make_shared<Component>(yylhs.location,yystack_[3].value.as < shared_ptr<Id>  > (),yystack_[1].value.as < shared_ptr<Type>  > ());
     }
 #line 1987 "src/syntactic_parser.cpp"
     break;
 
   case 33: // component: error ";"
 #line 354 "src/syntactic_parser.yy"
-                    { yylhs.value.as < shared_ptr<Component> > () = nullptr; yyerrok;}
+                    { yylhs.value.as < shared_ptr<Component>  > () = nullptr; yyerrok;}
 #line 1993 "src/syntactic_parser.cpp"
     break;
 
   case 34: // components: component
 #line 359 "src/syntactic_parser.yy"
              {
-        yylhs.value.as < shared_ptr<Components> > () = make_shared<Components>(yylhs.location); if(yylhs.value.as < shared_ptr<Components> > ()) yylhs.value.as < shared_ptr<Components> > ()->Insert(yystack_[0].value.as < shared_ptr<Component> > ());
+        yylhs.value.as < shared_ptr<Components>  > () = make_shared<Components>(yylhs.location); if(yylhs.value.as < shared_ptr<Components>  > ()) yylhs.value.as < shared_ptr<Components>  > ()->Insert(yystack_[0].value.as < shared_ptr<Component>  > ());
     }
 #line 2001 "src/syntactic_parser.cpp"
     break;
@@ -2003,7 +2003,7 @@ namespace yy {
   case 35: // components: components component
 #line 362 "src/syntactic_parser.yy"
                           {
-        yylhs.value.as < shared_ptr<Components> > () = yystack_[1].value.as < shared_ptr<Components> > (); if(yylhs.value.as < shared_ptr<Components> > ()) yylhs.value.as < shared_ptr<Components> > ()->Insert(yystack_[0].value.as < shared_ptr<Component> > ());
+        yylhs.value.as < shared_ptr<Components>  > () = yystack_[1].value.as < shared_ptr<Components>  > (); if(yylhs.value.as < shared_ptr<Components>  > ()) yylhs.value.as < shared_ptr<Components>  > ()->Insert(yystack_[0].value.as < shared_ptr<Component>  > ());
     }
 #line 2009 "src/syntactic_parser.cpp"
     break;
@@ -2011,7 +2011,7 @@ namespace yy {
   case 36: // id: "identifier"
 #line 368 "src/syntactic_parser.yy"
       {
-    yylhs.value.as < shared_ptr<Id> > () = make_shared<Id>(yylhs.location,yystack_[0].value.as < std::string > ());
+    yylhs.value.as < shared_ptr<Id>  > () = make_shared<Id>(yylhs.location,yystack_[0].value.as < std::string > ());
 }
 #line 2017 "src/syntactic_parser.cpp"
     break;
@@ -2019,656 +2019,657 @@ namespace yy {
   case 37: // ids: id
 #line 374 "src/syntactic_parser.yy"
        {
-        yylhs.value.as < shared_ptr<Ids> > () = make_shared<Id>(yylhs.location,yystack_[0].value.as < shared_ptr<Id> > ()); 
+        yylhs.value.as < shared_ptr<Ids>  > () = make_shared<Ids>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<Ids>  > ()) yylhs.value.as < shared_ptr<Ids>  > ()->Insert(yystack_[0].value.as < shared_ptr<Id>  > ());
     }
-#line 2025 "src/syntactic_parser.cpp"
+#line 2026 "src/syntactic_parser.cpp"
     break;
 
   case 38: // ids: ids "," id
-#line 377 "src/syntactic_parser.yy"
+#line 378 "src/syntactic_parser.yy"
                  {
-        yylhs.value.as < shared_ptr<Ids> > () = yystack_[2].value.as < shared_ptr<Ids> > (); if(yylhs.value.as < shared_ptr<Ids> > ()) yylhs.value.as < shared_ptr<Ids> > ()->Insert(yystack_[0].value.as < shared_ptr<Id> > ());
+        yylhs.value.as < shared_ptr<Ids>  > () = yystack_[2].value.as < shared_ptr<Ids>  > (); if(yylhs.value.as < shared_ptr<Ids>  > ()) yylhs.value.as < shared_ptr<Ids>  > ()->Insert(yystack_[0].value.as < shared_ptr<Id>  > ());
     }
-#line 2033 "src/syntactic_parser.cpp"
+#line 2034 "src/syntactic_parser.cpp"
     break;
 
   case 39: // statement: lvalue ":=" expression ";"
-#line 386 "src/syntactic_parser.yy"
+#line 387 "src/syntactic_parser.yy"
                                       {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<AssignStatement>(yylhs.location,yystack_[3].value.as < shared_ptr<Lvalue> > (),yystack_[1].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<AssignStatement>(yylhs.location,yystack_[3].value.as < shared_ptr<Lvalue>  > (),yystack_[1].value.as < shared_ptr<Expression>  > ());
     }
-#line 2041 "src/syntactic_parser.cpp"
+#line 2042 "src/syntactic_parser.cpp"
     break;
 
   case 40: // statement: id "(" actual_parameters ")" ";"
-#line 389 "src/syntactic_parser.yy"
+#line 390 "src/syntactic_parser.yy"
                                                 {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<CallStatement>(yylhs.location,yystack_[4].value.as < shared_ptr<Id> > (),yystack_[2].value.as < shared_ptr<ActualParameters> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<ProcedureCallStatement>(yylhs.location,yystack_[4].value.as < shared_ptr<Id>  > (),yystack_[2].value.as < shared_ptr<ActualParameters>  > ());
     }
-#line 2049 "src/syntactic_parser.cpp"
+#line 2050 "src/syntactic_parser.cpp"
     break;
 
   case 41: // statement: IF expression THEN statements elif_sections else_section END ";"
-#line 392 "src/syntactic_parser.yy"
+#line 393 "src/syntactic_parser.yy"
                                                                                       {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<IfStatement>(yylhs.location,yystack_[6].value.as < shared_ptr<Expression> > (),yystack_[4].value.as < shared_ptr<Statements> > (),yystack_[3].value.as < shared_ptr<ElifSections> > (),yystack_[2].value.as < shared_ptr<ElseSection> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<IfStatement>(yylhs.location,yystack_[6].value.as < shared_ptr<Expression>  > (),yystack_[4].value.as < shared_ptr<Statements>  > (),yystack_[3].value.as < shared_ptr<ElifSections>  > (),yystack_[2].value.as < shared_ptr<ElseSection>  > ());
     }
-#line 2057 "src/syntactic_parser.cpp"
+#line 2058 "src/syntactic_parser.cpp"
     break;
 
   case 42: // statement: READ "(" read_parameters ")" ";"
-#line 395 "src/syntactic_parser.yy"
+#line 396 "src/syntactic_parser.yy"
                                                 {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<ReadStatement>(yylhs.location,yystack_[2].value.as < shared_ptr<ReadParameters> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<ReadStatement>(yylhs.location,yystack_[2].value.as < shared_ptr<ReadParameters> > ());
     }
-#line 2065 "src/syntactic_parser.cpp"
+#line 2066 "src/syntactic_parser.cpp"
     break;
 
   case 43: // statement: WRITE "(" write_parameters ")" ";"
-#line 398 "src/syntactic_parser.yy"
+#line 399 "src/syntactic_parser.yy"
                                                   {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<WriteStatement>(yylhs.location,yystack_[2].value.as < shared_ptr<WriteParameters> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<WriteStatement>(yylhs.location,yystack_[2].value.as < shared_ptr<WriteParameters>  > ());
     }
-#line 2073 "src/syntactic_parser.cpp"
+#line 2074 "src/syntactic_parser.cpp"
     break;
 
   case 44: // statement: WHILE expression DO statements END ";"
-#line 401 "src/syntactic_parser.yy"
+#line 402 "src/syntactic_parser.yy"
                                                 {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<WhileStatement>(yylhs.location,yystack_[4].value.as < shared_ptr<Expression> > (),yystack_[2].value.as < shared_ptr<Statements> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<WhileStatement>(yylhs.location,yystack_[4].value.as < shared_ptr<Expression>  > (),yystack_[2].value.as < shared_ptr<Statements>  > ());
     }
-#line 2081 "src/syntactic_parser.cpp"
+#line 2082 "src/syntactic_parser.cpp"
     break;
 
   case 45: // statement: LOOP statements END ";"
-#line 404 "src/syntactic_parser.yy"
+#line 405 "src/syntactic_parser.yy"
                                  {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<LoopStatement>(yylhs.location,yystack_[2].value.as < shared_ptr<Statements> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<LoopStatement>(yylhs.location,yystack_[2].value.as < shared_ptr<Statements>  > ());
     }
-#line 2089 "src/syntactic_parser.cpp"
+#line 2090 "src/syntactic_parser.cpp"
     break;
 
   case 46: // statement: FOR id ":=" expression TO expression for_step DO statements END ";"
-#line 407 "src/syntactic_parser.yy"
+#line 408 "src/syntactic_parser.yy"
                                                                                                  {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<ForStatement>(yylhs.location,yystack_[9].value.as < shared_ptr<Id> > (),yystack_[7].value.as < shared_ptr<Expression> > (),yystack_[5].value.as < shared_ptr<Expression> > (),yystack_[4].value.as < shared_ptr<ForStep> > (),yystack_[2].value.as < shared_ptr<Statements> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<ForStatement>(yylhs.location,yystack_[9].value.as < shared_ptr<Id>  > (),yystack_[7].value.as < shared_ptr<Expression>  > (),yystack_[5].value.as < shared_ptr<Expression>  > (),yystack_[4].value.as < shared_ptr<ForStep>  > (),yystack_[2].value.as < shared_ptr<Statements>  > ());
     }
-#line 2097 "src/syntactic_parser.cpp"
+#line 2098 "src/syntactic_parser.cpp"
     break;
 
   case 47: // statement: RETURN expression ";"
-#line 410 "src/syntactic_parser.yy"
+#line 411 "src/syntactic_parser.yy"
                                {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<ReturnStatement>(yylhs.location,yystack_[1].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<ReturnStatement>(yylhs.location,yystack_[1].value.as < shared_ptr<Expression>  > ());
     }
-#line 2105 "src/syntactic_parser.cpp"
+#line 2106 "src/syntactic_parser.cpp"
     break;
 
   case 48: // statement: RETURN ";"
-#line 413 "src/syntactic_parser.yy"
+#line 414 "src/syntactic_parser.yy"
                     {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<ReturnStatement>(yylhs.location);
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<ReturnStatement>(yylhs.location);
     }
-#line 2113 "src/syntactic_parser.cpp"
+#line 2114 "src/syntactic_parser.cpp"
     break;
 
   case 49: // statement: EXIT ";"
-#line 417 "src/syntactic_parser.yy"
+#line 418 "src/syntactic_parser.yy"
                   {
-        yylhs.value.as < shared_ptr<Statement> > () = make_shared<ExitStatement>(yylhs.location);
+        yylhs.value.as < shared_ptr<Statement>   > () = make_shared<ExitStatement>(yylhs.location);
     }
-#line 2121 "src/syntactic_parser.cpp"
+#line 2122 "src/syntactic_parser.cpp"
     break;
 
   case 50: // statement: error ";"
-#line 420 "src/syntactic_parser.yy"
+#line 421 "src/syntactic_parser.yy"
                    {
-        yylhs.value.as < shared_ptr<Statement> > () = nullptr;
+        yylhs.value.as < shared_ptr<Statement>   > () = nullptr;
         yyerrok;
     }
-#line 2130 "src/syntactic_parser.cpp"
+#line 2131 "src/syntactic_parser.cpp"
     break;
 
   case 51: // statements: %empty
-#line 427 "src/syntactic_parser.yy"
+#line 428 "src/syntactic_parser.yy"
            {
-        yylhs.value.as < shared_ptr<Statements> > () = make_shared<Statements>(yylhs.location);
+        yylhs.value.as < shared_ptr<Statements>  > () = make_shared<Statements>(yylhs.location);
     }
-#line 2138 "src/syntactic_parser.cpp"
+#line 2139 "src/syntactic_parser.cpp"
     break;
 
   case 52: // statements: statements statement
-#line 430 "src/syntactic_parser.yy"
+#line 431 "src/syntactic_parser.yy"
                          {
-        yylhs.value.as < shared_ptr<Statements> > () = yystack_[1].value.as < shared_ptr<Statements> > (); if(yylhs.value.as < shared_ptr<Statements> > ()) yylhs.value.as < shared_ptr<Statements> > ()->Insert(yystack_[0].value.as < shared_ptr<Statement> > ());
+        yylhs.value.as < shared_ptr<Statements>  > () = yystack_[1].value.as < shared_ptr<Statements>  > (); if(yylhs.value.as < shared_ptr<Statements>  > ()) yylhs.value.as < shared_ptr<Statements>  > ()->Insert(yystack_[0].value.as < shared_ptr<Statement>   > ());
     }
-#line 2146 "src/syntactic_parser.cpp"
+#line 2147 "src/syntactic_parser.cpp"
     break;
 
   case 53: // actual_parameters: %empty
-#line 436 "src/syntactic_parser.yy"
+#line 437 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<ActualParameters> > () = make_shared<ActualParameters>(yylhs.location);
+        yylhs.value.as < shared_ptr<ActualParameters>  > () = make_shared<ActualParameters>(yylhs.location);
     }
-#line 2154 "src/syntactic_parser.cpp"
+#line 2155 "src/syntactic_parser.cpp"
     break;
 
   case 54: // actual_parameters: expressions
-#line 439 "src/syntactic_parser.yy"
+#line 440 "src/syntactic_parser.yy"
                {
-        yylhs.value.as < shared_ptr<ActualParameters> > () = make_shared<ActualParameters>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<ActualParameters> > ()){
-            yylhs.value.as < shared_ptr<ActualParameters> > ()->InsertArray(yystack_[0].value.as < shared_ptr<Expressions> > ());
+        yylhs.value.as < shared_ptr<ActualParameters>  > () = make_shared<ActualParameters>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<ActualParameters>  > ()){
+            yylhs.value.as < shared_ptr<ActualParameters>  > ()->InsertArray(yystack_[0].value.as < shared_ptr<Expressions>  > ());
         }
     }
-#line 2165 "src/syntactic_parser.cpp"
+#line 2166 "src/syntactic_parser.cpp"
     break;
 
   case 55: // read_parameters: lvalues
-#line 448 "src/syntactic_parser.yy"
+#line 449 "src/syntactic_parser.yy"
             {
         yylhs.value.as < shared_ptr<ReadParameters> > () = make_shared<ReadParameters>(yylhs.location);
         if(yylhs.value.as < shared_ptr<ReadParameters> > ()){
-            yylhs.value.as < shared_ptr<ReadParameters> > ()->InsertArray(yystack_[0].value.as < shared_ptr<Lvalues> > ());
+            yylhs.value.as < shared_ptr<ReadParameters> > ()->InsertArray(yystack_[0].value.as < shared_ptr<Lvalues>  > ());
         }
     }
-#line 2176 "src/syntactic_parser.cpp"
+#line 2177 "src/syntactic_parser.cpp"
     break;
 
   case 56: // write_parameters: write_expressions
-#line 457 "src/syntactic_parser.yy"
+#line 458 "src/syntactic_parser.yy"
                       {
-        yylhs.value.as < shared_ptr<WriteParameters> > () = make_shared<WriteParameters>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<WriteParameters> > ()){
-            yylhs.value.as < shared_ptr<WriteParameters> > ()->InsertArray(yystack_[0].value.as < shared_ptr<WriteExpressions> > ());
+        yylhs.value.as < shared_ptr<WriteParameters>  > () = make_shared<WriteParameters>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<WriteParameters>  > ()){
+            yylhs.value.as < shared_ptr<WriteParameters>  > ()->InsertArray(yystack_[0].value.as < shared_ptr<WriteExpressions>  > ());
         }
     }
-#line 2187 "src/syntactic_parser.cpp"
+#line 2188 "src/syntactic_parser.cpp"
     break;
 
   case 57: // write_parameters: %empty
-#line 463 "src/syntactic_parser.yy"
+#line 464 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<WriteParameters> > () = make_shared<WriteParameters>(yylhs.location);
+        yylhs.value.as < shared_ptr<WriteParameters>  > () = make_shared<WriteParameters>(yylhs.location);
     }
-#line 2195 "src/syntactic_parser.cpp"
+#line 2196 "src/syntactic_parser.cpp"
     break;
 
   case 58: // elif_section: ELSIF expression THEN statements
-#line 469 "src/syntactic_parser.yy"
+#line 470 "src/syntactic_parser.yy"
                                     {
-        yylhs.value.as < shared_ptr<ElifSection> > () = make_shared<ElifSection>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),yystack_[0].value.as < shared_ptr<Statements> > ());
+        yylhs.value.as < shared_ptr<ElifSection>  > () = make_shared<ElifSection>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),yystack_[0].value.as < shared_ptr<Statements>  > ());
     }
-#line 2203 "src/syntactic_parser.cpp"
+#line 2204 "src/syntactic_parser.cpp"
     break;
 
   case 59: // elif_sections: %empty
-#line 475 "src/syntactic_parser.yy"
+#line 476 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<ElifSections> > () = make_shared<ElifSections>(yylhs.location);
+        yylhs.value.as < shared_ptr<ElifSections>  > () = make_shared<ElifSections>(yylhs.location);
     }
-#line 2211 "src/syntactic_parser.cpp"
+#line 2212 "src/syntactic_parser.cpp"
     break;
 
   case 60: // elif_sections: elif_sections elif_section
-#line 478 "src/syntactic_parser.yy"
+#line 479 "src/syntactic_parser.yy"
                               {
-        yylhs.value.as < shared_ptr<ElifSections> > () = yystack_[1].value.as < shared_ptr<ElifSections> > ();
-        if(yylhs.value.as < shared_ptr<ElifSections> > ()){
-            yylhs.value.as < shared_ptr<ElifSections> > ()->Insert(yystack_[0].value.as < shared_ptr<ElifSection> > ());
+        yylhs.value.as < shared_ptr<ElifSections>  > () = yystack_[1].value.as < shared_ptr<ElifSections>  > ();
+        if(yylhs.value.as < shared_ptr<ElifSections>  > ()){
+            yylhs.value.as < shared_ptr<ElifSections>  > ()->Insert(yystack_[0].value.as < shared_ptr<ElifSection>  > ());
         }
     }
-#line 2222 "src/syntactic_parser.cpp"
+#line 2223 "src/syntactic_parser.cpp"
     break;
 
   case 61: // else_section: %empty
-#line 487 "src/syntactic_parser.yy"
+#line 488 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<ElseSection> > () = nullptr;
+        yylhs.value.as < shared_ptr<ElseSection>  > () = nullptr;
     }
-#line 2230 "src/syntactic_parser.cpp"
+#line 2231 "src/syntactic_parser.cpp"
     break;
 
   case 62: // else_section: ELSE statements
-#line 490 "src/syntactic_parser.yy"
+#line 491 "src/syntactic_parser.yy"
                    {
-        yylhs.value.as < shared_ptr<ElseSection> > () = make_shared<ElseSection>(yylhs.location,yystack_[0].value.as < shared_ptr<Statements> > ());
+        yylhs.value.as < shared_ptr<ElseSection>  > () = make_shared<ElseSection>(yylhs.location,yystack_[0].value.as < shared_ptr<Statements>  > ());
     }
-#line 2238 "src/syntactic_parser.cpp"
+#line 2239 "src/syntactic_parser.cpp"
     break;
 
   case 63: // for_step: %empty
-#line 496 "src/syntactic_parser.yy"
+#line 497 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<ForStep> > () = nullptr;
+        yylhs.value.as < shared_ptr<ForStep>  > () = nullptr;
     }
-#line 2246 "src/syntactic_parser.cpp"
+#line 2247 "src/syntactic_parser.cpp"
     break;
 
   case 64: // for_step: BY expression
-#line 499 "src/syntactic_parser.yy"
+#line 500 "src/syntactic_parser.yy"
                  {
-        yylhs.value.as < shared_ptr<ForStep> > () = make_shared<ForStep>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<ForStep>  > () = make_shared<ForStep>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2254 "src/syntactic_parser.cpp"
+#line 2255 "src/syntactic_parser.cpp"
     break;
 
   case 65: // expression: lvalue
-#line 507 "src/syntactic_parser.yy"
+#line 508 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<LvalueExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Lvalue> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<LvalueExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Lvalue>  > ());
     }
-#line 2262 "src/syntactic_parser.cpp"
+#line 2263 "src/syntactic_parser.cpp"
     break;
 
   case 66: // expression: number
-#line 510 "src/syntactic_parser.yy"
+#line 511 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<NumberExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Number> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<NumberExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Number>  > ());
     }
-#line 2270 "src/syntactic_parser.cpp"
+#line 2271 "src/syntactic_parser.cpp"
     break;
 
   case 67: // expression: "(" expression ")"
-#line 513 "src/syntactic_parser.yy"
+#line 514 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<ParenExpression>(yylhs.location,yystack_[1].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<ParenthesisExpression>(yylhs.location,yystack_[1].value.as < shared_ptr<Expression>  > ());
     }
-#line 2278 "src/syntactic_parser.cpp"
+#line 2279 "src/syntactic_parser.cpp"
     break;
 
   case 68: // expression: "+" expression
-#line 516 "src/syntactic_parser.yy"
+#line 517 "src/syntactic_parser.yy"
                              { 
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<UnaryExpression>(yylhs.location,make_shared<Op>(yystack_[1].location, yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<UnaryExpression>(yylhs.location,make_shared<Operator>(yystack_[1].location, yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2286 "src/syntactic_parser.cpp"
+#line 2287 "src/syntactic_parser.cpp"
     break;
 
   case 69: // expression: "-" expression
-#line 519 "src/syntactic_parser.yy"
+#line 520 "src/syntactic_parser.yy"
                               {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<UnaryExpression>(yylhs.location,make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<UnaryExpression>(yylhs.location,make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2294 "src/syntactic_parser.cpp"
+#line 2295 "src/syntactic_parser.cpp"
     break;
 
   case 70: // expression: NOT expression
-#line 522 "src/syntactic_parser.yy"
+#line 523 "src/syntactic_parser.yy"
                   {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<UnaryExpression>(yylhs.location,make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<UnaryExpression>(yylhs.location,make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2302 "src/syntactic_parser.cpp"
+#line 2303 "src/syntactic_parser.cpp"
     break;
 
   case 71: // expression: expression "+" expression
-#line 525 "src/syntactic_parser.yy"
+#line 526 "src/syntactic_parser.yy"
                                {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2310 "src/syntactic_parser.cpp"
+#line 2311 "src/syntactic_parser.cpp"
     break;
 
   case 72: // expression: expression "-" expression
-#line 528 "src/syntactic_parser.yy"
+#line 529 "src/syntactic_parser.yy"
                                {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2318 "src/syntactic_parser.cpp"
+#line 2319 "src/syntactic_parser.cpp"
     break;
 
   case 73: // expression: expression "*" expression
-#line 531 "src/syntactic_parser.yy"
+#line 532 "src/syntactic_parser.yy"
                               {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2326 "src/syntactic_parser.cpp"
+#line 2327 "src/syntactic_parser.cpp"
     break;
 
   case 74: // expression: expression DIV expression
-#line 534 "src/syntactic_parser.yy"
+#line 535 "src/syntactic_parser.yy"
                              {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2334 "src/syntactic_parser.cpp"
+#line 2335 "src/syntactic_parser.cpp"
     break;
 
   case 75: // expression: expression "/" expression
-#line 537 "src/syntactic_parser.yy"
+#line 538 "src/syntactic_parser.yy"
                                 {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2342 "src/syntactic_parser.cpp"
+#line 2343 "src/syntactic_parser.cpp"
     break;
 
   case 76: // expression: expression MOD expression
-#line 540 "src/syntactic_parser.yy"
+#line 541 "src/syntactic_parser.yy"
                              {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2350 "src/syntactic_parser.cpp"
+#line 2351 "src/syntactic_parser.cpp"
     break;
 
   case 77: // expression: expression AND expression
-#line 543 "src/syntactic_parser.yy"
+#line 544 "src/syntactic_parser.yy"
                              {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2358 "src/syntactic_parser.cpp"
+#line 2359 "src/syntactic_parser.cpp"
     break;
 
   case 78: // expression: expression OR expression
-#line 546 "src/syntactic_parser.yy"
+#line 547 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2366 "src/syntactic_parser.cpp"
+#line 2367 "src/syntactic_parser.cpp"
     break;
 
   case 79: // expression: expression "=" expression
-#line 549 "src/syntactic_parser.yy"
+#line 550 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2374 "src/syntactic_parser.cpp"
+#line 2375 "src/syntactic_parser.cpp"
     break;
 
   case 80: // expression: expression "<>" expression
-#line 552 "src/syntactic_parser.yy"
+#line 553 "src/syntactic_parser.yy"
                            {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2382 "src/syntactic_parser.cpp"
+#line 2383 "src/syntactic_parser.cpp"
     break;
 
   case 81: // expression: expression "<" expression
-#line 555 "src/syntactic_parser.yy"
+#line 556 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2390 "src/syntactic_parser.cpp"
+#line 2391 "src/syntactic_parser.cpp"
     break;
 
   case 82: // expression: expression "<=" expression
-#line 558 "src/syntactic_parser.yy"
+#line 559 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2398 "src/syntactic_parser.cpp"
+#line 2399 "src/syntactic_parser.cpp"
     break;
 
   case 83: // expression: expression ">" expression
-#line 561 "src/syntactic_parser.yy"
+#line 562 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2406 "src/syntactic_parser.cpp"
+#line 2407 "src/syntactic_parser.cpp"
     break;
 
   case 84: // expression: expression ">=" expression
-#line 564 "src/syntactic_parser.yy"
+#line 565 "src/syntactic_parser.yy"
                             {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression> > (),make_shared<Op>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<BinaryExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Expression>  > (),make_shared<Operator>(yystack_[1].location,yystack_[1].value.as < std::string > ()),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2414 "src/syntactic_parser.cpp"
+#line 2415 "src/syntactic_parser.cpp"
     break;
 
   case 85: // expression: id "(" actual_parameters ")"
-#line 567 "src/syntactic_parser.yy"
+#line 568 "src/syntactic_parser.yy"
                                       {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<ProcCallExpression>(yylhs.location,yystack_[3].value.as < shared_ptr<Id> > (),yystack_[1].value.as < shared_ptr<ActualParameters> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<ProcedureCallExpression>(yylhs.location,yystack_[3].value.as < shared_ptr<Id>  > (),yystack_[1].value.as < shared_ptr<ActualParameters>  > ());
     }
-#line 2422 "src/syntactic_parser.cpp"
+#line 2423 "src/syntactic_parser.cpp"
     break;
 
   case 86: // expression: id "{" component_values "}"
-#line 570 "src/syntactic_parser.yy"
+#line 571 "src/syntactic_parser.yy"
                                      {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<RecordConstrExpression>(yylhs.location,yystack_[3].value.as < shared_ptr<Id> > (),yystack_[1].value.as < shared_ptr<ComponentValues> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<RecordConstructExpression>(yylhs.location,yystack_[3].value.as < shared_ptr<Id>  > (),yystack_[1].value.as < shared_ptr<ComponentValues>  > ());
     }
-#line 2430 "src/syntactic_parser.cpp"
+#line 2431 "src/syntactic_parser.cpp"
     break;
 
   case 87: // expression: id "[<" array_values ">]"
-#line 573 "src/syntactic_parser.yy"
+#line 574 "src/syntactic_parser.yy"
                                    {
-        yylhs.value.as < shared_ptr<Expression> > () = make_shared<ArrayConstrExpression>(yylhs.location,yystack_[3].value.as < shared_ptr<Id> > (),yystack_[1].value.as < shared_ptr<ArrayValues> > ());
+        yylhs.value.as < shared_ptr<Expression>  > () = make_shared<ArrayConstructExpression>(yylhs.location,yystack_[3].value.as < shared_ptr<Id>  > (),yystack_[1].value.as < shared_ptr<ArrayValues>  > ());
     }
-#line 2438 "src/syntactic_parser.cpp"
+#line 2439 "src/syntactic_parser.cpp"
     break;
 
   case 88: // expressions: expression
-#line 579 "src/syntactic_parser.yy"
+#line 580 "src/syntactic_parser.yy"
               {
-        yylhs.value.as < shared_ptr<Expressions> > () = make_shared<Expressions>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<Expressions> > ()){
-            yylhs.value.as < shared_ptr<Expressions> > ()->Insert(yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expressions>  > () = make_shared<Expressions>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<Expressions>  > ()){
+            yylhs.value.as < shared_ptr<Expressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<Expression>  > ());
         }
     }
-#line 2449 "src/syntactic_parser.cpp"
+#line 2450 "src/syntactic_parser.cpp"
     break;
 
   case 89: // expressions: expressions "," expression
-#line 585 "src/syntactic_parser.yy"
+#line 586 "src/syntactic_parser.yy"
                                 {
-        yylhs.value.as < shared_ptr<Expressions> > () = yystack_[2].value.as < shared_ptr<Expressions> > ();
-        if(yylhs.value.as < shared_ptr<Expressions> > ()){
-            yylhs.value.as < shared_ptr<Expressions> > ()->Insert(yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Expressions>  > () = yystack_[2].value.as < shared_ptr<Expressions>  > ();
+        if(yylhs.value.as < shared_ptr<Expressions>  > ()){
+            yylhs.value.as < shared_ptr<Expressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<Expression>  > ());
         }
     }
-#line 2460 "src/syntactic_parser.cpp"
+#line 2461 "src/syntactic_parser.cpp"
     break;
 
   case 90: // write_expression: expression
-#line 594 "src/syntactic_parser.yy"
+#line 595 "src/syntactic_parser.yy"
               {
-        yylhs.value.as < shared_ptr<WriteExpression> > () = make_shared<WriteExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<WriteExpression>  > () = make_shared<WriteExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2468 "src/syntactic_parser.cpp"
+#line 2469 "src/syntactic_parser.cpp"
     break;
 
   case 91: // write_expression: string
-#line 597 "src/syntactic_parser.yy"
+#line 598 "src/syntactic_parser.yy"
             {
-        yylhs.value.as < shared_ptr<WriteExpression> > () = make_shared<WriteExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<STRING> > ());
+        yylhs.value.as < shared_ptr<WriteExpression>  > () = make_shared<WriteExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<String>  > ());
     }
-#line 2476 "src/syntactic_parser.cpp"
+#line 2477 "src/syntactic_parser.cpp"
     break;
 
   case 92: // write_expressions: write_expression
-#line 603 "src/syntactic_parser.yy"
+#line 604 "src/syntactic_parser.yy"
                     {
-        yylhs.value.as < shared_ptr<WriteExpressions> > () = make_shared<WriteExpressions>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<WriteExpressions> > ()){
-            yylhs.value.as < shared_ptr<WriteExpressions> > ()->Insert(yystack_[0].value.as < shared_ptr<WriteExpression> > ());
+        yylhs.value.as < shared_ptr<WriteExpressions>  > () = make_shared<WriteExpressions>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<WriteExpressions>  > ()){
+            yylhs.value.as < shared_ptr<WriteExpressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<WriteExpression>  > ());
         }
     }
-#line 2487 "src/syntactic_parser.cpp"
+#line 2488 "src/syntactic_parser.cpp"
     break;
 
   case 93: // write_expressions: write_expressions "," write_expression
-#line 609 "src/syntactic_parser.yy"
+#line 610 "src/syntactic_parser.yy"
                                             {
-        yylhs.value.as < shared_ptr<WriteExpressions> > () = yystack_[2].value.as < shared_ptr<WriteExpressions> > ();
-        if(yylhs.value.as < shared_ptr<WriteExpressions> > ()){
-            yylhs.value.as < shared_ptr<WriteExpressions> > ()->Insert(yystack_[0].value.as < shared_ptr<WriteExpression> > ());
+        yylhs.value.as < shared_ptr<WriteExpressions>  > () = yystack_[2].value.as < shared_ptr<WriteExpressions>  > ();
+        if(yylhs.value.as < shared_ptr<WriteExpressions>  > ()){
+            yylhs.value.as < shared_ptr<WriteExpressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<WriteExpression>  > ());
         }
     }
-#line 2498 "src/syntactic_parser.cpp"
+#line 2499 "src/syntactic_parser.cpp"
     break;
 
   case 94: // assign_expression: id ":=" expression
-#line 618 "src/syntactic_parser.yy"
+#line 619 "src/syntactic_parser.yy"
                         {
-        yylhs.value.as < shared_ptr<AssignExpression> > () = make_shared<AssignExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Id> > (),yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<AssignExpression>  > () = make_shared<AssignExpression>(yylhs.location,yystack_[2].value.as < shared_ptr<Id>  > (),yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2506 "src/syntactic_parser.cpp"
+#line 2507 "src/syntactic_parser.cpp"
     break;
 
   case 95: // assign_expressions: assign_expression
-#line 624 "src/syntactic_parser.yy"
+#line 625 "src/syntactic_parser.yy"
                      {
-        yylhs.value.as < shared_ptr<AssignExpressions> > () = make_shared<AssignExpressions>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<AssignExpressions> > ()){
-            yylhs.value.as < shared_ptr<AssignExpressions> > ()->Insert(yystack_[0].value.as < shared_ptr<AssignExpression> > ());
+        yylhs.value.as < shared_ptr<AssignExpressions>  > () = make_shared<AssignExpressions>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<AssignExpressions>  > ()){
+            yylhs.value.as < shared_ptr<AssignExpressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<AssignExpression>  > ());
         }
     }
-#line 2517 "src/syntactic_parser.cpp"
+#line 2518 "src/syntactic_parser.cpp"
     break;
 
   case 96: // assign_expressions: assign_expressions ";" assign_expression
-#line 630 "src/syntactic_parser.yy"
+#line 631 "src/syntactic_parser.yy"
                                                   {
-        yylhs.value.as < shared_ptr<AssignExpressions> > () = yystack_[2].value.as < shared_ptr<AssignExpressions> > ();
-        if (yylhs.value.as < shared_ptr<AssignExpressions> > ()) {
-            yylhs.value.as < shared_ptr<AssignExpressions> > ()->Insert(yystack_[0].value.as < shared_ptr<AssignExpression> > ());
+        yylhs.value.as < shared_ptr<AssignExpressions>  > () = yystack_[2].value.as < shared_ptr<AssignExpressions>  > ();
+        if (yylhs.value.as < shared_ptr<AssignExpressions>  > ()) {
+            yylhs.value.as < shared_ptr<AssignExpressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<AssignExpression>  > ());
         }
     }
-#line 2528 "src/syntactic_parser.cpp"
+#line 2529 "src/syntactic_parser.cpp"
     break;
 
   case 97: // array_expression: expression
-#line 639 "src/syntactic_parser.yy"
+#line 640 "src/syntactic_parser.yy"
                   {
-        yylhs.value.as < shared_ptr<ArrayExpression> > () = make_shared<ArrayExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<ArrayExpression>  > () = make_shared<ArrayExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression>  > ());
     }
-#line 2536 "src/syntactic_parser.cpp"
+#line 2537 "src/syntactic_parser.cpp"
     break;
 
   case 98: // array_expression: expression OF expression
-#line 642 "src/syntactic_parser.yy"
+#line 643 "src/syntactic_parser.yy"
                                    {
-        yylhs.value.as < shared_ptr<ArrayExpression> > () = make_shared<ArrayExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression> > (),yystack_[2].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<ArrayExpression>  > () = make_shared<ArrayExpression>(yylhs.location,yystack_[0].value.as < shared_ptr<Expression>  > (),yystack_[2].value.as < shared_ptr<Expression>  > ());
     }
-#line 2544 "src/syntactic_parser.cpp"
+#line 2545 "src/syntactic_parser.cpp"
     break;
 
   case 99: // array_expressions: array_expression
-#line 648 "src/syntactic_parser.yy"
+#line 649 "src/syntactic_parser.yy"
                     {
-        yylhs.value.as < shared_ptr<ArrayExpressions> > () = make_shared<ArrayExpressions>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<ArrayExpressions> > ()){
-            yylhs.value.as < shared_ptr<ArrayExpressions> > ()->Insert(yystack_[0].value.as < shared_ptr<ArrayExpression> > ());
+        yylhs.value.as < shared_ptr<ArrayExpressions>  > () = make_shared<ArrayExpressions>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<ArrayExpressions>  > ()){
+            yylhs.value.as < shared_ptr<ArrayExpressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<ArrayExpression>  > ());
         }
     }
-#line 2555 "src/syntactic_parser.cpp"
+#line 2556 "src/syntactic_parser.cpp"
     break;
 
   case 100: // array_expressions: array_expressions "," array_expression
-#line 654 "src/syntactic_parser.yy"
+#line 655 "src/syntactic_parser.yy"
                                             {
-        yylhs.value.as < shared_ptr<ArrayExpressions> > () = yystack_[2].value.as < shared_ptr<ArrayExpressions> > ();
-        if(yylhs.value.as < shared_ptr<ArrayExpressions> > ()){
-            yylhs.value.as < shared_ptr<ArrayExpressions> > ()->Insert(yystack_[0].value.as < shared_ptr<ArrayExpression> > ());
+        yylhs.value.as < shared_ptr<ArrayExpressions>  > () = yystack_[2].value.as < shared_ptr<ArrayExpressions>  > ();
+        if(yylhs.value.as < shared_ptr<ArrayExpressions>  > ()){
+            yylhs.value.as < shared_ptr<ArrayExpressions>  > ()->Insert(yystack_[0].value.as < shared_ptr<ArrayExpression>  > ());
         }
     }
-#line 2566 "src/syntactic_parser.cpp"
+#line 2567 "src/syntactic_parser.cpp"
     break;
 
   case 101: // number: integer
-#line 663 "src/syntactic_parser.yy"
+#line 664 "src/syntactic_parser.yy"
             {
-        yylhs.value.as < shared_ptr<Number> > () = make_shared<Number>(yylhs.location,yystack_[0].value.as < shared_ptr<INTEGER> > ());
+        yylhs.value.as < shared_ptr<Number>  > () = make_shared<Number>(yylhs.location,yystack_[0].value.as < shared_ptr<Integer>  > ());
     }
-#line 2574 "src/syntactic_parser.cpp"
+#line 2575 "src/syntactic_parser.cpp"
     break;
 
   case 102: // number: real
-#line 666 "src/syntactic_parser.yy"
+#line 667 "src/syntactic_parser.yy"
         {
-        yylhs.value.as < shared_ptr<Number> > () = make_share<Number>(yylhs.location,yystack_[0].value.as < shared_ptr<REAL> > ());
+        yylhs.value.as < shared_ptr<Number>  > () = make_shared<Number>(yylhs.location,yystack_[0].value.as < shared_ptr<Real>  > ());
     }
-#line 2582 "src/syntactic_parser.cpp"
+#line 2583 "src/syntactic_parser.cpp"
     break;
 
   case 103: // integer: "integer"
-#line 672 "src/syntactic_parser.yy"
+#line 673 "src/syntactic_parser.yy"
             {
-        yylhs.value.as < shared_ptr<INTEGER> > () = make_shared<Integer>(yylhs.location, yystack_[0].value.as < std::string > ())
+        yylhs.value.as < shared_ptr<Integer>  > () = make_shared<Integer>(yylhs.location, yystack_[0].value.as < std::string > ());
     }
-#line 2590 "src/syntactic_parser.cpp"
+#line 2591 "src/syntactic_parser.cpp"
     break;
 
   case 104: // real: "real"
-#line 678 "src/syntactic_parser.yy"
+#line 679 "src/syntactic_parser.yy"
          {
-        yylhs.value.as < shared_ptr<REAL> > () = make_shared<Real>(yylhs.location, yystack_[0].value.as < std::string > ())
+        yylhs.value.as < shared_ptr<Real>  > () = make_shared<Real>(yylhs.location, yystack_[0].value.as < std::string > ());
     }
-#line 2598 "src/syntactic_parser.cpp"
+#line 2599 "src/syntactic_parser.cpp"
     break;
 
   case 105: // string: "string"
-#line 684 "src/syntactic_parser.yy"
+#line 685 "src/syntactic_parser.yy"
            {
-        yylhs.value.as < shared_ptr<STRING> > () = make_shared<String>(yylhs.location, yystack_[0].value.as < std::string > ())
+        yylhs.value.as < shared_ptr<String>  > () = make_shared<String>(yylhs.location, yystack_[0].value.as < std::string > ());
     }
-#line 2606 "src/syntactic_parser.cpp"
+#line 2607 "src/syntactic_parser.cpp"
     break;
 
   case 106: // lvalues: lvalue
-#line 690 "src/syntactic_parser.yy"
+#line 691 "src/syntactic_parser.yy"
           {
-        yylhs.value.as < shared_ptr<Lvalues> > () = make_shared<Lvalues>(yylhs.location);
-        if(yylhs.value.as < shared_ptr<Lvalues> > ()){
-            yylhs.value.as < shared_ptr<Lvalues> > ()->Insert(yystack_[0].value.as < shared_ptr<Lvalue> > ());
+        yylhs.value.as < shared_ptr<Lvalues>  > () = make_shared<Lvalues>(yylhs.location);
+        if(yylhs.value.as < shared_ptr<Lvalues>  > ()){
+            yylhs.value.as < shared_ptr<Lvalues>  > ()->Insert(yystack_[0].value.as < shared_ptr<Lvalue>  > ());
         }
     }
-#line 2617 "src/syntactic_parser.cpp"
+#line 2618 "src/syntactic_parser.cpp"
     break;
 
   case 107: // lvalues: lvalues "," lvalue
-#line 696 "src/syntactic_parser.yy"
+#line 697 "src/syntactic_parser.yy"
                         {
-        yylhs.value.as < shared_ptr<Lvalues> > () = yystack_[2].value.as < shared_ptr<Lvalues> > ();
-        if(yylhs.value.as < shared_ptr<Lvalues> > ()){
-            yylhs.value.as < shared_ptr<Lvalues> > ()->Insert(yystack_[0].value.as < shared_ptr<Lvalue> > ());
+        yylhs.value.as < shared_ptr<Lvalues>  > () = yystack_[2].value.as < shared_ptr<Lvalues>  > ();
+        if(yylhs.value.as < shared_ptr<Lvalues>  > ()){
+            yylhs.value.as < shared_ptr<Lvalues>  > ()->Insert(yystack_[0].value.as < shared_ptr<Lvalue>  > ());
         }
     }
-#line 2628 "src/syntactic_parser.cpp"
+#line 2629 "src/syntactic_parser.cpp"
     break;
 
   case 108: // lvalue: id
-#line 705 "src/syntactic_parser.yy"
+#line 706 "src/syntactic_parser.yy"
       {
-        yylhs.value.as < shared_ptr<Lvalue> > () = make_shared<IdLvalue>(yylhs.location,yystack_[0].value.as < shared_ptr<Id> > ());
+        yylhs.value.as < shared_ptr<Lvalue>  > () = make_shared<IdLvalue>(yylhs.location,yystack_[0].value.as < shared_ptr<Id>  > ());
     }
-#line 2636 "src/syntactic_parser.cpp"
+#line 2637 "src/syntactic_parser.cpp"
     break;
 
   case 109: // lvalue: lvalue "[" expression "]"
-#line 708 "src/syntactic_parser.yy"
+#line 709 "src/syntactic_parser.yy"
                                    {
-        yylhs.value.as < shared_ptr<Lvalue> > () = make_shared<ArrayElementvalue>(yylhs.location,yystack_[3].value.as < shared_ptr<Lvalue> > (),yystack_[1].value.as < shared_ptr<Expression> > ());
+        yylhs.value.as < shared_ptr<Lvalue>  > () = make_shared<ArrayElementLvalue>(yylhs.location,yystack_[3].value.as < shared_ptr<Lvalue>  > (),yystack_[1].value.as < shared_ptr<Expression>  > ());
     }
-#line 2644 "src/syntactic_parser.cpp"
+#line 2645 "src/syntactic_parser.cpp"
     break;
 
   case 110: // lvalue: lvalue "." id
-#line 711 "src/syntactic_parser.yy"
+#line 712 "src/syntactic_parser.yy"
                  {
-        yylhs.value.as < shared_ptr<Lvalue> > () = make_shared<RecordComponentLvalue>(yylhs.location,yystack_[2].value.as < shared_ptr<Lvalue> > (),yystack_[0].value.as < shared_ptr<Id> > ());
+        yylhs.value.as < shared_ptr<Lvalue>  > () = make_shared<RecordComponentLvalue>(yylhs.location,yystack_[2].value.as < shared_ptr<Lvalue>  > (),yystack_[0].value.as < shared_ptr<Id>  > ());
     }
-#line 2652 "src/syntactic_parser.cpp"
+#line 2653 "src/syntactic_parser.cpp"
     break;
 
   case 111: // component_values: assign_expressions
-#line 717 "src/syntactic_parser.yy"
+#line 718 "src/syntactic_parser.yy"
                        {
-        yylhs.value.as < shared_ptr<ComponentValues> > () = make_shared<ComponentValues>(yylhs.location,yystack_[0].value.as < shared_ptr<AssignExpressions> > ());
+        yylhs.value.as < shared_ptr<ComponentValues>  > () = make_shared<ComponentValues>(yylhs.location,yystack_[0].value.as < shared_ptr<AssignExpressions>  > ());
     }
-#line 2660 "src/syntactic_parser.cpp"
+#line 2661 "src/syntactic_parser.cpp"
     break;
 
   case 112: // array_values: array_expressions
-#line 723 "src/syntactic_parser.yy"
+#line 724 "src/syntactic_parser.yy"
                       {
-        yylhs.value.as < shared_ptr<ArrayValues> > () = make_shared<ArrayValues>(yylhs.location,yystack_[0].value.as < shared_ptr<ArrayExpressions> > ());
+        yylhs.value.as < shared_ptr<ArrayValues>  > () = make_shared<ArrayValues>(yylhs.location,yystack_[0].value.as < shared_ptr<ArrayExpressions>  > ());
     }
-#line 2668 "src/syntactic_parser.cpp"
+#line 2669 "src/syntactic_parser.cpp"
     break;
 
 
-#line 2672 "src/syntactic_parser.cpp"
+#line 2673 "src/syntactic_parser.cpp"
 
             default:
               break;
@@ -3478,17 +3479,16 @@ namespace yy {
   "\"[\"", "\"]\"", "\"{\"", "\"}\"", "\",\"", "\":\"", "\";\"", "\".\"",
   "\"[<\"", "\">]\"", "\"\\\\\"", "\"identifier\"", "\"integer\"",
   "\"real\"", "\"string\"", "POS", "NEG", "$accept", "program", "body",
-  "declaration", "declarations", "variable_declaration",
-  "variable_declarations", "type_declaration", "type_declarations",
-  "procedure_declaration", "procedure_declarations", "formal_parameter",
-  "formal_parameters", "type", "type_annotation", "component",
-  "components", "id", "ids", "statement", "statements",
-  "actual_parameters", "read_parameters", "write_parameters",
-  "elif_section", "elif_sections", "else_section", "for_step",
-  "expression", "expressions", "write_expression", "write_expressions",
-  "assign_expression", "assign_expressions", "array_expression",
-  "array_expressions", "number", "integer", "real", "string", "lvalues",
-  "lvalue", "component_values", "array_values", YY_NULLPTR
+  "declaration", "declarations", "var_declaration", "var_declarations",
+  "type_declaration", "type_declarations", "procedure_declaration",
+  "procedure_declarations", "formal_parameter", "formal_parameters",
+  "type", "type_annotation", "component", "components", "id", "ids",
+  "statement", "statements", "actual_parameters", "read_parameters",
+  "write_parameters", "elif_section", "elif_sections", "else_section",
+  "for_step", "expression", "expressions", "write_expression",
+  "write_expressions", "assign_expression", "assign_expressions",
+  "array_expression", "array_expressions", "number", "integer", "real",
+  "string", "lvalues", "lvalue", "component_values", "array_values", YY_NULLPTR
   };
 #endif
 
@@ -3500,15 +3500,15 @@ namespace yy {
        0,   192,   192,   196,   201,   205,   212,   216,   220,   227,
      230,   237,   240,   247,   251,   258,   261,   265,   271,   280,
      283,   290,   297,   306,   312,   315,   321,   330,   333,   336,
-     342,   345,   351,   354,   359,   362,   368,   374,   377,   386,
-     389,   392,   395,   398,   401,   404,   407,   410,   413,   417,
-     420,   427,   430,   436,   439,   448,   457,   463,   469,   475,
-     478,   487,   490,   496,   499,   507,   510,   513,   516,   519,
-     522,   525,   528,   531,   534,   537,   540,   543,   546,   549,
-     552,   555,   558,   561,   564,   567,   570,   573,   579,   585,
-     594,   597,   603,   609,   618,   624,   630,   639,   642,   648,
-     654,   663,   666,   672,   678,   684,   690,   696,   705,   708,
-     711,   717,   723
+     342,   345,   351,   354,   359,   362,   368,   374,   378,   387,
+     390,   393,   396,   399,   402,   405,   408,   411,   414,   418,
+     421,   428,   431,   437,   440,   449,   458,   464,   470,   476,
+     479,   488,   491,   497,   500,   508,   511,   514,   517,   520,
+     523,   526,   529,   532,   535,   538,   541,   544,   547,   550,
+     553,   556,   559,   562,   565,   568,   571,   574,   580,   586,
+     595,   598,   604,   610,   619,   625,   631,   640,   643,   649,
+     655,   664,   667,   673,   679,   685,   691,   697,   706,   709,
+     712,   718,   724
   };
 
   void
@@ -3542,7 +3542,7 @@ namespace yy {
 } // yy
 #line 3544 "src/syntactic_parser.cpp"
 
-#line 727 "src/syntactic_parser.yy"
+#line 728 "src/syntactic_parser.yy"
 
 
 void yy::Parser::error(const location_type& l, const std::string& m) {

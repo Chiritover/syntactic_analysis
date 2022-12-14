@@ -5,15 +5,15 @@
     #include <stdexcept>
     #include <unordered_map>
 
-    #include "parser.h"
-    #include "driver"
+    #include "syntactic_parser.h"
+    #include "driver.h"
 
-    #define YY_USER_ACTION loc.step(); loc += YYleng();
+    #define YY_USER_ACTION location.step(); location += YYLeng();
 
     using location_type = yy::Parser::location_type;
     using symbol_type = yy::Parser::symbol_type;
     using MakeTable = std::unordered_map<std::string, 
-        symbol_type(*)(std::string s,location_type loc)>;
+        symbol_type(*)(std::string s,location_type location)>;
     
     symbol_type make_INTEGER(const std::string& s,const location_type& location);
     symbol_type make_REAL(const std::string& s, const location_type& location);
@@ -55,29 +55,29 @@ COMMENTS_END          "*)"
 %%
 
 %{
-  auto& loc = drv_.loc();
+  auto& location = drv_.location();
 %}
 
-<INITIAL><<EOF>>              { return yy::Parser::make_YYEOF(loc); }
+<INITIAL><<EOF>>              { return yy::Parser::make_YYEOF(location); }
 <INITIAL>{WS}                 /* skip whitespaces */
-<INITIAL>{NEWLINE}            { loc.lines(); }
+<INITIAL>{NEWLINE}            { location.lines(); }
 
-<INITIAL>{INTEGER}            { return make_INTEGER(YYText(), loc); }
-<INITIAL>{REAL}               { return make_REAL(YYText(), loc); }
-<INITIAL>{STRING}             { return make_STRING(YYText(), loc); }
-<INITIAL>{UNTERM_STRING}      { panic_UNTERM_STRING(YYText(), loc); }
+<INITIAL>{INTEGER}            { return make_INTEGER(YYText(), location); }
+<INITIAL>{REAL}               { return make_REAL(YYText(), location); }
+<INITIAL>{STRING}             { return make_STRING(YYText(), location); }
+<INITIAL>{UNTERM_STRING}      { panic_UNTERM_STRING(YYText(), location); }
 
-<INITIAL>{IDENTIFIER}         { return make_ID(YYText(), loc); }
-<INITIAL>{OPERATOR}           { return make_OPERATOR(YYText(), loc); }
-<INITIAL>{DELIMITER}          { return make_DELIMITER(YYText(), loc); }
+<INITIAL>{IDENTIFIER}         { return make_ID(YYText(), location); }
+<INITIAL>{OPERATOR}           { return make_OPERATOR(YYText(), location); }
+<INITIAL>{DELIMITER}          { return make_DELIMITER(YYText(), location); }
 
-<INITIAL>{COMMENTS_BEGIN}     { BEGIN(COMMENT); skip_COMMENTS(YYText(), loc); }
-<COMMENT>{COMMENTS_END}       { BEGIN(INITIAL); skip_COMMENTS(YYText(), loc); }
-<COMMENT>.                    { skip_COMMENTS(YYText(), loc); }
-<COMMENT>{NEWLINE}            { loc.lines(); skip_COMMENTS(YYText(), loc); }
-<COMMENT><<EOF>>              { BEGIN(INITIAL); skip_COMMENTS("", loc); }
+<INITIAL>{COMMENTS_BEGIN}     { BEGIN(COMMENT); skip_COMMENTS(YYText(), location); }
+<COMMENT>{COMMENTS_END}       { BEGIN(INITIAL); skip_COMMENTS(YYText(), location); }
+<COMMENT>.                    { skip_COMMENTS(YYText(), location); }
+<COMMENT>{NEWLINE}            { location.lines(); skip_COMMENTS(YYText(), location); }
+<COMMENT><<EOF>>              { BEGIN(INITIAL); skip_COMMENTS("", location); }
 
-<INITIAL>.                    { panic_UNKNOWN_CHAR(YYText(), loc); }
+<INITIAL>.                    { panic_UNKNOWN_CHAR(YYText(), location); }
 
 %%
 
@@ -85,7 +85,7 @@ symbol_type make_INTEGER(const std::string& s, const location_type& location){
     try{
         std::stoi(s);
     }catch(const std::out_of_range& e){
-        throw yy::Parser::syntax_error(loc,"range error,integer out of range" + s);
+        throw yy::Parser::syntax_error(location,"range error,integer out of range" + s);
     }
     return yy::Parser::make_INTEGER(s,location);
 }
@@ -97,7 +97,7 @@ symbol_type make_REAL(const std::string& s, const location_type& location){
 symbol_type make_STRING(const std::string& s, const location_type& location) {
   if (s.size() > 257) {
     throw yy::Parser::syntax_error(
-        loc, "value error, string literal is too long: " + s);
+        location, "value error, string literal is too long: " + s);
   }
   if(s.find('\t') != std::string::npos){
     throw yy::Parser::syntax_error(location,"value error, invalid character found in string: "+s);
@@ -146,7 +146,7 @@ static const MakeTable make_keyword_table{
 symbol_type make_ID(const std::string& s, const location_type& location) {
   if (s.size() > 255) {
     throw yy::Parser::syntax_error(
-        loc, "compile error, identifier is too long: " + s);
+        location, "compile error, identifier is too long: " + s);
   }
 
   auto entry = make_keyword_table.find(s);
@@ -160,7 +160,7 @@ static const MakeTable make_operator_table{
     {":=", yy::Parser::make_ASSIGN},
     {"+", yy::Parser::make_PLUS},
     {"-", yy::Parser::make_MINUS},
-    {"*", yy::Parser::make_TIMES},
+    {"*", yy::Parser::make_MULT},
     {"/", yy::Parser::make_DIVIDE},
     {"<", yy::Parser::make_LT},
     {"<=", yy::Parser::make_LE},
@@ -210,7 +210,7 @@ void skip_COMMENTS(const std::string& s, const location_type& location){
     if(s == "(*"){
         comments_buffer = s;
         comments_location = location;
-    }else if(!s.empty){
+    }else if(!s.empty()){
         comments_buffer += s;
         comments_location += location;
     }else{

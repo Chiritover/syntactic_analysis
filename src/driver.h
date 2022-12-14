@@ -14,12 +14,12 @@ class Driver {
     public:
         Driver();
 
-        int Paese(const std::string& in_path, const std::string& out_path);
+        int Parse(const std::string& in_path, const std::string& out_path);
 
         std::ifstream& ifs() { return *p_ifs_; }
         std::ofstream& ofs() { return *p_ofs_; }
         yy::Parser::location_type& location() { return location_; }
-        void set_program(shared_ptr<Program> p_program) { p_program_ = p_program; }
+        void SetProgram(shared_ptr<Program> p_program) { p_program_ = p_program; }
 
     private:
         yy::Lexer lexer_;

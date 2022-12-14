@@ -12,8 +12,9 @@ void NumberExpression::UpdateDepth(int depth) {
 }
 
 void NumberExpression::Print(std::ostream& os) const {
-  os << Indent(depth_) << name() << " " << value() << std::endl;
-}
+    Expression::Print(os);
+    if (p_number_) p_number_->Print(os);
+    }
 
 std::string NumberExpression::value() const {
     auto number = p_number_ ? p_number_->value() : "";
@@ -52,8 +53,8 @@ std::string ParenthesisExpression::value() const {
 
 void UnaryExpression::UpdateDepth(int depth) {
     Expression::UpdateDepth(depth);
-    if (p_operation_) p_op_->UpdateDepth(depth + 1);
-    if (p_expression_)
+    if (p_operator_) p_operator_->UpdateDepth(depth + 1);
+    if (p_expression_) p_expression_->UpdateDepth(depth + 1);
 }
 
 void UnaryExpression::Print(std::ostream& os) const {
@@ -63,9 +64,9 @@ void UnaryExpression::Print(std::ostream& os) const {
 }
 
 std::string UnaryExpression::value() const {
-    auto operator = p_operator_ ? p_operator_->value() : "";
+    auto op = p_operator_ ? p_operator_->value() : "";
     auto expression = p_expression_? p_expression_->value() : "";
-    return operator + expression;
+    return op + expression;
 }
 
 void BinaryExpression::UpdateDepth(int depth) {
@@ -84,10 +85,10 @@ void BinaryExpression::Print(std::ostream& os) const {
 
 std::string BinaryExpression::value() const {
     auto left = p_left_ ? p_left_->value() : "";
-    auto operator = p_operator_? p_operator_->value() : "";
+    auto opera = p_operator_ ? p_operator_->value() : "";
     auto right =p_right_ ? p_right_->value() : "";
 
-    return left + " " + operator + " " + right;
+    return left + " " + opera + " " + right;
 }
 
 void ProcedureCallExpression::UpdateDepth(int depth) {
@@ -108,8 +109,13 @@ std::string ProcedureCallExpression::value() const {
 }
 
 void ComponentValues::Print(std::ostream& os) const {
-    Node::print(os);
+    Node::Print(os);
     if(p_assign_expressions_) p_assign_expressions_->Print(os);
+}
+
+void ComponentValues::UpdateDepth(int depth) {
+    Node::UpdateDepth(depth);
+    if(p_assign_expressions_) p_assign_expressions_->UpdateDepth(depth + 1);
 }
 
 void RecordConstructExpression::UpdateDepth(int depth) {
@@ -119,12 +125,12 @@ void RecordConstructExpression::UpdateDepth(int depth) {
 }
 
 void RecordConstructExpression::Print(std::ostream& os) const {
-    Expr::Print(os);
+    Expression::Print(os);
     if (p_id_) p_id_->Print(os);
     if (p_component_values_) p_component_values_->Print(os);
 }
 
-std::string RecordComponentExpression::value() const {
+std::string RecordConstructExpression::value() const {
     auto id = p_id_ ? p_id_->value() : "";
     return id + "{}";
 }
@@ -141,23 +147,23 @@ void ArrayValues::Print(std::ostream& os) const {
 
 void ArrayConstructExpression::UpdateDepth(int depth) {
     Expression::UpdateDepth(depth);
-    if (p_id_) p_id->UpdateDepth(depth + 1);
+    if (p_id_) p_id_->UpdateDepth(depth + 1);
     if (p_array_values_) p_array_values_->UpdateDepth(depth + 1);
 }
 
-void ArrayConstructExpression::Print(std::ostream& os) {
+void ArrayConstructExpression::Print(std::ostream& os) const{
     Expression::Print(os);
     if (p_id_) p_id_->Print(os);
     if (p_array_values_) p_array_values_->Print(os);
 }
 
 std::string ArrayConstructExpression::value() const {
-    auto id = p_id_> p_id_->value() : "";
+    auto id = p_id_ ? p_id_->value() : "";
     return id + "[<>]";
 }
 
 void WriteExpression::UpdateDepth(int depth) {
-    Expression:UpdateDepth(depth);
+    Expression::UpdateDepth(depth);
     auto visitor = Overloaded{
         [depth](auto&& p) {
             if(p) p->UpdateDepth(depth + 1);
@@ -188,8 +194,8 @@ std::string WriteExpression::value() const {
 
 void AssignExpression::UpdateDepth(int depth) {
     Expression::UpdateDepth(depth);
-    if (p_id_) p_id_->Print(os);
-    if (p_expression_) p_expression_->Print(os);
+    if (p_id_) p_id_->UpdateDepth(depth + 1);
+    if (p_expression_) p_expression_->UpdateDepth(depth + 1);
 }
 
 void AssignExpression::Print(std::ostream& os) const {
@@ -218,6 +224,6 @@ void ArrayExpression::Print(std::ostream& os) const {
 
 std::string ArrayExpression::value() const {
     auto value = p_value_ ? p_value_->value() : "";
-    auto num = p_num_ ? p_num_->value() + "OF" + "";
+    auto num = p_num_ ? p_num_->value() + "OF" : "";
     return num + value;
 }

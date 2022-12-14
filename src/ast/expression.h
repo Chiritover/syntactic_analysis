@@ -139,7 +139,7 @@ class ProcedureCallExpression : public Expression {
 
 class AssignExpression : public Expression {
     public:
-        explicit AssignExpression(const yy::location& location, shared_ptr<Lvalue> p_lvalue, shared_ptr<Expression> p_expression)
+        explicit AssignExpression(const yy::location& location,shared_ptr<Id> p_id, shared_ptr<Expression> p_expression)
             : Expression{location}, p_id_{p_id}, p_expression_{p_expression} {}
         
         void UpdateDepth(int depth) override;
@@ -231,7 +231,7 @@ class ArrayConstructExpression : public Expression {
         const std::string name_ = "array construct expression";
         shared_ptr<Id> p_id_;
         shared_ptr<ArrayValues> p_array_values_;
-}
+};
 class RecordConstructExpression : public Expression {
     public:
         explicit RecordConstructExpression(const yy::location& location,shared_ptr<Id> p_id, shared_ptr<ComponentValues> p_component_values)
@@ -265,7 +265,7 @@ class WriteExpression : public Expression {
     private:
         const std::string name_ = "write expression";
         UnionPtr p_write_expression_;
-}
+};
 
 class WriteExpressions : public Expressions {
     public:

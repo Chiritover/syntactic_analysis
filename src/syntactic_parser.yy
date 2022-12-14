@@ -15,8 +15,8 @@
 %define parse.error verbose
 %define parse.lac full
 
-%lex-param {yy::Lexer* p_lex}
-%parse-param {yy::Lexer* p_lex} {Driver* p_driver}
+%lex-param {yy::Lexer* p_lexer}
+%parse-param {yy::Lexer* p_lexer} {Driver* p_driver}
 
 %code requires {
     #include <string>
@@ -31,7 +31,7 @@
 }
 
 %code top {
-    #include <memory> //for std::shared_ptr
+    #include <memory> 
 
     #include "driver.h"
     #include "lexer.h"
@@ -41,8 +41,8 @@
     using location_type = yy::Parser::location_type;
     using symbol_type = yy::Parser::symbol_type;
 
-    static symbol_type yylex(yy::Lexer* p_lex) {
-        return p_lex->ReadToken();
+    static symbol_type yylex(yy::Lexer* p_lexer) {
+        return p_lexer->ReadToken();
     }
 
     int yyFlexLexer::yylex() {
@@ -133,55 +133,55 @@
 
 %nterm
 //program
-<shared_ptr<Program>>                   program
-<shared_ptr<Body>>                      body
+<shared_ptr<Program> >                   program
+<shared_ptr<Body> >                      body
 
 //declarations
-<shared_ptr<Declaration>>               declarations
-<shared_ptr<Declaration>>               declaration
-<shared_ptr<VarDeclarations>>           var_declarations
-<shared_ptr<VarDeclaration>>            var_declaration 
-<shared_ptr<TypeDeclarations>>          type_declarations
-<shared_ptr<TypeDeclaration>>           type_declaration
-<shared_ptr<ProcedureDeclarations>>     procedure_declarations
-<shared_ptr<ProcedureDeclaration>>      procedure_declaration
-<shared_ptr<FormalParameters>>          formal_parameters
-<shared_ptr<FormalParameter>>           formal_parameter
-<shared_ptr<TypeAnnotation>>            type_annotation
-<shared_ptr<Type>>                      type
-<shared_ptr<Components>>                components
-<shared_ptr<Component>>                 component
-<shared_ptr<Ids>>                       ids
-<shared_ptr<Id>>                        id
+<shared_ptr<Declarations> >               declarations
+<shared_ptr<Declarations> >               declaration
+<shared_ptr<VarDeclarations> >           var_declarations
+<shared_ptr<VarDeclaration> >            var_declaration 
+<shared_ptr<TypeDeclarations> >          type_declarations
+<shared_ptr<TypeDeclaration> >           type_declaration
+<shared_ptr<ProcedureDeclarations> >     procedure_declarations
+<shared_ptr<ProcedureDeclaration> >      procedure_declaration
+<shared_ptr<FormalParameters> >          formal_parameters
+<shared_ptr<FormalParameter> >           formal_parameter
+<shared_ptr<TypeAnnotation> >            type_annotation
+<shared_ptr<Type> >                      type
+<shared_ptr<Components> >                components
+<shared_ptr<Component> >                 component
+<shared_ptr<Ids> >                       ids
+<shared_ptr<Id> >                        id
 
 //statements
-<shared_ptr<Statements>>                statements
-<shared_ptr<Statement>>                 statement
+<shared_ptr<Statements> >                statements
+<shared_ptr<Statement>  >                 statement
 <shared_ptr<ReadParameters>>            read_parameters
-<shared_ptr<ActualParameters>>          actual_parameters
-<shared_ptr<WriteParameters>>           write_parameters
-<shared_ptr<ElifSections>>              elif_sections
-<shared_ptr<ElifSection>>               elif_section
-<shared_ptr<ElseSection>>               else_section
-<shared_ptr<ForStep>>                   for_step  
+<shared_ptr<ActualParameters> >          actual_parameters
+<shared_ptr<WriteParameters> >           write_parameters
+<shared_ptr<ElifSections> >              elif_sections
+<shared_ptr<ElifSection> >               elif_section
+<shared_ptr<ElseSection> >               else_section
+<shared_ptr<ForStep> >                   for_step  
 
 //expressions
-<shared_ptr<Expressions>>               expressions
-<shared_ptr<Expression>>                expression
-<shared_ptr<WriteExpressions>>          write_expressions
-<shared_ptr<WriteExpression>>           write_expression
-<shared_ptr<AssignExpressions>>         assign_expressions
-<shared_ptr<AssignExpression>>          assign_expression
-<shared_ptr<ArrayExpressions>>          array_expressions
-<shared_ptr<ArrayExpression>>           array_expression
-<shared_ptr<Number>>                    number
-<shared_ptr<INTEGER>>                   integer
-<shared_ptr<REAL>>                      real
-<shared_ptr<STRING>>                    string
-<shared_ptr<Lvalues>>                   lvalues
-<shared_ptr<Lvalue>>                    lvalue
-<shared_ptr<ComponentValues>>           component_values
-<shared_ptr<ArrayValues>>               array_values
+<shared_ptr<Expressions> >               expressions
+<shared_ptr<Expression> >                expression
+<shared_ptr<WriteExpressions> >          write_expressions
+<shared_ptr<WriteExpression> >           write_expression
+<shared_ptr<AssignExpressions> >         assign_expressions
+<shared_ptr<AssignExpression> >          assign_expression
+<shared_ptr<ArrayExpressions> >          array_expressions
+<shared_ptr<ArrayExpression> >           array_expression
+<shared_ptr<Number> >                    number
+<shared_ptr<Integer> >                   integer
+<shared_ptr<Real> >                      real
+<shared_ptr<String> >                    string
+<shared_ptr<Lvalues> >                   lvalues
+<shared_ptr<Lvalue> >                    lvalue
+<shared_ptr<ComponentValues> >           component_values
+<shared_ptr<ArrayValues> >               array_values
 ;
 
 %%
@@ -191,11 +191,11 @@
 program:
     PROGRAM IS body SEMICOLON{
         $$ = make_shared<Program>(@$,$body);
-        p_driver.SetProgram($$);
+        p_driver->SetProgram($$);
     }
 | error body SEMICOLON{
         $$ = make_shared<Program>(@$,$body);
-        p_driver.SetProgram($$);
+        p_driver->SetProgram($$);
         yyerrok;
     }
 | error {$$ = nullptr;yyerrok;yyclearin;}
@@ -263,7 +263,7 @@ type_declaration:
 
 type_declarations:
     type_declaration {
-        $$ = make_shared<TypeDeclaration>(@$);
+        $$ = make_shared<TypeDeclarations>(@$);
         if($$){
             $$->Insert($1);
         }
@@ -372,7 +372,8 @@ id:
 
 ids:
     id {
-        $$ = make_shared<Id>(@$,$1); 
+        $$ = make_shared<Ids>(@$);
+        if($$) $$->Insert($1);
     }
 |   ids COMMA id {
         $$ = $1; if($$) $$->Insert($3);
@@ -387,7 +388,7 @@ statement:
         $$ = make_shared<AssignStatement>(@$,$lvalue,$expression);
     }
 |   id LPAREN actual_parameters RPAREN SEMICOLON{
-        $$ = make_shared<CallStatement>(@$,$id,$actual_parameters);
+        $$ = make_shared<ProcedureCallStatement>(@$,$id,$actual_parameters);
     }
 |   IF expression THEN statements elif_sections[elif] else_section[else] END SEMICOLON{
         $$ = make_shared<IfStatement>(@$,$expression,$statements,$elif,$else);
@@ -511,61 +512,61 @@ expression:
         $$ = make_shared<NumberExpression>(@$,$1);
     }
 |   LPAREN expression RPAREN{
-        $$ = make_shared<ParenExpression>(@$,$2);
+        $$ = make_shared<ParenthesisExpression>(@$,$2);
     }
 |   PLUS expression %prec POS{ 
-        $$ = make_shared<UnaryExpression>(@$,make_shared<Op>(@1, $1),$2);
+        $$ = make_shared<UnaryExpression>(@$,make_shared<Operator>(@1, $1),$2);
     } 
 |   MINUS expression %prec NEG{
-        $$ = make_shared<UnaryExpression>(@$,make_shared<Op>(@1,$1),$2);
+        $$ = make_shared<UnaryExpression>(@$,make_shared<Operator>(@1,$1),$2);
     }
 |   NOT expression{
-        $$ = make_shared<UnaryExpression>(@$,make_shared<Op>(@1,$1),$2);
+        $$ = make_shared<UnaryExpression>(@$,make_shared<Operator>(@1,$1),$2);
     }
 |   expression PLUS expression {
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression MINUS expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression MULT expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression DIV expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression DIVIDE expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression MOD expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression AND expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression OR expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression EQ expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |  expression NE expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression LT expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression LE expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression GT expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   expression GE expression{
-        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Op>(@2,$2),$3);
+        $$ = make_shared<BinaryExpression>(@$,$1,make_shared<Operator>(@2,$2),$3);
     }
 |   id LPAREN actual_parameters RPAREN{
-        $$ = make_shared<ProcCallExpression>(@$,$1,$3);
+        $$ = make_shared<ProcedureCallExpression>(@$,$1,$3);
     }
 |   id LBRACE component_values RBRACE{
         $$ = make_shared<RecordConstructExpression>(@$,$1,$3);
@@ -664,25 +665,25 @@ number:
         $$ = make_shared<Number>(@$,$1);
     }
 |   real{
-        $$ = make_share<Number>(@$,$1);
+        $$ = make_shared<Number>(@$,$1);
     }
 ;
 
 integer:
     INTEGER {
-        $$ = make_shared<Integer>(@$, $1)
+        $$ = make_shared<Integer>(@$, $1);
     }
 ;
 
 real:
     REAL {
-        $$ = make_shared<Real>(@$, $1)
+        $$ = make_shared<Real>(@$, $1);
     }
 ;
 
 string:
     STRING {
-        $$ = make_shared<String>(@$, $1)
+        $$ = make_shared<String>(@$, $1);
     }
 ;
 
@@ -706,7 +707,7 @@ lvalue:
         $$ = make_shared<IdLvalue>(@$,$1);
     }
 |   lvalue LBRACK expression RBRACK{
-        $$ = make_shared<ArrayElementvalue>(@$,$1,$3);
+        $$ = make_shared<ArrayElementLvalue>(@$,$1,$3);
     }
 |   lvalue DOT id{
         $$ = make_shared<RecordComponentLvalue>(@$,$1,$3);

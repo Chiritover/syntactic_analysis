@@ -1,0 +1,25 @@
+# tests/case_13.pcat
+
+[ERROR] 3:24-3:25: syntax error, unexpected .
+[ERROR] 7:5-7:10: syntax error, unexpected WRITE, expecting ;
+
+program <1:1-8:5>
+  body <1:11-8:4>
+    declaration list <1:11-4:25>
+      variable declaration <2:9-2:29>
+        identifier list <2:9-2:13>
+          identifier <2:9-2:10> i
+          identifier <2:12-2:13> j
+        type annotation <2:14-2:23>
+          id type <2:16-2:23>
+            identifier <2:16-2:23> INTEGER
+        number expression <2:27-2:28> 1
+          integer <2:27-2:28> 1
+      variable declaration <4:9-4:25>
+        identifier list <4:9-4:10>
+          identifier <4:9-4:10> y
+        type annotation <4:11-4:17>
+          id type <4:13-4:17>
+            identifier <4:13-4:17> REAL
+        number expression <4:21-4:24> 3.0
+          real <4:21-4:24> 3.0

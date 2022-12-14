@@ -1,6 +1,7 @@
 #ifndef SRC_AST_STATEMENT_H_
 #define SRC_AST_STATEMENT_H_
 
+#include <cstddef>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -46,7 +47,7 @@ class AssignStatement : public Statement {
         const std::string name_ = "assign statement";
         shared_ptr<Lvalue> p_lvalue_;
         shared_ptr<Expression> p_expression_;
-}
+};
 
 class ProcedureCallStatement : public Statement {
     public:
@@ -118,18 +119,18 @@ class ElifSection : public Node {
 
 class ElifSections : public Nodes {
     public:
-        explicit ElifSections(const yy:location& location) : Nodes{location}{}
+        explicit ElifSections(const yy::location& location) : Nodes{location}{}
 
         std::string name() const override {return name_;}
 
     private:
         const std::string name_ = "else if section list";
-}
+};
 
-class ElseSection : public Nodes {
+class ElseSection : public Node {
     public:
-        explicit ElseSection(const yy:location& location, shared_ptr<Statements> p_statements)
-        :Node{location},p_statements_{p_statements_}{}
+        explicit ElseSection(const yy::location& location, shared_ptr<Statements> p_statements)
+        :Node{location},p_statements_{p_statements}{}
 
         void UpdateDepth(int depth) override;
         void Print(std::ostream& os) const override;
@@ -138,8 +139,8 @@ class ElseSection : public Nodes {
     
     private:
         const std::string name_ = "else section";
-        shared_ptr p_statements_;
-}
+        shared_ptr<Statements> p_statements_;
+};
 
 class IfStatement : public Statement {
     public:
@@ -201,7 +202,7 @@ class LoopStatement : public Statement {
 
 class ForStep : public Node {
     public:
-        explicit ForStrp(const yy::location& location,
+        explicit ForStep(const yy::location& location,
                             shared_ptr<Expression> p_expression)
         : Node{location},p_expression_{p_expression} {}
 
@@ -253,7 +254,7 @@ class ExitStatement : public Statement {
 class ReturnStatement : public Statement {
     public:
         explicit ReturnStatement(const yy::location& location,
-                                    shared_ptr<Expression> p_expression)
+                                    shared_ptr<Expression> p_expression = nullptr)
         : Statement{location}, p_expression_{p_expression} {}
 
         void UpdateDepth(int depth) override;

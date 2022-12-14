@@ -9,7 +9,7 @@ void Node::Print(std::ostream& os) const {
 }
 
 void Node::UpdateDepth(int depth) {
-    set_depth(depth);
+    SetDepth(depth);
 }
 
 void Node::PrintIndent(std::ostream& os) const {
@@ -17,8 +17,8 @@ void Node::PrintIndent(std::ostream& os) const {
 }
 
 void Node::PrintLocation(std::ostream& os) const {
-    os << "<" << loc_.begin.line << ":" << loc_.begin.column << "-"
-       << loc_.end.line << ":" << loc_.end.column << ">";
+    os << "<" << location_.begin.line << ":" << location_.begin.column << "-"
+       << location_.end.line << ":" << location_.end.column << ">";
 }
 
 void Node::PrintBase(std::ostream& os) const {
@@ -34,7 +34,7 @@ void ValueNode::Print(std::ostream& os) const {
 
 void Nodes::Insert(shared_ptr<Node> p_node) {
     if (p_node) {
-        set_loc(loc() + p_node->loc());
+        SetLocation(loc() + p_node->loc());
         data_.push_back(p_node);
     }
 }
