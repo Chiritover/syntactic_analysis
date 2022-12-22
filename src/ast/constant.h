@@ -12,7 +12,7 @@
 template <class T>
 class Constant : public Node {
  public:
-  explicit Constant(const yy::location& location, const T& value,std::string name = "constant")
+  explicit Constant(const yy::location& location, const T& value,const std::string name = "constant")
       : Node{location,name}, value_{value} {}
 
   void Print(std::ostream& os) const override {

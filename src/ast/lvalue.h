@@ -12,12 +12,12 @@
 
 class Lvalue : public ValueNode {
     public:
-        explicit Lvalue(const yy::location& location, std::string name = "lvalue") : ValueNode{location,name} {}
+        explicit Lvalue(const yy::location& location,const std::string name = "lvalue") : ValueNode{location,name} {}
 };
 
 class Lvalues : public Nodes {
     public:
-        explicit Lvalues(const yy::location& location,std::string name = "lvalue list") : Nodes{location,name} {}
+        explicit Lvalues(const yy::location& location,const std::string name = "lvalue list") : Nodes{location,name} {}
 };
 
 class IdLvalue : public Lvalue {

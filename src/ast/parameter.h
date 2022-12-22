@@ -14,12 +14,12 @@
 
 class Parameter : public Node {
  public:
-  explicit Parameter(const yy::location& location, std::string name = "parameter") : Node{location,name} {}
+  explicit Parameter(const yy::location& location,const std::string name = "parameter") : Node{location,name} {}
 };
 
 class Parameters : public Nodes {
  public:
-  explicit Parameters(const yy::location& location, std::string name = "parameter list") : Nodes{location,name} {}
+  explicit Parameters(const yy::location& location,const std::string name = "parameter list") : Nodes{location,name} {}
 };
 
 class FormalParameter : public Parameter{

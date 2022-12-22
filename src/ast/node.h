@@ -10,7 +10,7 @@
 
 class Node{
     public:
-        explicit Node(const yy::location& location, std::string name = "node") : name_{name},location_{location} {}
+        explicit Node(const yy::location& location,const std::string name = "node") : name_{name},location_{location} {}
         virtual ~Node() {}
 
         virtual void UpdateDepth(int depth);
@@ -34,7 +34,7 @@ class Node{
 
 class ValueNode : public Node{
     public:
-        explicit ValueNode(const yy::location& location, std::string name = "node",  const std::string& value = "")
+        explicit ValueNode(const yy::location& location,const std::string name = "node",  const std::string& value = "")
             : Node{location,name}, value_{value} {}
 
         void Print(std::ostream& os) const override;
@@ -46,7 +46,7 @@ class ValueNode : public Node{
 
 class Nodes : public Node{
     public:
-        explicit Nodes(const yy::location& location,std::string name = "nodes") : Node{location,name} {}
+        explicit Nodes(const yy::location& location,const std::string name = "nodes") : Node{location,name} {}
 
         void Insert(shared_ptr<Node> p_node);
         void InsertArray(shared_ptr<Nodes> p_nodes);

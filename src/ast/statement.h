@@ -15,12 +15,12 @@
 
 class Statement : public Node {
  public:
-  explicit Statement(const yy::location& location,std::string name = "statement") : Node{location,name} {}
+  explicit Statement(const yy::location& location,const std::string name = "statement") : Node{location,name} {}
 };
 
 class Statements : public Nodes {
  public:
-  explicit Statements(const yy::location& location, std::string name = "statement list") : Nodes{location,name} {}
+  explicit Statements(const yy::location& location,const std::string name = "statement list") : Nodes{location,name} {}
 };
 
 class AssignStatement : public Statement {

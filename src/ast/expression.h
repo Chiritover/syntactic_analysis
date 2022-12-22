@@ -16,13 +16,13 @@
 
 class Expression: public ValueNode {
     public:
-        explicit Expression(const yy::location& location,std::string name = "expression", const std::string& value = "")
+        explicit Expression(const yy::location& location,const std::string name = "expression", const std::string& value = "")
             : ValueNode{location,name, value} {}
 };
 
 class Expressions: public Nodes {
     public:
-        explicit Expressions(const yy::location& location,std::string name = "expression list") : Nodes{location,name} {}
+        explicit Expressions(const yy::location& location,const std::string name = "expression list") : Nodes{location,name} {}
 };
 
 class NumberExpression : public Expression {
@@ -137,7 +137,7 @@ class AssignExpressions : public Expressions{
 
 class ComponentValues : public Node {
     public:
-        explicit ComponentValues(const yy::location& location,shared_ptr<AssignExpressions> p_assign_expressions_,std::string name = "component values") : Node{location,name}, p_assign_expressions_{p_assign_expressions_} {}
+        explicit ComponentValues(const yy::location& location,shared_ptr<AssignExpressions> p_assign_expressions_,const std::string name = "component values") : Node{location,name}, p_assign_expressions_{p_assign_expressions_} {}
         
         void UpdateDepth(int depth) override;
         void Print(std::ostream& os) const override;
@@ -222,7 +222,7 @@ class WriteExpression : public Expression {
 
 class WriteExpressions : public Expressions {
     public:
-        explicit WriteExpressions(const yy::location& location, std::string name = "write expression list") : Expressions{location,name} {}
+        explicit WriteExpressions(const yy::location& location,const std::string name = "write expression list") : Expressions{location,name} {}
 };
 
 #endif //SRC_AST_EXPRESSION_H_

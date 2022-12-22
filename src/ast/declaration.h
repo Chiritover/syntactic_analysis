@@ -17,13 +17,13 @@ class Declarations;
 
 class Declaration: public Node {
     public:
-        explicit Declaration(const yy::location& location, std::string name = "declaration") : Node{location,name} {}
+        explicit Declaration(const yy::location& location,const std::string name = "declaration") : Node{location,name} {}
     
 };
 
 class Declarations : public Nodes {
     public:
-        explicit Declarations(const yy::location& location, std::string name = "declaration list") : Nodes{location,name} {}
+        explicit Declarations(const yy::location& location,const std::string name = "declaration list") : Nodes{location,name} {}
 };
 
 class VarDeclaration : public Declaration {

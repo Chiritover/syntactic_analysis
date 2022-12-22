@@ -12,7 +12,7 @@
 
 class Type : public Node{
     public:
-        explicit Type(const yy::location& location,std::string name = "type") : Node{location,name} {}
+        explicit Type(const yy::location& location,const std::string name = "type") : Node{location,name} {}
 };
 
 class TypeAnnotation : public Node{
