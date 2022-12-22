@@ -10,12 +10,7 @@
 class Operator : public ValueNode {
     public:
         explicit Operator(const yy::location& location, const std::string& value)
-            : ValueNode{location, value} {}
-
-        std::string name() const override { return name_; }
-
-    private:
-        const std::string name_ = "operator";
+            : ValueNode{location,"operator", value} {}
 };
 
 #endif  // SRC_AST_OPERATOR_H_

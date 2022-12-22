@@ -12,22 +12,12 @@
 
 class Lvalue : public ValueNode {
     public:
-        explicit Lvalue(const yy::location& location) : ValueNode{location} {}
-
-        std::string name() const override { return name_; }
-
-    private:
-        const std::string name_ = "lvalue";
+        explicit Lvalue(const yy::location& location, std::string name = "lvalue") : ValueNode{location,name} {}
 };
 
 class Lvalues : public Nodes {
     public:
-        explicit Lvalues(const yy::location& location) : Nodes{location} {}
-
-        std::string name() const override { return name_; }
-
-    private:
-        const std::string name_ = "lvalue list";
+        explicit Lvalues(const yy::location& location,std::string name = "lvalue list") : Nodes{location,name} {}
 };
 
 class IdLvalue : public Lvalue {
@@ -38,10 +28,7 @@ class IdLvalue : public Lvalue {
         void UpdateDepth(int depth) override;
         std::string value() const override;
 
-        std::string name() const override { return name_; }
-
     private:
-        const std::string name_ = "lvalue";
         shared_ptr<Id> p_id_;
 };
 
@@ -56,10 +43,7 @@ class ArrayElementLvalue : public Lvalue {
         void UpdateDepth(int depth) override;
         std::string value() const override;
 
-        std::string name() const override { return name_; }
-
     private:
-        const std::string name_ = "lvalue";
         shared_ptr<Lvalue> p_lvalue_;
         shared_ptr<Expression> p_expression_;
 };
@@ -73,10 +57,7 @@ class RecordComponentLvalue : public Lvalue {
         void UpdateDepth(int depth) override;
         std::string value() const override;
 
-        std::string name() const override { return name_; }
-
     private:
-        const std::string name_ = "lvalue";
         shared_ptr<Lvalue> p_lvalue_;
         shared_ptr<Id> p_id_;
 };

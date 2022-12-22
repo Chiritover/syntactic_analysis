@@ -17,22 +17,13 @@ class Declarations;
 
 class Declaration: public Node {
     public:
-        explicit Declaration(const yy::location& location) : Node{location} {}
+        explicit Declaration(const yy::location& location, std::string name = "declaration") : Node{location,name} {}
     
-        std::string name() const override { return name_; }
-
-    private:
-        const std::string name_ = "declaration";
 };
 
 class Declarations : public Nodes {
     public:
-        explicit Declarations(const yy::location& location) : Nodes{location} {}
-    
-        std::string name() const override { return name_; }
-    
-    private:
-        const std::string name_ = "declaration list";
+        explicit Declarations(const yy::location& location, std::string name = "declaration list") : Nodes{location,name} {}
 };
 
 class VarDeclaration : public Declaration {
@@ -41,7 +32,7 @@ class VarDeclaration : public Declaration {
                                 shared_ptr<Ids> p_ids, 
                                 shared_ptr<TypeAnnotation> p_type_annotation,
                                 shared_ptr<Expression> p_expression)
-            :   Declaration{location}, 
+            :   Declaration{location,"variable declaration"}, 
                 p_ids_{p_ids}, 
                 p_type_annotation_{p_type_annotation},
                 p_expression_{p_expression} {}
@@ -49,10 +40,8 @@ class VarDeclaration : public Declaration {
         void UpdateDepth(int depth) override;
         void Print(std::ostream& os) const override;
 
-        std::string name() const override { return name_; }
 
     private:
-        const std::string name_ = "variable declaration";
         shared_ptr<Ids> p_ids_;
         shared_ptr<TypeAnnotation> p_type_annotation_;
         shared_ptr<Expression> p_expression_;
@@ -60,12 +49,7 @@ class VarDeclaration : public Declaration {
 
 class VarDeclarations : public Declarations {
     public:
-        explicit VarDeclarations(const yy::location& location) : Declarations{location} {}
-    
-        std::string name() const override { return name_; }
-    
-    private:
-        const std::string name_ = "variable declaration list";
+        explicit VarDeclarations(const yy::location& location) : Declarations{location,"variable declaration list"} {}
 };
 
 class TypeDeclaration : public Declaration {
@@ -73,17 +57,14 @@ class TypeDeclaration : public Declaration {
         explicit TypeDeclaration(const yy::location& location,
                                 shared_ptr<Id> p_id,
                                 shared_ptr<Type> p_type)
-        :   Declaration{location},
+        :   Declaration{location,"type declaration"},
             p_id_{p_id},
             p_type_{p_type} {}
 
         void UpdateDepth(int depth) override;
         void Print(std::ostream& os) const override;
-
-        std::string name() const override { return name_; }
     
     private:
-        const std::string name_ = "type declaration";
         shared_ptr<Id> p_id_;
         shared_ptr<Type> p_type_;
 };
@@ -91,12 +72,9 @@ class TypeDeclaration : public Declaration {
 class TypeDeclarations : public Declarations {
     public:
         explicit TypeDeclarations(const yy::location& location) : 
-        Declarations{location} {}
-    
-        std::string name() const override { return name_; }
+        Declarations{location,"type declaration list"} {}
     
     private:
-        const std::string name_ = "type declaration list";
         shared_ptr<Id> p_id_;
         shared_ptr<Type> p_type_;
 };
@@ -110,7 +88,7 @@ class ProcedureDeclaration : public Declaration{
                                     shared_ptr<FormalParameters> p_formal_parameters,
                                     shared_ptr<TypeAnnotation> p_type_annotation,
                                     shared_ptr<Body> p_body)
-        :   Declaration{location},
+        :   Declaration{location,"procedure declaration"},
             p_id_{p_id},
             p_formal_parameters_{p_formal_parameters},
             p_type_annotation_{p_type_annotation},
@@ -119,10 +97,7 @@ class ProcedureDeclaration : public Declaration{
         void UpdateDepth(int depth) override;
         void Print(std::ostream& os) const override;
 
-        std::string name() const override { return name_; }
-
     private:
-        const std::string name_ = "procedure declaration";
         shared_ptr<Id> p_id_;
         shared_ptr<FormalParameters> p_formal_parameters_;
         shared_ptr<TypeAnnotation> p_type_annotation_;
@@ -131,12 +106,7 @@ class ProcedureDeclaration : public Declaration{
 
 class ProcedureDeclarations : public Declarations {
     public:
-        explicit ProcedureDeclarations(const yy::location& location) : Declarations{location} {}
-    
-        std::string name() const override { return name_; }
-    
-    private:
-        const std::string name_ = "procedure declaration list";
+        explicit ProcedureDeclarations(const yy::location& location) : Declarations{location,"procedure declaration list"} {}
 };
 
 #endif  // SRC_AST_DECLARATION_H_
