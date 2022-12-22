@@ -22,7 +22,6 @@
     #include <string>
 
     #include "ast/ast.h"
-    #include "base/common.h"
 
     class Driver;
     namespace yy {
