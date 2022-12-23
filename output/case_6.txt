@@ -2,68 +2,68 @@
 
 
 program <1:1-12:5>
-  body <1:11-12:4>
-    declaration list <1:11-8:23>
-      procedure declaration <2:15-7:11>
-        identifier <2:15-2:18> FOO
-        formal parameter list <2:19-2:34>
-          formal parameter <2:19-2:25>
-            identifier list <2:19-2:20>
-              identifier <2:19-2:20> X
-            id type <2:22-2:25>
-              identifier <2:22-2:25> INT
-          formal parameter <2:27-2:34>
-            identifier list <2:27-2:28>
-              identifier <2:27-2:28> Y
-            id type <2:30-2:34>
-              identifier <2:30-2:34> REAL
-        type annotation <2:35-2:40>
-          id type <2:36-2:40>
-            identifier <2:36-2:40> REAL
-        body <2:43-7:10>
-          declaration list <2:43-3:50>
-            procedure declaration <3:17-3:50>
-              identifier <3:17-3:20> BAR
-              body <3:25-3:49>
-                statement list <3:31-3:45>
-                  assign statement <3:32-3:45>
-                    lvalue <3:32-3:33> Y
-                    binary expression <3:37-3:44> X + 1.0
-                      lvalue expression <3:37-3:38> X
-                        lvalue <3:37-3:38> X
-                      operator <3:39-3:40> +
-                      number expression <3:41-3:44> 1.0
-                        real <3:41-3:44> 1.0
-          statement list <4:12-6:11>
-            procedure call statement <5:9-5:15>
-              identifier <5:9-5:12> BAR
-            return statement <6:2-6:11>
-              lvalue expression <6:9-6:10> Y
-                lvalue <6:9-6:10> Y
-      variable declaration <8:9-8:23>
-        identifier list <8:9-8:10>
-          identifier <8:9-8:10> C
-        type annotation <8:11-8:17>
-          id type <8:13-8:17>
-            identifier <8:13-8:17> REAL
-        number expression <8:21-8:22> 0
-          integer <8:21-8:22> 0
-    statement list <9:6-11:42>
-      assign statement <10:5-10:22>
-        lvalue <10:5-10:6> C
-        procedure call expression <10:10-10:21> FOO()
-          identifier <10:10-10:13> FOO
-          actual parameter list <10:14-10:20>
-            number expression <10:14-10:15> 3
-              integer <10:14-10:15> 3
-            number expression <10:17-10:20> 2.0
-              real <10:17-10:20> 2.0
-      write statement <11:5-11:42>
-        write parameter list <11:11-11:40>
-          write expression <11:11-11:17> "C = "
-            string <11:11-11:17> "C = "
-          write expression <11:19-11:20> C
-            lvalue expression <11:19-11:20> C
-              lvalue <11:19-11:20> C
-          write expression <11:22-11:40> " (should be 4.0)"
-            string <11:22-11:40> " (should be 4.0)"
+	body <1:11-12:4>
+		declaration list <1:11-8:23>
+			procedure declaration <2:15-7:11>
+				identifier <2:15-2:18> FOO
+				formal parameter list <2:19-2:34>
+					formal parameter <2:19-2:25>
+						identifier list <2:19-2:20>
+							identifier <2:19-2:20> X
+						id type <2:22-2:25>
+							identifier <2:22-2:25> INT
+					formal parameter <2:27-2:34>
+						identifier list <2:27-2:28>
+							identifier <2:27-2:28> Y
+						id type <2:30-2:34>
+							identifier <2:30-2:34> REAL
+				type annotation <2:35-2:40>
+					id type <2:36-2:40>
+						identifier <2:36-2:40> REAL
+				body <2:43-7:10>
+					declaration list <2:43-3:50>
+						procedure declaration <3:17-3:50>
+							identifier <3:17-3:20> BAR
+							body <3:25-3:49>
+								statement list <3:31-3:45>
+									assign statement <3:32-3:45>
+										lvalue <3:32-3:33> Y
+										binary expression <3:37-3:44> X + 1.0
+											lvalue expression <3:37-3:38> X
+												lvalue <3:37-3:38> X
+											operator <3:39-3:40> +
+											number expression <3:41-3:44> 1.0
+												real <3:41-3:44> 1.0
+					statement list <4:12-6:11>
+						procedure call statement <5:9-5:15>
+							identifier <5:9-5:12> BAR
+						return statement <6:2-6:11>
+							lvalue expression <6:9-6:10> Y
+								lvalue <6:9-6:10> Y
+			variable declaration <8:9-8:23>
+				identifier list <8:9-8:10>
+					identifier <8:9-8:10> C
+				type annotation <8:11-8:17>
+					id type <8:13-8:17>
+						identifier <8:13-8:17> REAL
+				number expression <8:21-8:22> 0
+					integer <8:21-8:22> 0
+		statement list <9:6-11:42>
+			assign statement <10:5-10:22>
+				lvalue <10:5-10:6> C
+				procedure call expression <10:10-10:21> FOO()
+					identifier <10:10-10:13> FOO
+					actual parameter list <10:14-10:20>
+						number expression <10:14-10:15> 3
+							integer <10:14-10:15> 3
+						number expression <10:17-10:20> 2.0
+							real <10:17-10:20> 2.0
+			write statement <11:5-11:42>
+				write parameter list <11:11-11:40>
+					write expression <11:11-11:17> "C = "
+						string <11:11-11:17> "C = "
+					write expression <11:19-11:20> C
+						lvalue expression <11:19-11:20> C
+							lvalue <11:19-11:20> C
+					write expression <11:22-11:40> " (should be 4.0)"
+						string <11:22-11:40> " (should be 4.0)"

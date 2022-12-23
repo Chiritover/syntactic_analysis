@@ -176,7 +176,7 @@ symbol_type make_OPERATOR(const std::string& s, const location_type& location) {
     return entry->second(s, location);
   }
   throw yy::Parser::syntax_error(location, "syntax error, unknown operator: " + s);
-}//this should be thinked
+}
 
 static const MakeTable make_delimiter_table{
     {".", yy::Parser::make_DOT},
@@ -200,7 +200,7 @@ symbol_type make_DELIMITER(const std::string& s, const location_type& location) 
     return entry->second(s, location);
   }
   throw yy::Parser::syntax_error(location, "syntax error, unknown delimiter: " + s);
-}//this should be thinked too
+}
 
 void skip_COMMENTS(const std::string& s, const location_type& location){
     //do nothing

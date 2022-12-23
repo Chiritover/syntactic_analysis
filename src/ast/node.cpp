@@ -13,7 +13,7 @@ void Node::UpdateDepth(int depth) {
 }
 
 void Node::PrintIndent(std::ostream& os) const {
-    os << std::string(depth_ * 2, ' ');
+    os << std::string(depth_, '\t');
 }
 
 void Node::PrintLocation(std::ostream& os) const {

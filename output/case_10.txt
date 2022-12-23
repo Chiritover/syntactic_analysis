@@ -2,132 +2,132 @@
 
 
 program <1:1-30:5>
-  body <1:11-30:4>
-    declaration list <1:11-20:9>
-      variable declaration <2:9-2:34>
-        identifier list <2:9-2:18>
-          identifier <2:9-2:10> I
-          identifier <2:12-2:18> ANSWER
-        type annotation <2:19-2:28>
-          id type <2:21-2:28>
-            identifier <2:21-2:28> INTEGER
-        number expression <2:32-2:33> 0
-          integer <2:32-2:33> 0
-      procedure declaration <3:15-20:9>
-        identifier <3:15-3:24> FACTORIAL
-        body <3:29-20:8>
-          declaration list <3:29-15:8>
-            variable declaration <4:6-4:23>
-              identifier list <4:6-4:7>
-                identifier <4:6-4:7> J
-              type annotation <4:8-4:17>
-                id type <4:10-4:17>
-                  identifier <4:10-4:17> INTEGER
-              number expression <4:21-4:22> 0
-                integer <4:21-4:22> 0
-            procedure declaration <6:11-8:8>
-              identifier <6:11-6:15> FACT
-              body <6:20-8:7>
-                statement list <6:26-7:53>
-                  if statement <7:6-7:53>
-                    binary expression <7:9-7:15> J <= I
-                      lvalue expression <7:9-7:10> J
-                        lvalue <7:9-7:10> J
-                      operator <7:11-7:13> <=
-                      lvalue expression <7:14-7:15> I
-                        lvalue <7:14-7:15> I
-                    statement list <7:20-7:48>
-                      procedure call statement <7:21-7:28>
-                        identifier <7:21-7:25> MULT
-                      assign statement <7:29-7:40>
-                        lvalue <7:29-7:30> J
-                        binary expression <7:34-7:39> J + 1
-                          lvalue expression <7:34-7:35> J
-                            lvalue <7:34-7:35> J
-                          operator <7:36-7:37> +
-                          number expression <7:38-7:39> 1
-                            integer <7:38-7:39> 1
-                      procedure call statement <7:41-7:48>
-                        identifier <7:41-7:45> FACT
-            procedure declaration <9:4-15:8>
-              identifier <9:4-9:8> MULT
-              body <9:13-15:7>
-                declaration list <9:13-10:27>
-                  variable declaration <10:10-10:27>
-                    identifier list <10:10-10:11>
-                      identifier <10:10-10:11> I
-                    type annotation <10:12-10:21>
-                      id type <10:14-10:21>
-                        identifier <10:14-10:21> INTEGER
-                    number expression <10:25-10:26> 0
-                      integer <10:25-10:26> 0
-                statement list <11:9-14:25>
-                  assign statement <12:6-12:18>
-                    lvalue <12:6-12:7> I
-                    lvalue expression <12:11-12:17> ANSWER
-                      lvalue <12:11-12:17> ANSWER
-                  assign statement <13:13-13:24>
-                    lvalue <13:13-13:14> I
-                    binary expression <13:18-13:23> I * J
-                      lvalue expression <13:18-13:19> I
-                        lvalue <13:18-13:19> I
-                      operator <13:20-13:21> *
-                      lvalue expression <13:22-13:23> J
-                        lvalue <13:22-13:23> J
-                  assign statement <14:13-14:25>
-                    lvalue <14:13-14:19> ANSWER
-                    lvalue expression <14:23-14:24> I
-                      lvalue <14:23-14:24> I
-          statement list <16:10-19:9>
-            assign statement <17:2-17:14>
-              lvalue <17:2-17:8> ANSWER
-              number expression <17:12-17:13> 1
-                integer <17:12-17:13> 1
-            assign statement <18:2-18:9>
-              lvalue <18:2-18:3> J
-              number expression <18:7-18:8> 1
-                integer <18:7-18:8> 1
-            procedure call statement <19:2-19:9>
-              identifier <19:2-19:6> FACT
-    statement list <21:6-29:9>
-      write statement <22:5-22:64>
-        write parameter list <22:12-22:62>
-          write expression <22:12-22:62> "The first 5 factorials are (in ascending order):"
-            string <22:12-22:62> "The first 5 factorials are (in ascending order):"
-      assign statement <23:5-23:12>
-        lvalue <23:5-23:6> I
-        number expression <23:10-23:11> 1
-          integer <23:10-23:11> 1
-      loop statement <24:5-29:9>
-        statement list <24:9-28:13>
-          if statement <25:2-25:26>
-            binary expression <25:5-25:10> I > 5
-              lvalue expression <25:5-25:6> I
-                lvalue <25:5-25:6> I
-              operator <25:7-25:8> >
-              number expression <25:9-25:10> 5
-                integer <25:9-25:10> 5
-            statement list <25:15-25:21>
-              exit statement <25:16-25:21>
-          procedure call statement <26:9-26:21>
-            identifier <26:9-26:18> FACTORIAL
-          write statement <27:9-27:48>
-            write parameter list <27:15-27:46>
-              write expression <27:15-27:27> "FACTORIAL("
-                string <27:15-27:27> "FACTORIAL("
-              write expression <27:29-27:30> I
-                lvalue expression <27:29-27:30> I
-                  lvalue <27:29-27:30> I
-              write expression <27:32-27:38> ") = "
-                string <27:32-27:38> ") = "
-              write expression <27:40-27:46> ANSWER
-                lvalue expression <27:40-27:46> ANSWER
-                  lvalue <27:40-27:46> ANSWER
-          assign statement <28:2-28:13>
-            lvalue <28:2-28:3> I
-            binary expression <28:7-28:12> I + 1
-              lvalue expression <28:7-28:8> I
-                lvalue <28:7-28:8> I
-              operator <28:9-28:10> +
-              number expression <28:11-28:12> 1
-                integer <28:11-28:12> 1
+	body <1:11-30:4>
+		declaration list <1:11-20:9>
+			variable declaration <2:9-2:34>
+				identifier list <2:9-2:18>
+					identifier <2:9-2:10> I
+					identifier <2:12-2:18> ANSWER
+				type annotation <2:19-2:28>
+					id type <2:21-2:28>
+						identifier <2:21-2:28> INTEGER
+				number expression <2:32-2:33> 0
+					integer <2:32-2:33> 0
+			procedure declaration <3:15-20:9>
+				identifier <3:15-3:24> FACTORIAL
+				body <3:29-20:8>
+					declaration list <3:29-15:8>
+						variable declaration <4:6-4:23>
+							identifier list <4:6-4:7>
+								identifier <4:6-4:7> J
+							type annotation <4:8-4:17>
+								id type <4:10-4:17>
+									identifier <4:10-4:17> INTEGER
+							number expression <4:21-4:22> 0
+								integer <4:21-4:22> 0
+						procedure declaration <6:11-8:8>
+							identifier <6:11-6:15> FACT
+							body <6:20-8:7>
+								statement list <6:26-7:53>
+									if statement <7:6-7:53>
+										binary expression <7:9-7:15> J <= I
+											lvalue expression <7:9-7:10> J
+												lvalue <7:9-7:10> J
+											operator <7:11-7:13> <=
+											lvalue expression <7:14-7:15> I
+												lvalue <7:14-7:15> I
+										statement list <7:20-7:48>
+											procedure call statement <7:21-7:28>
+												identifier <7:21-7:25> MULT
+											assign statement <7:29-7:40>
+												lvalue <7:29-7:30> J
+												binary expression <7:34-7:39> J + 1
+													lvalue expression <7:34-7:35> J
+														lvalue <7:34-7:35> J
+													operator <7:36-7:37> +
+													number expression <7:38-7:39> 1
+														integer <7:38-7:39> 1
+											procedure call statement <7:41-7:48>
+												identifier <7:41-7:45> FACT
+						procedure declaration <9:4-15:8>
+							identifier <9:4-9:8> MULT
+							body <9:13-15:7>
+								declaration list <9:13-10:27>
+									variable declaration <10:10-10:27>
+										identifier list <10:10-10:11>
+											identifier <10:10-10:11> I
+										type annotation <10:12-10:21>
+											id type <10:14-10:21>
+												identifier <10:14-10:21> INTEGER
+										number expression <10:25-10:26> 0
+											integer <10:25-10:26> 0
+								statement list <11:9-14:25>
+									assign statement <12:6-12:18>
+										lvalue <12:6-12:7> I
+										lvalue expression <12:11-12:17> ANSWER
+											lvalue <12:11-12:17> ANSWER
+									assign statement <13:13-13:24>
+										lvalue <13:13-13:14> I
+										binary expression <13:18-13:23> I * J
+											lvalue expression <13:18-13:19> I
+												lvalue <13:18-13:19> I
+											operator <13:20-13:21> *
+											lvalue expression <13:22-13:23> J
+												lvalue <13:22-13:23> J
+									assign statement <14:13-14:25>
+										lvalue <14:13-14:19> ANSWER
+										lvalue expression <14:23-14:24> I
+											lvalue <14:23-14:24> I
+					statement list <16:10-19:9>
+						assign statement <17:2-17:14>
+							lvalue <17:2-17:8> ANSWER
+							number expression <17:12-17:13> 1
+								integer <17:12-17:13> 1
+						assign statement <18:2-18:9>
+							lvalue <18:2-18:3> J
+							number expression <18:7-18:8> 1
+								integer <18:7-18:8> 1
+						procedure call statement <19:2-19:9>
+							identifier <19:2-19:6> FACT
+		statement list <21:6-29:9>
+			write statement <22:5-22:64>
+				write parameter list <22:12-22:62>
+					write expression <22:12-22:62> "The first 5 factorials are (in ascending order):"
+						string <22:12-22:62> "The first 5 factorials are (in ascending order):"
+			assign statement <23:5-23:12>
+				lvalue <23:5-23:6> I
+				number expression <23:10-23:11> 1
+					integer <23:10-23:11> 1
+			loop statement <24:5-29:9>
+				statement list <24:9-28:13>
+					if statement <25:2-25:26>
+						binary expression <25:5-25:10> I > 5
+							lvalue expression <25:5-25:6> I
+								lvalue <25:5-25:6> I
+							operator <25:7-25:8> >
+							number expression <25:9-25:10> 5
+								integer <25:9-25:10> 5
+						statement list <25:15-25:21>
+							exit statement <25:16-25:21>
+					procedure call statement <26:9-26:21>
+						identifier <26:9-26:18> FACTORIAL
+					write statement <27:9-27:48>
+						write parameter list <27:15-27:46>
+							write expression <27:15-27:27> "FACTORIAL("
+								string <27:15-27:27> "FACTORIAL("
+							write expression <27:29-27:30> I
+								lvalue expression <27:29-27:30> I
+									lvalue <27:29-27:30> I
+							write expression <27:32-27:38> ") = "
+								string <27:32-27:38> ") = "
+							write expression <27:40-27:46> ANSWER
+								lvalue expression <27:40-27:46> ANSWER
+									lvalue <27:40-27:46> ANSWER
+					assign statement <28:2-28:13>
+						lvalue <28:2-28:3> I
+						binary expression <28:7-28:12> I + 1
+							lvalue expression <28:7-28:8> I
+								lvalue <28:7-28:8> I
+							operator <28:9-28:10> +
+							number expression <28:11-28:12> 1
+								integer <28:11-28:12> 1
