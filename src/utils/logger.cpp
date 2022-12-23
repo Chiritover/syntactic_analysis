@@ -10,7 +10,7 @@
 void Logger::Log(const std::string& msg, const yy::location* p_location, std::ostream& os) {
     if (p_location) {
         auto location = *p_location;
-        os << location.begin.line << ":" << location.begin.column << "-" << location.end.line << ":" << location.end.column << ": ";
+        os << "(" << location.begin.line << "," << location.begin.column << ")-(" << location.end.line << "," << location.end.column << "): ";
     }
     os << msg;
     if (&os == &std::cout) os << RESET;

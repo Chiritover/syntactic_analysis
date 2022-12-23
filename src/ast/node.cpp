@@ -17,8 +17,8 @@ void Node::PrintIndent(std::ostream& os) const {
 }
 
 void Node::PrintLocation(std::ostream& os) const {
-    os << "<" << location_.begin.line << ":" << location_.begin.column << "-"
-       << location_.end.line << ":" << location_.end.column << ">";
+    os << "(" << location_.begin.line << "," << location_.begin.column << ")-("
+       << location_.end.line << "," << location_.end.column << ")";
 }
 
 void Node::PrintBase(std::ostream& os) const {

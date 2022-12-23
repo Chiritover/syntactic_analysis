@@ -12,8 +12,6 @@
 
 ### 二.具体实现
 
-以下将从bison的用法，
-
 #### 2.1Bison的使用方法
 
 Bison 文件的结构可以分为四个部分:
@@ -674,8 +672,8 @@ void Node::PrintIndent(std::ostream& os) const {
 }
 
 void Node::PrintLocation(std::ostream& os) const {
-    os << "<" << location_.begin.line << ":" << location_.begin.column << "-"
-       << location_.end.line << ":" << location_.end.column << ">";
+    os << "(" << location_.begin.line << "," << location_.begin.column << ")-("
+       << location_.end.line << "," << location_.end.column << ")";
 }
 
 void Node::PrintBase(std::ostream& os) const {
@@ -920,9 +918,153 @@ std::string WriteExpression::value() const {
 
 其余类的实现方法与上述实现类似，不做赘述。
 
-#### 2.5成果展示
+#### 2.5文件组织结构
+
+* bin/:二进制文件位置（构建时自动生成）
+  * syntactic_parser:语法分析器的二进制文件
+
+* build/:项目构建时产生的临时文件（构建时自动生成）
+* output/:语法分析结果的存放
+* src/:源代码
+  * ast/：语法树节点的实现
+  * base/:一些通用设置
+  * utils/:工具，主要是一个日志生成器
+  * driver.h语法分析器
+  * driver.cpp
+  * lexer.h:词法分析器头文件
+  * lexer.cpp：词法分析器源文件（由Flex生成）
+  * location.h:用于标识分析到的位置(项目构建时生成)
+  * main.cpp:主程序
+  * syntactic_parser.yy:语法分析器文件，用于Bison生成语法分析器
+  * syntactic_parser.h：语法分析器头文件（Bison生成）
+  * syntactic_parser.cpp:语法分析器源文件（Bison生成）
+* tests/:测试用例
+* Makefile
+* test.sh:自动化测试脚本
+
+#### 2.6Makefile实现
+
+首先，我们使用Flex生成词法分析器源文件
+
+```makefile
+SRC_DIR   := src
+
+LEX_IN    := $(SRC_DIR)/lexer.lex
+LEX_SRC   := $(SRC_DIR)/lexer.cpp
+LEX       := flex
+
+$(LEX_SRC): $(LEX_IN)
+	@echo + $@
+	@$(LEX) -o $@ $<
+```
+
+然后，我们通过Bison生成词法分析器文件
+
+```makefile
+YACC_IN   := $(SRC_DIR)/parser.yy
+YACC_SRC  := $(SRC_DIR)/parser.cpp
+YACC_H    := $(SRC_DIR)/parser.hpp $(SRC_DIR)/location.hpp
+YACC      := bison
+
+$(YACC_SRC): $(YACC_IN)
+	@echo + $@
+	@$(YACC) -o $@ -d $<
+
+$(YACC_H): $(YACC_SRC)
+```
+
+然后，我们通过g++生成源代码的目标文件，并通过g++生成最终二进制文件
+
+```makefile
+TARGET    := syntactic_parser
+BIN_DIR   := bin
+BUILD_DIR := build
+
+SRCS      := $(YACC_SRC) $(LEX_SRC) $(shell find $(SRC_DIR) -name *.cpp)
+OBJS      := $(SRCS:%=$(BUILD_DIR)/%.o)
+DEPS      := $(OBJS:.o=.d)
+CXX       := g++
+CXXFLAGS  := -g -Wall -O3 -std=c++17 -MMD
+MKDIR     := mkdir -p
+
+$(BUILD_DIR)/%.cpp.o: %.cpp
+	@echo + $@
+	@$(MKDIR) $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c -o $@ $<
+	
+$(BIN_DIR)/$(TARGET): $(OBJS)
+	@echo + $@
+	@$(MKDIR) $(dir $@)
+	@$(CXX) $(CXXFLAGS) -o $@ $^
+# ...
+
+-include $(DEPS)
+```
+
+项目运行时，我们执行二进制文件bin/syntactix_parser，变量INPUT是用户输入的测试文件名
+
+```makefile
+OUT_DIR   := output
+
+start: $(BIN_DIR)/$(TARGET)
+	@$(MKDIR) $(OUT_DIR)
+	@$< $(INPUT)
+```
+
+我们还编写了test.sh用于快速测试所有样例，具体文件如下
+
+```shell
+#!/bin/sh
+
+make clean
+for filename in tests/case_*.pcat; do
+    make INPUT="$filename"
+done
+```
+
+
+
+#### 2.7成果展示
 
 对项目的测试用例进行语法分析，得到的结果保存在output/case_1.txt到output/case_14.txt中
 
+<img src="/Users/wuxiao/Library/Application Support/typora-user-images/Screen Shot 2022-12-23 at 08.54.35.png" alt="Screen Shot 2022-12-23 at 08.54.35" style="zoom:50%;" />
+
+以case_1.txt为例，得到的结果如下：
+
+<img src="/Users/wuxiao/Desktop/Screen Shot 2022-12-23 at 10.07.54.png" alt="Screen Shot 2022-12-23 at 10.07.54" style="zoom:50%;" />
+
+case_11得到的结果如下：
+
+![Screen Shot 2022-12-23 at 10.08.09](/Users/wuxiao/Desktop/Screen Shot 2022-12-23 at 10.08.09.png)
+
+case_12到case_14得到的结果如下：
+
+<img src="/Users/wuxiao/Library/Application Support/typora-user-images/Screen Shot 2022-12-23 at 10.12.52.png" alt="Screen Shot 2022-12-23 at 10.12.52" style="zoom:50%;" />
+
+<img src="/Users/wuxiao/Library/Application Support/typora-user-images/Screen Shot 2022-12-23 at 10.13.11.png" alt="Screen Shot 2022-12-23 at 10.13.11" style="zoom:50%;" />
+
+<img src="/Users/wuxiao/Library/Application Support/typora-user-images/image-20221223101505062.png" alt="image-20221223101505062" style="zoom:50%;" />
 
 
+
+### 三.项目完成情况
+
+1、完成指标
+
+（1）项目完成度 60分
+
+- [x] 分析case1至10中的语法，并打印出语法树
+- [x] 分析case11-14中出现的各种词法错误和语法错误，提供相应报错信息并提示错误的位置，同时打印出错误修复后的语法树
+
+（2）项目报告及展示 40分
+
+- [x] 撰写项目报告，并详细展现实现过程
+
+
+
+2.成员分工
+
+吴骁 55%：共同设计与讨论，并完成⼤部分代码
+
+蔡哲飚 45%：共同设计与讨论，并完成⼤部分报告

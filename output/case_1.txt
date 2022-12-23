@@ -1,56 +1,56 @@
 # tests/case_1.pcat
 
 
-program <1:1-8:5>
-	body <1:11-8:4>
-		declaration list <1:11-4:25>
-			variable declaration <2:9-2:29>
-				identifier list <2:9-2:13>
-					identifier <2:9-2:10> i
-					identifier <2:12-2:13> j
-				type annotation <2:14-2:23>
-					id type <2:16-2:23>
-						identifier <2:16-2:23> INTEGER
-				number expression <2:27-2:28> 1
-					integer <2:27-2:28> 1
-			variable declaration <3:9-3:25>
-				identifier list <3:9-3:10>
-					identifier <3:9-3:10> x
-				type annotation <3:11-3:17>
-					id type <3:13-3:17>
-						identifier <3:13-3:17> REAL
-				number expression <3:21-3:24> 2.0
-					real <3:21-3:24> 2.0
-			variable declaration <4:9-4:25>
-				identifier list <4:9-4:10>
-					identifier <4:9-4:10> y
-				type annotation <4:11-4:17>
-					id type <4:13-4:17>
-						identifier <4:13-4:17> REAL
-				number expression <4:21-4:24> 3.0
-					real <4:21-4:24> 3.0
-		statement list <5:6-7:36>
-			write statement <6:5-6:36>
-				write parameter list <6:12-6:34>
-					write expression <6:12-6:18> "i = "
-						string <6:12-6:18> "i = "
-					write expression <6:20-6:21> i
-						lvalue expression <6:20-6:21> i
-							lvalue <6:20-6:21> i
-					write expression <6:23-6:31> ", j = "
-						string <6:23-6:31> ", j = "
-					write expression <6:33-6:34> j
-						lvalue expression <6:33-6:34> j
-							lvalue <6:33-6:34> j
-			write statement <7:5-7:36>
-				write parameter list <7:12-7:34>
-					write expression <7:12-7:18> "x = "
-						string <7:12-7:18> "x = "
-					write expression <7:20-7:21> x
-						lvalue expression <7:20-7:21> x
-							lvalue <7:20-7:21> x
-					write expression <7:23-7:31> ", y = "
-						string <7:23-7:31> ", y = "
-					write expression <7:33-7:34> y
-						lvalue expression <7:33-7:34> y
-							lvalue <7:33-7:34> y
+program (1,1)-(8,5)
+	body (1,11)-(8,4)
+		declaration list (1,11)-(4,25)
+			variable declaration (2,9)-(2,29)
+				identifier list (2,9)-(2,13)
+					identifier (2,9)-(2,10) i
+					identifier (2,12)-(2,13) j
+				type annotation (2,14)-(2,23)
+					id type (2,16)-(2,23)
+						identifier (2,16)-(2,23) INTEGER
+				number expression (2,27)-(2,28) 1
+					integer (2,27)-(2,28) 1
+			variable declaration (3,9)-(3,25)
+				identifier list (3,9)-(3,10)
+					identifier (3,9)-(3,10) x
+				type annotation (3,11)-(3,17)
+					id type (3,13)-(3,17)
+						identifier (3,13)-(3,17) REAL
+				number expression (3,21)-(3,24) 2.0
+					real (3,21)-(3,24) 2.0
+			variable declaration (4,9)-(4,25)
+				identifier list (4,9)-(4,10)
+					identifier (4,9)-(4,10) y
+				type annotation (4,11)-(4,17)
+					id type (4,13)-(4,17)
+						identifier (4,13)-(4,17) REAL
+				number expression (4,21)-(4,24) 3.0
+					real (4,21)-(4,24) 3.0
+		statement list (5,6)-(7,36)
+			write statement (6,5)-(6,36)
+				write parameter list (6,12)-(6,34)
+					write expression (6,12)-(6,18) "i = "
+						string (6,12)-(6,18) "i = "
+					write expression (6,20)-(6,21) i
+						lvalue expression (6,20)-(6,21) i
+							lvalue (6,20)-(6,21) i
+					write expression (6,23)-(6,31) ", j = "
+						string (6,23)-(6,31) ", j = "
+					write expression (6,33)-(6,34) j
+						lvalue expression (6,33)-(6,34) j
+							lvalue (6,33)-(6,34) j
+			write statement (7,5)-(7,36)
+				write parameter list (7,12)-(7,34)
+					write expression (7,12)-(7,18) "x = "
+						string (7,12)-(7,18) "x = "
+					write expression (7,20)-(7,21) x
+						lvalue expression (7,20)-(7,21) x
+							lvalue (7,20)-(7,21) x
+					write expression (7,23)-(7,31) ", y = "
+						string (7,23)-(7,31) ", y = "
+					write expression (7,33)-(7,34) y
+						lvalue expression (7,33)-(7,34) y
+							lvalue (7,33)-(7,34) y

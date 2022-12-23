@@ -1,188 +1,188 @@
 # tests/case_4.pcat
 
 
-program <1:1-31:5>
-	body <1:11-31:4>
-		declaration list <1:11-10:9>
-			variable declaration <2:9-2:26>
-				identifier list <2:9-2:10>
-					identifier <2:9-2:10> I
-				type annotation <2:11-2:20>
-					id type <2:13-2:20>
-						identifier <2:13-2:20> INTEGER
-				number expression <2:24-2:25> 0
-					integer <2:24-2:25> 0
-			type declaration <3:10-3:51>
-				identifier <3:10-3:17> COMPLEX
-				record type <3:21-3:50>
-					component list <3:28-3:46>
-						component <3:28-3:36>
-							identifier <3:28-3:29> R
-							id type <3:31-3:35>
-								identifier <3:31-3:35> REAL
-						component <3:37-3:46>
-							identifier <3:37-3:38> I
-							id type <3:41-3:45>
-								identifier <3:41-3:45> REAL
-			type declaration <4:10-4:63>
-				identifier <4:10-4:14> PAIR
-				record type <4:18-4:62>
-					component list <4:25-4:58>
-						component <4:25-4:40>
-							identifier <4:25-4:30> FIRST
-							id type <4:32-4:39>
-								identifier <4:32-4:39> COMPLEX
-						component <4:41-4:58>
-							identifier <4:41-4:47> SECOND
-							id type <4:50-4:57>
-								identifier <4:50-4:57> COMPLEX
-			variable declaration <5:9-5:55>
-				identifier list <5:9-5:10>
-					identifier <5:9-5:10> C
-				type annotation <5:11-5:20>
-					id type <5:13-5:20>
-						identifier <5:13-5:20> COMPLEX
-				record expression <5:24-5:54> COMPLEX{}
-					identifier <5:24-5:31> COMPLEX
-					component values <5:34-5:52>
-						assign expression list <5:34-5:52>
-							assign expression <5:34-5:42> R := 0.0
-								identifier <5:34-5:35> R
-								number expression <5:39-5:42> 0.0
-									real <5:39-5:42> 0.0
-							assign expression <5:44-5:52> I := 0.0
-								identifier <5:44-5:45> I
-								number expression <5:49-5:52> 0.0
-									real <5:49-5:52> 0.0
-			variable declaration <6:9-7:71>
-				identifier list <6:9-6:10>
-					identifier <6:9-6:10> P
-				type annotation <6:11-6:17>
-					id type <6:13-6:17>
-						identifier <6:13-6:17> PAIR
-				record expression <6:21-7:70> PAIR{}
-					identifier <6:21-6:25> PAIR
-					component values <6:28-7:68>
-						assign expression list <6:28-7:68>
-							assign expression <6:28-6:67> FIRST := COMPLEX{}
-								identifier <6:28-6:33> FIRST
-								record expression <6:37-6:67> COMPLEX{}
-									identifier <6:37-6:44> COMPLEX
-									component values <6:47-6:65>
-										assign expression list <6:47-6:65>
-											assign expression <6:47-6:55> R := 0.0
-												identifier <6:47-6:48> R
-												number expression <6:52-6:55> 0.0
-													real <6:52-6:55> 0.0
-											assign expression <6:57-6:65> I := 0.0
-												identifier <6:57-6:58> I
-												number expression <6:62-6:65> 0.0
-													real <6:62-6:65> 0.0
-							assign expression <7:28-7:68> SECOND := COMPLEX{}
-								identifier <7:28-7:34> SECOND
-								record expression <7:38-7:68> COMPLEX{}
-									identifier <7:38-7:45> COMPLEX
-									component values <7:48-7:66>
-										assign expression list <7:48-7:66>
-											assign expression <7:48-7:56> R := 0.0
-												identifier <7:48-7:49> R
-												number expression <7:53-7:56> 0.0
-													real <7:53-7:56> 0.0
-											assign expression <7:58-7:66> I := 0.0
-												identifier <7:58-7:59> I
-												number expression <7:63-7:66> 0.0
-													real <7:63-7:66> 0.0
-			procedure declaration <8:15-10:9>
-				identifier <8:15-8:20> PRINT
-				body <8:25-10:8>
-					statement list <8:31-9:38>
-						write statement <9:2-9:38>
-							write parameter list <9:8-9:36>
-								write expression <9:8-9:15> "    ("
-									string <9:8-9:15> "    ("
-								write expression <9:17-9:20> C.R
-									lvalue expression <9:17-9:20> C.R
-										lvalue <9:17-9:20> C.R
-								write expression <9:22-9:26> ", "
-									string <9:22-9:26> ", "
-								write expression <9:28-9:31> C.I
-									lvalue expression <9:28-9:31> C.I
-										lvalue <9:28-9:31> C.I
-								write expression <9:33-9:36> ")"
-									string <9:33-9:36> ")"
-		statement list <11:6-30:9>
-			assign statement <12:5-12:16>
-				lvalue <12:5-12:8> C.R
-				number expression <12:12-12:15> 1.0
-					real <12:12-12:15> 1.0
-			assign statement <13:5-13:16>
-				lvalue <13:5-13:8> C.I
-				number expression <13:12-13:15> 0.0
-					real <13:12-13:15> 0.0
-			assign statement <14:5-14:18>
-				lvalue <14:5-14:12> P.FIRST
-				lvalue expression <14:16-14:17> C
-					lvalue <14:16-14:17> C
-			assign statement <15:5-15:16>
-				lvalue <15:5-15:8> C.R
-				number expression <15:12-15:15> 0.0
-					real <15:12-15:15> 0.0
-			assign statement <16:5-16:16>
-				lvalue <16:5-16:8> C.I
-				number expression <16:12-16:15> 1.0
-					real <16:12-16:15> 1.0
-			assign statement <17:5-17:19>
-				lvalue <17:5-17:13> P.SECOND
-				lvalue expression <17:17-17:18> C
-					lvalue <17:17-17:18> C
-			assign statement <18:5-18:18>
-				lvalue <18:5-18:6> C
-				lvalue expression <18:10-18:17> P.FIRST
-					lvalue <18:10-18:17> P.FIRST
-			write statement <19:5-19:62>
-				write parameter list <19:12-19:60>
-					write expression <19:12-19:60> "The first complex number should be (1.0, 0.0):"
-						string <19:12-19:60> "The first complex number should be (1.0, 0.0):"
-			procedure call statement <20:5-20:13>
-				identifier <20:5-20:10> PRINT
-			assign statement <21:5-21:19>
-				lvalue <21:5-21:6> C
-				lvalue expression <21:10-21:18> P.SECOND
-					lvalue <21:10-21:18> P.SECOND
-			write statement <22:5-22:63>
-				write parameter list <22:12-22:61>
-					write expression <22:12-22:61> "The second complex number should be (0.0, 1.0):"
-						string <22:12-22:61> "The second complex number should be (0.0, 1.0):"
-			procedure call statement <23:5-23:13>
-				identifier <23:5-23:10> PRINT
-			if statement <24:5-30:9>
-				binary expression <24:8-24:31> P.FIRST.R <> P.SECOND.R
-					lvalue expression <24:8-24:17> P.FIRST.R
-						lvalue <24:8-24:17> P.FIRST.R
-					operator <24:18-24:20> <>
-					lvalue expression <24:21-24:31> P.SECOND.R
-						lvalue <24:21-24:31> P.SECOND.R
-				statement list <24:36-25:57>
-					write statement <25:2-25:57>
-						write parameter list <25:9-25:55>
-							write expression <25:9-25:55> "and these two complex numbers are not equal!"
-								string <25:9-25:55> "and these two complex numbers are not equal!"
-				else if section list <25:57-27:57>
-					else if section <26:5-27:57>
-						binary expression <26:11-26:34> P.FIRST.I <> P.SECOND.I
-							lvalue expression <26:11-26:20> P.FIRST.I
-								lvalue <26:11-26:20> P.FIRST.I
-							operator <26:21-26:23> <>
-							lvalue expression <26:24-26:34> P.SECOND.I
-								lvalue <26:24-26:34> P.SECOND.I
-						statement list <26:39-27:57>
-							write statement <27:2-27:57>
-								write parameter list <27:9-27:55>
-									write expression <27:9-27:55> "and these two complex numbers are not equal!"
-										string <27:9-27:55> "and these two complex numbers are not equal!"
-				else section <28:5-29:53>
-					statement list <28:9-29:53>
-						write statement <29:2-29:53>
-							write parameter list <29:9-29:51>
-								write expression <29:9-29:51> "and these two complex numbers are equal?"
-									string <29:9-29:51> "and these two complex numbers are equal?"
+program (1,1)-(31,5)
+	body (1,11)-(31,4)
+		declaration list (1,11)-(10,9)
+			variable declaration (2,9)-(2,26)
+				identifier list (2,9)-(2,10)
+					identifier (2,9)-(2,10) I
+				type annotation (2,11)-(2,20)
+					id type (2,13)-(2,20)
+						identifier (2,13)-(2,20) INTEGER
+				number expression (2,24)-(2,25) 0
+					integer (2,24)-(2,25) 0
+			type declaration (3,10)-(3,51)
+				identifier (3,10)-(3,17) COMPLEX
+				record type (3,21)-(3,50)
+					component list (3,28)-(3,46)
+						component (3,28)-(3,36)
+							identifier (3,28)-(3,29) R
+							id type (3,31)-(3,35)
+								identifier (3,31)-(3,35) REAL
+						component (3,37)-(3,46)
+							identifier (3,37)-(3,38) I
+							id type (3,41)-(3,45)
+								identifier (3,41)-(3,45) REAL
+			type declaration (4,10)-(4,63)
+				identifier (4,10)-(4,14) PAIR
+				record type (4,18)-(4,62)
+					component list (4,25)-(4,58)
+						component (4,25)-(4,40)
+							identifier (4,25)-(4,30) FIRST
+							id type (4,32)-(4,39)
+								identifier (4,32)-(4,39) COMPLEX
+						component (4,41)-(4,58)
+							identifier (4,41)-(4,47) SECOND
+							id type (4,50)-(4,57)
+								identifier (4,50)-(4,57) COMPLEX
+			variable declaration (5,9)-(5,55)
+				identifier list (5,9)-(5,10)
+					identifier (5,9)-(5,10) C
+				type annotation (5,11)-(5,20)
+					id type (5,13)-(5,20)
+						identifier (5,13)-(5,20) COMPLEX
+				record expression (5,24)-(5,54) COMPLEX{}
+					identifier (5,24)-(5,31) COMPLEX
+					component values (5,34)-(5,52)
+						assign expression list (5,34)-(5,52)
+							assign expression (5,34)-(5,42) R := 0.0
+								identifier (5,34)-(5,35) R
+								number expression (5,39)-(5,42) 0.0
+									real (5,39)-(5,42) 0.0
+							assign expression (5,44)-(5,52) I := 0.0
+								identifier (5,44)-(5,45) I
+								number expression (5,49)-(5,52) 0.0
+									real (5,49)-(5,52) 0.0
+			variable declaration (6,9)-(7,71)
+				identifier list (6,9)-(6,10)
+					identifier (6,9)-(6,10) P
+				type annotation (6,11)-(6,17)
+					id type (6,13)-(6,17)
+						identifier (6,13)-(6,17) PAIR
+				record expression (6,21)-(7,70) PAIR{}
+					identifier (6,21)-(6,25) PAIR
+					component values (6,28)-(7,68)
+						assign expression list (6,28)-(7,68)
+							assign expression (6,28)-(6,67) FIRST := COMPLEX{}
+								identifier (6,28)-(6,33) FIRST
+								record expression (6,37)-(6,67) COMPLEX{}
+									identifier (6,37)-(6,44) COMPLEX
+									component values (6,47)-(6,65)
+										assign expression list (6,47)-(6,65)
+											assign expression (6,47)-(6,55) R := 0.0
+												identifier (6,47)-(6,48) R
+												number expression (6,52)-(6,55) 0.0
+													real (6,52)-(6,55) 0.0
+											assign expression (6,57)-(6,65) I := 0.0
+												identifier (6,57)-(6,58) I
+												number expression (6,62)-(6,65) 0.0
+													real (6,62)-(6,65) 0.0
+							assign expression (7,28)-(7,68) SECOND := COMPLEX{}
+								identifier (7,28)-(7,34) SECOND
+								record expression (7,38)-(7,68) COMPLEX{}
+									identifier (7,38)-(7,45) COMPLEX
+									component values (7,48)-(7,66)
+										assign expression list (7,48)-(7,66)
+											assign expression (7,48)-(7,56) R := 0.0
+												identifier (7,48)-(7,49) R
+												number expression (7,53)-(7,56) 0.0
+													real (7,53)-(7,56) 0.0
+											assign expression (7,58)-(7,66) I := 0.0
+												identifier (7,58)-(7,59) I
+												number expression (7,63)-(7,66) 0.0
+													real (7,63)-(7,66) 0.0
+			procedure declaration (8,15)-(10,9)
+				identifier (8,15)-(8,20) PRINT
+				body (8,25)-(10,8)
+					statement list (8,31)-(9,38)
+						write statement (9,2)-(9,38)
+							write parameter list (9,8)-(9,36)
+								write expression (9,8)-(9,15) "    ("
+									string (9,8)-(9,15) "    ("
+								write expression (9,17)-(9,20) C.R
+									lvalue expression (9,17)-(9,20) C.R
+										lvalue (9,17)-(9,20) C.R
+								write expression (9,22)-(9,26) ", "
+									string (9,22)-(9,26) ", "
+								write expression (9,28)-(9,31) C.I
+									lvalue expression (9,28)-(9,31) C.I
+										lvalue (9,28)-(9,31) C.I
+								write expression (9,33)-(9,36) ")"
+									string (9,33)-(9,36) ")"
+		statement list (11,6)-(30,9)
+			assign statement (12,5)-(12,16)
+				lvalue (12,5)-(12,8) C.R
+				number expression (12,12)-(12,15) 1.0
+					real (12,12)-(12,15) 1.0
+			assign statement (13,5)-(13,16)
+				lvalue (13,5)-(13,8) C.I
+				number expression (13,12)-(13,15) 0.0
+					real (13,12)-(13,15) 0.0
+			assign statement (14,5)-(14,18)
+				lvalue (14,5)-(14,12) P.FIRST
+				lvalue expression (14,16)-(14,17) C
+					lvalue (14,16)-(14,17) C
+			assign statement (15,5)-(15,16)
+				lvalue (15,5)-(15,8) C.R
+				number expression (15,12)-(15,15) 0.0
+					real (15,12)-(15,15) 0.0
+			assign statement (16,5)-(16,16)
+				lvalue (16,5)-(16,8) C.I
+				number expression (16,12)-(16,15) 1.0
+					real (16,12)-(16,15) 1.0
+			assign statement (17,5)-(17,19)
+				lvalue (17,5)-(17,13) P.SECOND
+				lvalue expression (17,17)-(17,18) C
+					lvalue (17,17)-(17,18) C
+			assign statement (18,5)-(18,18)
+				lvalue (18,5)-(18,6) C
+				lvalue expression (18,10)-(18,17) P.FIRST
+					lvalue (18,10)-(18,17) P.FIRST
+			write statement (19,5)-(19,62)
+				write parameter list (19,12)-(19,60)
+					write expression (19,12)-(19,60) "The first complex number should be (1.0, 0.0):"
+						string (19,12)-(19,60) "The first complex number should be (1.0, 0.0):"
+			procedure call statement (20,5)-(20,13)
+				identifier (20,5)-(20,10) PRINT
+			assign statement (21,5)-(21,19)
+				lvalue (21,5)-(21,6) C
+				lvalue expression (21,10)-(21,18) P.SECOND
+					lvalue (21,10)-(21,18) P.SECOND
+			write statement (22,5)-(22,63)
+				write parameter list (22,12)-(22,61)
+					write expression (22,12)-(22,61) "The second complex number should be (0.0, 1.0):"
+						string (22,12)-(22,61) "The second complex number should be (0.0, 1.0):"
+			procedure call statement (23,5)-(23,13)
+				identifier (23,5)-(23,10) PRINT
+			if statement (24,5)-(30,9)
+				binary expression (24,8)-(24,31) P.FIRST.R <> P.SECOND.R
+					lvalue expression (24,8)-(24,17) P.FIRST.R
+						lvalue (24,8)-(24,17) P.FIRST.R
+					operator (24,18)-(24,20) <>
+					lvalue expression (24,21)-(24,31) P.SECOND.R
+						lvalue (24,21)-(24,31) P.SECOND.R
+				statement list (24,36)-(25,57)
+					write statement (25,2)-(25,57)
+						write parameter list (25,9)-(25,55)
+							write expression (25,9)-(25,55) "and these two complex numbers are not equal!"
+								string (25,9)-(25,55) "and these two complex numbers are not equal!"
+				else if section list (25,57)-(27,57)
+					else if section (26,5)-(27,57)
+						binary expression (26,11)-(26,34) P.FIRST.I <> P.SECOND.I
+							lvalue expression (26,11)-(26,20) P.FIRST.I
+								lvalue (26,11)-(26,20) P.FIRST.I
+							operator (26,21)-(26,23) <>
+							lvalue expression (26,24)-(26,34) P.SECOND.I
+								lvalue (26,24)-(26,34) P.SECOND.I
+						statement list (26,39)-(27,57)
+							write statement (27,2)-(27,57)
+								write parameter list (27,9)-(27,55)
+									write expression (27,9)-(27,55) "and these two complex numbers are not equal!"
+										string (27,9)-(27,55) "and these two complex numbers are not equal!"
+				else section (28,5)-(29,53)
+					statement list (28,9)-(29,53)
+						write statement (29,2)-(29,53)
+							write parameter list (29,9)-(29,51)
+								write expression (29,9)-(29,51) "and these two complex numbers are equal?"
+									string (29,9)-(29,51) "and these two complex numbers are equal?"

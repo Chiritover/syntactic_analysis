@@ -1,102 +1,102 @@
 # tests/case_8.pcat
 
 
-program <1:1-24:5>
-	body <1:11-24:4>
-		declaration list <1:11-15:9>
-			variable declaration <2:9-2:26>
-				identifier list <2:9-2:10>
-					identifier <2:9-2:10> I
-				type annotation <2:11-2:20>
-					id type <2:13-2:20>
-						identifier <2:13-2:20> INTEGER
-				number expression <2:24-2:25> 0
-					integer <2:24-2:25> 0
-			procedure declaration <3:15-15:9>
-				identifier <3:15-3:21> ADDONE
-				body <3:26-15:8>
-					declaration list <3:26-10:6>
-						variable declaration <4:6-4:23>
-							identifier list <4:6-4:7>
-								identifier <4:6-4:7> J
-							type annotation <4:8-4:17>
-								id type <4:10-4:17>
-									identifier <4:10-4:17> INTEGER
-							number expression <4:21-4:22> 0
-								integer <4:21-4:22> 0
-						procedure declaration <5:12-10:6>
-							identifier <5:12-5:16> OKAY
-							body <5:21-10:5>
-								declaration list <5:21-6:34>
-									variable declaration <6:10-6:34>
-										identifier list <6:10-6:18>
-											identifier <6:10-6:18> CONSTANT
-										type annotation <6:19-6:28>
-											id type <6:21-6:28>
-												identifier <6:21-6:28> INTEGER
-										number expression <6:32-6:33> 0
-											integer <6:32-6:33> 0
-								statement list <7:7-9:24>
-									assign statement <8:6-8:20>
-										lvalue <8:6-8:14> CONSTANT
-										number expression <8:18-8:19> 1
-											integer <8:18-8:19> 1
-									assign statement <9:6-9:24>
-										lvalue <9:6-9:7> J
-										binary expression <9:11-9:23> J + CONSTANT
-											lvalue expression <9:11-9:12> J
-												lvalue <9:11-9:12> J
-											operator <9:13-9:14> +
-											lvalue expression <9:15-9:23> CONSTANT
-												lvalue <9:15-9:23> CONSTANT
-					statement list <11:10-14:9>
-						assign statement <12:2-12:9>
-							lvalue <12:2-12:3> J
-							lvalue expression <12:7-12:8> I
-								lvalue <12:7-12:8> I
-						procedure call statement <13:2-13:9>
-							identifier <13:2-13:6> OKAY
-						assign statement <14:2-14:9>
-							lvalue <14:2-14:3> I
-							lvalue expression <14:7-14:8> J
-								lvalue <14:7-14:8> J
-		statement list <16:6-23:24>
-			assign statement <17:5-17:12>
-				lvalue <17:5-17:6> I
-				number expression <17:10-17:11> 0
-					integer <17:10-17:11> 0
-			write statement <18:5-18:40>
-				write parameter list <18:11-18:38>
-					write expression <18:11-18:17> "I = "
-						string <18:11-18:17> "I = "
-					write expression <18:19-18:20> I
-						lvalue expression <18:19-18:20> I
-							lvalue <18:19-18:20> I
-					write expression <18:22-18:38> " (SHOULD BE 0)"
-						string <18:22-18:38> " (SHOULD BE 0)"
-			procedure call statement <19:5-19:14>
-				identifier <19:5-19:11> ADDONE
-			write statement <20:5-20:40>
-				write parameter list <20:11-20:38>
-					write expression <20:11-20:17> "I = "
-						string <20:11-20:17> "I = "
-					write expression <20:19-20:20> I
-						lvalue expression <20:19-20:20> I
-							lvalue <20:19-20:20> I
-					write expression <20:22-20:38> " (SHOULD BE 1)"
-						string <20:22-20:38> " (SHOULD BE 1)"
-			procedure call statement <21:5-21:14>
-				identifier <21:5-21:11> ADDONE
-			write statement <22:5-22:40>
-				write parameter list <22:11-22:38>
-					write expression <22:11-22:17> "I = "
-						string <22:11-22:17> "I = "
-					write expression <22:19-22:20> I
-						lvalue expression <22:19-22:20> I
-							lvalue <22:19-22:20> I
-					write expression <22:22-22:38> " (SHOULD BE 2)"
-						string <22:22-22:38> " (SHOULD BE 2)"
-			write statement <23:5-23:24>
-				write parameter list <23:11-23:22>
-					write expression <23:11-23:22> "ALL DONE!"
-						string <23:11-23:22> "ALL DONE!"
+program (1,1)-(24,5)
+	body (1,11)-(24,4)
+		declaration list (1,11)-(15,9)
+			variable declaration (2,9)-(2,26)
+				identifier list (2,9)-(2,10)
+					identifier (2,9)-(2,10) I
+				type annotation (2,11)-(2,20)
+					id type (2,13)-(2,20)
+						identifier (2,13)-(2,20) INTEGER
+				number expression (2,24)-(2,25) 0
+					integer (2,24)-(2,25) 0
+			procedure declaration (3,15)-(15,9)
+				identifier (3,15)-(3,21) ADDONE
+				body (3,26)-(15,8)
+					declaration list (3,26)-(10,6)
+						variable declaration (4,6)-(4,23)
+							identifier list (4,6)-(4,7)
+								identifier (4,6)-(4,7) J
+							type annotation (4,8)-(4,17)
+								id type (4,10)-(4,17)
+									identifier (4,10)-(4,17) INTEGER
+							number expression (4,21)-(4,22) 0
+								integer (4,21)-(4,22) 0
+						procedure declaration (5,12)-(10,6)
+							identifier (5,12)-(5,16) OKAY
+							body (5,21)-(10,5)
+								declaration list (5,21)-(6,34)
+									variable declaration (6,10)-(6,34)
+										identifier list (6,10)-(6,18)
+											identifier (6,10)-(6,18) CONSTANT
+										type annotation (6,19)-(6,28)
+											id type (6,21)-(6,28)
+												identifier (6,21)-(6,28) INTEGER
+										number expression (6,32)-(6,33) 0
+											integer (6,32)-(6,33) 0
+								statement list (7,7)-(9,24)
+									assign statement (8,6)-(8,20)
+										lvalue (8,6)-(8,14) CONSTANT
+										number expression (8,18)-(8,19) 1
+											integer (8,18)-(8,19) 1
+									assign statement (9,6)-(9,24)
+										lvalue (9,6)-(9,7) J
+										binary expression (9,11)-(9,23) J + CONSTANT
+											lvalue expression (9,11)-(9,12) J
+												lvalue (9,11)-(9,12) J
+											operator (9,13)-(9,14) +
+											lvalue expression (9,15)-(9,23) CONSTANT
+												lvalue (9,15)-(9,23) CONSTANT
+					statement list (11,10)-(14,9)
+						assign statement (12,2)-(12,9)
+							lvalue (12,2)-(12,3) J
+							lvalue expression (12,7)-(12,8) I
+								lvalue (12,7)-(12,8) I
+						procedure call statement (13,2)-(13,9)
+							identifier (13,2)-(13,6) OKAY
+						assign statement (14,2)-(14,9)
+							lvalue (14,2)-(14,3) I
+							lvalue expression (14,7)-(14,8) J
+								lvalue (14,7)-(14,8) J
+		statement list (16,6)-(23,24)
+			assign statement (17,5)-(17,12)
+				lvalue (17,5)-(17,6) I
+				number expression (17,10)-(17,11) 0
+					integer (17,10)-(17,11) 0
+			write statement (18,5)-(18,40)
+				write parameter list (18,11)-(18,38)
+					write expression (18,11)-(18,17) "I = "
+						string (18,11)-(18,17) "I = "
+					write expression (18,19)-(18,20) I
+						lvalue expression (18,19)-(18,20) I
+							lvalue (18,19)-(18,20) I
+					write expression (18,22)-(18,38) " (SHOULD BE 0)"
+						string (18,22)-(18,38) " (SHOULD BE 0)"
+			procedure call statement (19,5)-(19,14)
+				identifier (19,5)-(19,11) ADDONE
+			write statement (20,5)-(20,40)
+				write parameter list (20,11)-(20,38)
+					write expression (20,11)-(20,17) "I = "
+						string (20,11)-(20,17) "I = "
+					write expression (20,19)-(20,20) I
+						lvalue expression (20,19)-(20,20) I
+							lvalue (20,19)-(20,20) I
+					write expression (20,22)-(20,38) " (SHOULD BE 1)"
+						string (20,22)-(20,38) " (SHOULD BE 1)"
+			procedure call statement (21,5)-(21,14)
+				identifier (21,5)-(21,11) ADDONE
+			write statement (22,5)-(22,40)
+				write parameter list (22,11)-(22,38)
+					write expression (22,11)-(22,17) "I = "
+						string (22,11)-(22,17) "I = "
+					write expression (22,19)-(22,20) I
+						lvalue expression (22,19)-(22,20) I
+							lvalue (22,19)-(22,20) I
+					write expression (22,22)-(22,38) " (SHOULD BE 2)"
+						string (22,22)-(22,38) " (SHOULD BE 2)"
+			write statement (23,5)-(23,24)
+				write parameter list (23,11)-(23,22)
+					write expression (23,11)-(23,22) "ALL DONE!"
+						string (23,11)-(23,22) "ALL DONE!"
